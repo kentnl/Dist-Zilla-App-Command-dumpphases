@@ -10,6 +10,17 @@ package Dist::Zilla::App::Command::dumpphases;
   cd $PROJECT;
   dzil dumpphases
 
+If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
+
+( Everyone else can visit L<https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/raw/media/example_01.png> )
+
+=for html <center><img src="https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/raw/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+
+=cut
+
+
+
+
 =head1 DESCRIPTION
 
 Working out what Plugins will execute in which order during which phase can be a
@@ -18,6 +29,7 @@ little confusing sometimes.
 This Command exists primarily to make developing Plugin Bundles and debugging
 dist.ini a bit easier, especially for newbies who may not fully understand
 Bundles yet.
+
 
 =cut
 
