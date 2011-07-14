@@ -18,9 +18,6 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 =cut
 
-
-
-
 =head1 DESCRIPTION
 
 Working out what Plugins will execute in which order during which phase can be a
@@ -39,7 +36,9 @@ use Try::Tiny;
 use Term::ANSIColor qw( colored );
 use Scalar::Util qw( blessed );
 
-sub abstract { 'Dump a textual representation of each phase\'s parts' }
+## no critic ( ProhibitAmbiguousNames)
+sub abstract { return 'Dump a textual representation of each phase\'s parts' }
+## use critic
 
 sub _phases {
   my (@phases) = (
@@ -66,6 +65,7 @@ sub _phases {
   return \@phases;
 }
 
+## no critic ( RequireArgUnpacking )
 sub _color_label_label {
   shift;
   return colored( ['blue'], @_ );
@@ -101,6 +101,8 @@ sub _color_plugin_star {
   return colored( ['blue'], @_ );
 }
 
+## use critic
+
 sub execute {
   my ( $self, $opt, $args ) = @_;
   my $zilla = $self->zilla;
@@ -129,6 +131,7 @@ sub execute {
         $self->_color_plugin_package( ' => ' . blessed($plugin) );
     }
   }
+  return 0;
 }
 
 1;
