@@ -3,11 +3,120 @@ use warnings;
 
 package Dist::Zilla::App::Command::dumpphases;
 
-# ABSTRACT:
+# ABSTRACT: Dump a textual representation of each phase's parts.
 
-use Moose;
+=head1 SYNOPSIS
 
-__PACKAGE__->meta->make_immutable;
-no Moose;
+  cd $PROJECT;
+  dzil dumpphases
+
+=head1 DESCRIPTION
+
+Working out what Plugins will execute in which order during which phase can be a
+little confusing sometimes.
+
+This Command exists primarily to make developing Plugin Bundles and debugging
+dist.ini a bit easier, especially for newbies who may not fully understand
+Bundles yet.
+
+=cut
+
+use Dist::Zilla::App -command;
+use Moose::Autobox;
+use Try::Tiny;
+use Term::ANSIColor qw( colored );
+use Scalar::Util qw( blessed );
+
+sub abstract { 'Dump a textual representation of each phase\'s parts' }
+
+sub _phases {
+  my (@phases) = (
+    [ 'Version',           ['-VersionProvider'], 'Provide a version for the distribution' ],
+    [ 'MetaData',          ['-MetaProvider'],    'Specify MetaData for the distribution' ],
+    [ 'ExecFiles',         ['-ExecFiles'],       undef ],
+    [ 'ShareDir',          ['-ShareDir'],        undef ],
+    [ 'Before Build',      ['-BeforeBuild'],     undef ],
+    [ 'Gather Files',      ['-FileGatherer'],    undef ],
+    [ 'Prune Files',       ['-FilePruner'],      undef ],
+    [ 'Munge Files',       ['-FileMunger'],      undef ],
+    [ 'Register Preqreqs', ['-PrereqSource'],    undef ],
+    [ 'Install Tool',      ['-InstallTool'],     undef ],
+    [ 'After Build',       ['-AfterBuild'],      undef ],
+    [ 'Before Archive',    ['-BeforeArchive'],   undef ],
+    [ 'Releaser',          ['-Releaser'],        undef ],
+    [ 'Before Release',    ['-BeforeRelease'],   undef ],
+    [ 'After Release',     ['-AfterRelease'],    undef ],
+    [ 'Test Runner',       ['-TestRunner'],      undef ],
+    [ 'Build Runner',      ['-BuildRunner'],     undef ],
+    [ 'BeforeMint',        ['-BeforeMint'],      undef ],
+    [ 'AfterMint',         ['-AfterMint'],       undef ],
+  );
+  return \@phases;
+}
+
+sub _color_label_label {
+  shift;
+  return colored( ['blue'], @_ );
+}
+
+sub _color_label_value {
+  shift;
+  return colored( ['bold'], @_ );
+}
+
+sub _color_attribute_label {
+  shift;
+  return colored( [ 'blue', 'bold' ], @_ );
+}
+
+sub _color_attribute_value {
+  shift;
+  return colored( ['blue'], @_ );
+}
+
+sub _color_plugin_name {
+  shift;
+  return @_;
+}
+
+sub _color_plugin_package {
+  shift;
+  return colored( ['blue'], @_ );
+}
+
+sub _color_plugin_star {
+  shift;
+  return colored( ['blue'], @_ );
+}
+
+sub execute {
+  my ( $self, $opt, $args ) = @_;
+  my $zilla = $self->zilla;
+
+  my $phases = $self->_phases;
+
+  for my $phase ( @{$phases} ) {
+    my ( $label, $roles, $description ) = @{$phase};
+    my @plugins;
+    push @plugins, $zilla->plugins_with($_)->flatten for @{$roles};
+    next unless @plugins;
+
+    printf "\n%s%s\n", $self->_color_label_label('Phase: '), $self->_color_label_value($label);
+
+    if ($description) {
+      printf "%s%s\n", $self->_color_attribute_label(' - description: '), $self->_color_attribute_value($description);
+    }
+    for my $role ( @{$roles} ) {
+      printf "%s%s\n", $self->_color_attribute_label(' - role: '), $self->_color_attribute_value($role);
+    }
+
+    for my $plugin (@plugins) {
+      printf "%s%s%s\n",
+        $self->_color_plugin_star(' * '),
+        $self->_color_plugin_name( $plugin->plugin_name ),
+        $self->_color_plugin_package( ' => ' . blessed($plugin) );
+    }
+  }
+}
 
 1;
