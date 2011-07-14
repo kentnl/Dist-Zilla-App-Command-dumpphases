@@ -2,33 +2,13 @@ use strict;
 use warnings;
 
 package Dist::Zilla::App::Command::dumpphases;
+BEGIN {
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.1.0';
+}
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
-=head1 SYNOPSIS
 
-  cd $PROJECT;
-  dzil dumpphases
-
-If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
-
-( Everyone else can visit L<https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/raw/media/example_01.png> )
-
-=for html <center><img src="https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/raw/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
-
-=cut
-
-=head1 DESCRIPTION
-
-Working out what Plugins will execute in which order during which phase can be a
-little confusing sometimes.
-
-This Command exists primarily to make developing Plugin Bundles and debugging
-dist.ini a bit easier, especially for newbies who may not fully understand
-Bundles yet.
-
-
-=cut
 
 use Dist::Zilla::App -command;
 use Moose::Autobox;
@@ -135,3 +115,48 @@ sub execute {
 }
 
 1;
+
+__END__
+=pod
+
+=head1 NAME
+
+Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each phase's parts.
+
+=head1 VERSION
+
+version 0.1.0
+
+=head1 SYNOPSIS
+
+  cd $PROJECT;
+  dzil dumpphases
+
+If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
+
+( Everyone else can visit L<https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/raw/media/example_01.png> )
+
+=for html <center><img src="https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/raw/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+
+=head1 DESCRIPTION
+
+Working out what Plugins will execute in which order during which phase can be a
+little confusing sometimes.
+
+This Command exists primarily to make developing Plugin Bundles and debugging
+dist.ini a bit easier, especially for newbies who may not fully understand
+Bundles yet.
+
+=head1 AUTHOR
+
+Kent Fredric <kentnl@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2011 by Kent Fredric <kentnl@cpan.org>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
