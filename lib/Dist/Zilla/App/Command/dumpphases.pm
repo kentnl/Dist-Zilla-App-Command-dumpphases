@@ -27,6 +27,10 @@ This Command exists primarily to make developing Plugin Bundles and debugging
 dist.ini a bit easier, especially for newbies who may not fully understand
 Bundles yet.
 
+If you want to turn colors off, use the L<Term::ANSIColor> environment variable
+C<ANSI_COLORS_DISABLED>. E.g.,
+
+C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
 
 =cut
 
