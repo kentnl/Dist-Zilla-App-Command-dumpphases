@@ -2,8 +2,8 @@ use strict;
 use warnings;
 
 package Dist::Zilla::App::Command::dumpphases;
-BEGIN {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.1.0';
+{
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.1.1';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -125,7 +125,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
@@ -147,9 +147,24 @@ This Command exists primarily to make developing Plugin Bundles and debugging
 dist.ini a bit easier, especially for newbies who may not fully understand
 Bundles yet.
 
-=head1 AUTHOR
+If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
+C<ANSI_COLORS_DISABLED>. E.g.,
+
+C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
 
 Kent Fredric <kentnl@cpan.org>
+
+=item *
+
+Alan Young <harleypig@gmail.com>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

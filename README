@@ -3,7 +3,7 @@ NAME
     each phase's parts.
 
 VERSION
-    version 0.1.0
+    version 0.1.1
 
 SYNOPSIS
       cd $PROJECT;
@@ -24,8 +24,15 @@ DESCRIPTION
     debugging dist.ini a bit easier, especially for newbies who may not
     fully understand Bundles yet.
 
-AUTHOR
-    Kent Fredric <kentnl@cpan.org>
+    If you want to turn colors off, use "Term::ANSIcolor"'s environment
+    variable "ANSI_COLORS_DISABLED". E.g.,
+
+    "ANSI_COLORS_DISABLED=1 dzil dumpphases"
+
+AUTHORS
+    *   Kent Fredric <kentnl@cpan.org>
+
+    *   Alan Young <harleypig@gmail.com>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2011 by Kent Fredric <kentnl@cpan.org>.

@@ -1,5 +1,27 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+0.1.1 2011-09-02T09:37:14Z
+ [Dependencies::Build::Removed]
+ - English
+
+ [Dependencies::Runtime::New]
+ - strict
+ - warnings
+
+ [Documentation]
+ - Document how to turn off colouring ( thanks harleypig / ayoung / Alan
+   Young )
+
+ [Metadata]
+ - Github Urls updated/corrected.
+
+ [Packaging]
+ - Author/Release tests now in xt/
+ - Alan Young is now an author.
+
+ [Tests]
+ - compile test updated.
+
 0.1.0 2011-07-14T06:13:32Z
  - First version.
 
