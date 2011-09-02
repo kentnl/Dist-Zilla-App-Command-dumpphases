@@ -2,7 +2,8 @@ Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
  [Documentation]
- - Document how to turn off colouring ( thanks harleypig / ayoung / Alan Young )
+ - Document how to turn off colouring ( thanks harleypig / ayoung / Alan
+   Young )
 
 0.1.0 2011-07-14T06:13:32Z
  - First version.
