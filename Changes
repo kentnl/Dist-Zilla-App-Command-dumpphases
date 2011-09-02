@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+0.1.1 2011-09-02T09:37:14Z
  [Dependencies::Build::Removed]
  - English
 
