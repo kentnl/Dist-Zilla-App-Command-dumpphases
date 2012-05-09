@@ -1,5 +1,27 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+0.1.2 2012-05-09T07:25:48Z
+ - Maintenance Release.
+
+ [Dependencies::Changed]
+ - develop recommends : Dist::Zilla::PluginBundle::Author::KENTNL::Lite
+   0.01009803 -> v1.3.0
+ - develop suggests : Dist::Zilla::PluginBundle::Author::KENTNL
+   v1.0.0 -> v1.3.0
+
+ [Dependencies::New]
+ - runtime requires : perl 5.006
+
+ [Internals]
+ - add $AUTHORITY to all packages.
+
+ [Packaging]
+ - Update LICENSE ( Year, Indent, Address )
+ - Export x_authority in Meta
+
+ [Tests]
+ - Add a minimum version release test
+
 0.1.1 2011-09-02T09:37:14Z
  [Dependencies::Build::Removed]
  - English

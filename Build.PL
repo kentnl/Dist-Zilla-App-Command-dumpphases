@@ -21,7 +21,7 @@ my %module_build_args = (
     "Alan Young <harleypig\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-App-Command-dumpphases",
-  "dist_version" => "0.1.1",
+  "dist_version" => "0.1.2",
   "license" => "perl",
   "module_name" => "Dist::Zilla::App::Command::dumpphases",
   "recommends" => {},
@@ -32,6 +32,7 @@ my %module_build_args = (
     "Scalar::Util" => 0,
     "Term::ANSIColor" => 0,
     "Try::Tiny" => 0,
+    "perl" => "5.006",
     "strict" => 0,
     "warnings" => 0
   },
