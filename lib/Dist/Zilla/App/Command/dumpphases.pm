@@ -170,6 +170,10 @@ Kent Fredric <kentnl@cpan.org>
 
 Alan Young <harleypig@gmail.com>
 
+=item *
+
+Oliver Mengué <dolmen@cpan.org>
+
 =back
 
 =head1 COPYRIGHT AND LICENSE

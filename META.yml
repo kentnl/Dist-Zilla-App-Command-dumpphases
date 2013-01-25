@@ -3,6 +3,7 @@ abstract: "Dump a textual representation of each phase's parts."
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
   - 'Alan Young <harleypig@gmail.com>'
+  - 'Oliver Mengué <dolmen@cpan.org>'
 build_requires:
   File::Find: 0
   File::Temp: 0

@@ -18,7 +18,8 @@ my %module_build_args = (
   "dist_abstract" => "Dump a textual representation of each phase's parts.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>",
-    "Alan Young <harleypig\@gmail.com>"
+    "Alan Young <harleypig\@gmail.com>",
+    "Oliver Mengu\303\251 <dolmen\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-App-Command-dumpphases",
   "dist_version" => "0.1.3",
