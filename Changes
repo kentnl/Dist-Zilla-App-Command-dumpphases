@@ -1,0 +1,51 @@
+Release history for Dist-Zilla-App-Command-dumpphases
+
+0.1.3 2013-01-25T22:45:48Z
+
+0.1.2 2012-05-09T07:25:48Z
+ - Maintenance Release.
+
+ [Dependencies::Changed]
+ - develop recommends : Dist::Zilla::PluginBundle::Author::KENTNL::Lite
+   0.01009803 -> v1.3.0
+ - develop suggests : Dist::Zilla::PluginBundle::Author::KENTNL
+   v1.0.0 -> v1.3.0
+
+ [Dependencies::New]
+ - runtime requires : perl 5.006
+
+ [Internals]
+ - add $AUTHORITY to all packages.
+
+ [Packaging]
+ - Update LICENSE ( Year, Indent, Address )
+ - Export x_authority in Meta
+
+ [Tests]
+ - Add a minimum version release test
+
+0.1.1 2011-09-02T09:37:14Z
+ [Dependencies::Build::Removed]
+ - English
+
+ [Dependencies::Runtime::New]
+ - strict
+ - warnings
+
+ [Documentation]
+ - Document how to turn off colouring ( thanks harleypig / ayoung / Alan
+   Young )
+
+ [Metadata]
+ - Github Urls updated/corrected.
+
+ [Packaging]
+ - Author/Release tests now in xt/
+ - Alan Young is now an author.
+
+ [Tests]
+ - compile test updated.
+
+0.1.0 2011-07-14T06:13:32Z
+ - First version.
+
