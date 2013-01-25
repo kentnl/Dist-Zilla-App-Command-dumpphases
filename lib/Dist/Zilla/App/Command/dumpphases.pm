@@ -37,7 +37,6 @@ C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
 use Dist::Zilla::App -command;
 use Moose::Autobox;
 use Try::Tiny;
-use Term::ANSIColor qw( colored );
 use Scalar::Util qw( blessed );
 
 ## no critic ( ProhibitAmbiguousNames)
@@ -112,6 +111,9 @@ sub execute {
   my $zilla = $self->zilla;
 
   my $phases = $self->_phases;
+
+  require Term::ANSIColor;
+  Term::ANSIColor->import('colored');
 
   for my $phase ( @{$phases} ) {
     my ( $label, $roles, $description ) = @{$phase};
