@@ -9,19 +9,20 @@ my %module_build_args = (
   "build_requires" => {
     "File::Find" => 0,
     "File::Temp" => 0,
-    "Module::Build" => "0.3601",
-    "Test::More" => "0.88"
+    "Module::Build" => "0.4003",
+    "Test::More" => "0.98"
   },
   "configure_requires" => {
-    "Module::Build" => "0.3601"
+    "Module::Build" => "0.4003"
   },
   "dist_abstract" => "Dump a textual representation of each phase's parts.",
   "dist_author" => [
     "Kent Fredric <kentnl\@cpan.org>",
-    "Alan Young <harleypig\@gmail.com>"
+    "Alan Young <harleypig\@gmail.com>",
+    "Oliver Mengu\303\251 <dolmen\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-App-Command-dumpphases",
-  "dist_version" => "0.1.2",
+  "dist_version" => "0.1.3",
   "license" => "perl",
   "module_name" => "Dist::Zilla::App::Command::dumpphases",
   "recommends" => {},

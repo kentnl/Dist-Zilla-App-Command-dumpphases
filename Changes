@@ -1,5 +1,37 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+0.1.3 2013-01-25T23:04:24Z
+ - Bugfix release
+
+ [Bugs]
+ - Load Term::ANSIColor lazily to stop it being loaded when all the other
+   commands are ( Thanks Oliver Mengué ).
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.3601 -> 0.4003
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.3.0 -> v1.7.0
+
+ [Dependencies::Changed / test requires]
+ - Test::More 0.88 -> 0.98
+
+ [Dependencies::New / develop requires]
+ - Pod::Coverage::TrustPod 0
+ - Test::CPAN::Meta 0
+ - Test::Pod 1.41
+ - Test::Pod::Coverage 1.08
+ - version 0.9901
+
+ [Documentation]
+ - Copyright = 2013
+
+ [Meta]
+ - Bugtracker switched to github
+
+ [Tests]
+ - Regenerated 000-report-versions-tiny.t
+
 0.1.2 2012-05-09T07:25:48Z
  - Maintenance Release.
 

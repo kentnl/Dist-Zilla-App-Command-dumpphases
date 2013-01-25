@@ -3,10 +3,10 @@
    "author" : [
       "Kent Fredric <kentnl@cpan.org>",
       "Alan Young <harleypig@gmail.com>",
-      "Oliver Mengu\u00c3\u00a9 <dolmen@cpan.org>"
+      "Oliver Mengué <dolmen@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "perl_5"
    ],
@@ -18,28 +18,15 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Module::Build" : "0.4003"
+            "File::Find" : "0",
+            "File::Temp" : "0",
+            "Module::Build" : "0.4003",
+            "Test::More" : "0.98"
          }
       },
       "configure" : {
          "requires" : {
             "Module::Build" : "0.4003"
-         }
-      },
-      "develop" : {
-         "recommends" : {
-            "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "v1.3.0"
-         },
-         "requires" : {
-            "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "0",
-            "Pod::Coverage::TrustPod" : "0",
-            "Test::CPAN::Meta" : "0",
-            "Test::Pod" : "1.41",
-            "Test::Pod::Coverage" : "1.08",
-            "version" : "0.9901"
-         },
-         "suggests" : {
-            "Dist::Zilla::PluginBundle::Author::KENTNL" : "v1.7.0"
          }
       },
       "runtime" : {
@@ -52,13 +39,6 @@
             "perl" : "5.006",
             "strict" : "0",
             "warnings" : "0"
-         }
-      },
-      "test" : {
-         "requires" : {
-            "File::Find" : "0",
-            "File::Temp" : "0",
-            "Test::More" : "0.98"
          }
       }
    },
@@ -75,9 +55,7 @@
       },
       "homepage" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases",
       "repository" : {
-         "type" : "git",
-         "url" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases.git",
-         "web" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases"
+         "url" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases.git"
       }
    },
    "version" : "0.1.3",
@@ -105,11 +83,11 @@
       },
       "perl" : {
          "original" : "v5.17.9",
-         "qv" : 1,
+         "qv" : "1",
          "version" : [
-            5,
-            17,
-            9
+            "5",
+            "17",
+            "9"
          ]
       },
       "perl-config" : {
@@ -439,4 +417,3 @@
    },
    "x_authority" : "cpan:KENTNL"
 }
-

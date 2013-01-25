@@ -1,0 +1,134 @@
+do{ my $x = [
+       {
+         'ARGV' => []
+       },
+       {},
+       {
+         'bundle_inc_preload' => [],
+         'dist_suffix' => undef,
+         'scripts' => undef,
+         'use_rcfile' => 1,
+         'config' => undef,
+         'original_prefix' => {},
+         'sign' => undef,
+         'build_requires' => {
+                               'Module::Build' => '0.4003',
+                               'File::Find' => 0,
+                               'File::Temp' => 0,
+                               'Test::More' => '0.98'
+                             },
+         'recurse_into' => [],
+         'has_config_data' => undef,
+         'dist_abstract' => 'Dump a textual representation of each phase\'s parts.',
+         'create_readme' => undef,
+         'create_license' => undef,
+         'allow_mb_mismatch' => 0,
+         'install_base_relpaths' => {},
+         'recommends' => {},
+         'cpan_client' => 'cpan',
+         'install_base' => undef,
+         'release_status' => 'stable',
+         'pod_files' => undef,
+         'requires' => {
+                         'Dist::Zilla::App' => 0,
+                         'Moose::Autobox' => 0,
+                         'strict' => 0,
+                         'perl' => '5.006',
+                         'Try::Tiny' => 0,
+                         'Term::ANSIColor' => 0,
+                         'Scalar::Util' => 0,
+                         'warnings' => 0
+                       },
+         'build_class' => 'Module::Build',
+         'get_options' => {},
+         'bindoc_dirs' => [
+                            'blib/script'
+                          ],
+         'prereq_action_types' => [
+                                    'requires',
+                                    'build_requires',
+                                    'conflicts',
+                                    'recommends'
+                                  ],
+         'dist_version_from' => undef,
+         'script_files' => [],
+         'installdirs' => 'site',
+         'libdoc_dirs' => [
+                            'blib/lib',
+                            'blib/arch'
+                          ],
+         'dist_author' => [
+                            'Kent Fredric <kentnl@cpan.org>',
+                            'Alan Young <harleypig@gmail.com>',
+                            'Oliver Mengué <dolmen@cpan.org>'
+                          ],
+         'orig_dir' => '/home/kent/perl/Dist-Zilla-App-Command-dumpphases/Dist-Zilla-App-Command-dumpphases-0.1.3',
+         'config_dir' => '_build',
+         'meta_add' => {},
+         'debug' => undef,
+         'test_files' => undef,
+         'test_file_exts' => [
+                               '.t'
+                             ],
+         'meta_merge' => {},
+         'base_dir' => '/home/kent/perl/Dist-Zilla-App-Command-dumpphases/Dist-Zilla-App-Command-dumpphases-0.1.3',
+         'html_css' => '',
+         'pm_files' => undef,
+         'create_makefile_pl' => undef,
+         'needs_compiler' => '',
+         'blib' => 'blib',
+         'pollute' => undef,
+         'program_name' => undef,
+         'build_bat' => 0,
+         'metafile' => 'META.yml',
+         'extra_linker_flags' => [],
+         'install_path' => {},
+         'mymetafile2' => 'MYMETA.json',
+         'configure_requires' => {
+                                   'Module::Build' => '0.4003'
+                                 },
+         'conflicts' => {},
+         'install_sets' => {},
+         'share_dir' => undef,
+         'prefix' => undef,
+         'auto_configure_requires' => 1,
+         'PL_files' => undef,
+         'bundle_inc' => [],
+         'xs_files' => undef,
+         'autosplit' => undef,
+         'create_packlist' => 1,
+         'dist_version' => '0.1.3',
+         'extra_compiler_flags' => [],
+         'prefix_relpaths' => {},
+         'destdir' => undef,
+         'recursive_test_files' => 1,
+         'build_script' => 'Build',
+         'dist_name' => 'Dist-Zilla-App-Command-dumpphases',
+         '_added_to_INC' => [],
+         'use_tap_harness' => 0,
+         'license' => 'perl',
+         'quiet' => undef,
+         'build_elements' => [
+                               'PL',
+                               'support',
+                               'pm',
+                               'xs',
+                               'share_dir',
+                               'pod',
+                               'script'
+                             ],
+         'dynamic_config' => 1,
+         'metafile2' => 'META.json',
+         'mb_version' => '0.4003',
+         'perl' => '/home/kent/perl5/perlbrew/perls/perl-blead/bin/perl5.17.9',
+         'tap_harness_args' => {},
+         'mymetafile' => 'MYMETA.yml',
+         'magic_number' => undef,
+         'module_name' => 'Dist::Zilla::App::Command::dumpphases',
+         'debugger' => undef,
+         'verbose' => undef,
+         'c_source' => undef,
+         'include_dirs' => []
+       }
+     ];
+$x; }
