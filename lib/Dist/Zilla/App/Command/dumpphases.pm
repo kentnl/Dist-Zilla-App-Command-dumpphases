@@ -125,6 +125,8 @@ __END__
 
 =pod
 
+=encoding utf-8
+
 =head1 NAME
 
 Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each phase's parts.

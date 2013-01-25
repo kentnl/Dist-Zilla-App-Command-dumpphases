@@ -42,11 +42,3 @@ COPYRIGHT AND LICENSE
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
 
-POD ERRORS
-    Hey! The above document had some coding errors, which are explained
-    below:
-
-    Around line 175:
-        Non-ASCII character seen before =encoding in 'Mengué'. Assuming
-        UTF-8
-
