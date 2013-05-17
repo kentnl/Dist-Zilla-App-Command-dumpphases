@@ -3,7 +3,7 @@ NAME
     each phase's parts.
 
 VERSION
-    version 0.1.3
+    version 0.1.4
 
 SYNOPSIS
       cd $PROJECT;
@@ -13,8 +13,8 @@ SYNOPSIS
     of this in action:
 
     ( Everyone else can visit
-    <https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/raw/me
-    dia/example_01.png> )
+    <http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/ex
+    ample_01.png> )
 
 DESCRIPTION
     Working out what Plugins will execute in which order during which phase
