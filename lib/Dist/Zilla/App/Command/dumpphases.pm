@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.1.3';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.1.4';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -133,7 +133,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.1.3
+version 0.1.4
 
 =head1 SYNOPSIS
 
@@ -142,9 +142,9 @@ version 0.1.3
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
-( Everyone else can visit L<https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/raw/media/example_01.png> )
+( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
 
-=for html <center><img src="https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/raw/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
 
 =head1 DESCRIPTION
 
