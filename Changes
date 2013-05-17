@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+0.1.4 2013-05-17T12:45:25Z
  [Dependencies::Added / develop requires]
  - Test::CPAN::Changes 0.19
 
