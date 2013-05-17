@@ -1,3 +1,9 @@
 [submodule "media"]
 	path = media
 	url = git://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases.git
+[submodule "theme/dinky"]
+	path = theme/dinky
+	url = git://github.com/sodabrew/theme-dinky.git
+[submodule "theme/jekyll-bootstrap"]
+	path = theme/jekyll-bootstrap
+	url = https://github.com/plusjade/jekyll-bootstrap.git
