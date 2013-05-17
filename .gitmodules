@@ -1,3 +1,3 @@
 [submodule "media"]
 	path = media
-	url = git@github.com:kentfredric/Dist-Zilla-App-Command-dumpphases.git
+	url = git://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases.git
