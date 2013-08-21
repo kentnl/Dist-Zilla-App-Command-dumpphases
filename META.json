@@ -67,7 +67,7 @@
    "provides" : {
       "Dist::Zilla::App::Command::dumpphases" : {
          "file" : "lib/Dist/Zilla/App/Command/dumpphases.pm",
-         "version" : "v0.1.5"
+         "version" : "v0.2.0"
       }
    },
    "release_status" : "stable",
@@ -82,7 +82,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases"
       }
    },
-   "version" : "0.1.5",
+   "version" : "0.2.0",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.22",
