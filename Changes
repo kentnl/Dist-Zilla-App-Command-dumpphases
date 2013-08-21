@@ -1,5 +1,31 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+0.2.0 2013-08-21T14:32:08Z
+ [!Major]
+ - New feature, shows aggregate of plugins that were not in any predefined
+   phase.
+ - Better docs on a few phases.
+
+ [Dependencies::Added / develop requires]
+ - Test::Kwalitee 1.08
+
+ [Dependencies::Added / test requires]
+ - Capture::Tiny
+ - blib
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.4005 → 0.4007
+
+ [Dependencies::Changed / configure requires]
+ - Module::Build 0.4005 → 0.4007
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.3 → v1.8.0
+
+ [Dependencies::Removed / test requires]
+ - File::Find
+ - File::Temp
+
 0.1.4 2013-05-17T12:45:25Z
  [Dependencies::Added / develop requires]
  - Test::CPAN::Changes 0.19

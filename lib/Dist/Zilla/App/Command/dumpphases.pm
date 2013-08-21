@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.1.4';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.2.0';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -29,14 +29,14 @@ sub _phases {
     [ 'ExecFiles',         ['-ExecFiles'],       undef ],
     [ 'ShareDir',          ['-ShareDir'],        undef ],
     [ 'Before Build',      ['-BeforeBuild'],     undef ],
-    [ 'Gather Files',      ['-FileGatherer'],    undef ],
-    [ 'Prune Files',       ['-FilePruner'],      undef ],
-    [ 'Munge Files',       ['-FileMunger'],      undef ],
-    [ 'Register Preqreqs', ['-PrereqSource'],    undef ],
-    [ 'Install Tool',      ['-InstallTool'],     undef ],
+    [ 'Gather Files',      ['-FileGatherer'],    'Add files to your distribution somehow' ],
+    [ 'Prune Files',       ['-FilePruner'],      'Remove fils from your distribution' ],
+    [ 'Munge Files',       ['-FileMunger'],      'Modify files in the distribution in-memory' ],
+    [ 'Register Preqreqs', ['-PrereqSource'],    'Advertise prerequisites to the distribution metadata' ],
+    [ 'Install Tool',      ['-InstallTool'],     'Add a tool ( or tool-based files) for end users to install your dist with' ],
     [ 'After Build',       ['-AfterBuild'],      undef ],
     [ 'Before Archive',    ['-BeforeArchive'],   undef ],
-    [ 'Releaser',          ['-Releaser'],        undef ],
+    [ 'Releaser',          ['-Releaser'],        'Broadcast a copy of a built distribution to somewhere' ],
     [ 'Before Release',    ['-BeforeRelease'],   undef ],
     [ 'After Release',     ['-AfterRelease'],    undef ],
     [ 'Test Runner',       ['-TestRunner'],      undef ],
@@ -83,6 +83,24 @@ sub _color_plugin_star {
   return colored( ['blue'], @_ );
 }
 
+sub _print_section_header {
+  my ( $self, $label, $comment ) = @_;
+  return printf "\n%s%s\n", $self->_color_label_label($label), $self->_color_label_value($comment);
+}
+
+sub _print_section_prelude {
+  my ( $self, $label, $value ) = @_;
+  return printf "%s%s\n", $self->_color_attribute_label( ' - ' . $label ), $self->_color_attribute_value($value);
+}
+
+sub _print_star_assoc {
+  my ( $self, $name, $value ) = @_;
+  return printf "%s%s%s\n",
+    $self->_color_plugin_star(' * '),
+    $self->_color_plugin_name($name),
+    $self->_color_plugin_package( ' => ' . $value );
+}
+
 ## use critic
 
 sub execute {
@@ -94,26 +112,38 @@ sub execute {
   require Term::ANSIColor;
   Term::ANSIColor->import('colored');
 
+  my $seen_plugins = {};
+
   for my $phase ( @{$phases} ) {
     my ( $label, $roles, $description ) = @{$phase};
     my @plugins;
     push @plugins, $zilla->plugins_with($_)->flatten for @{$roles};
     next unless @plugins;
 
-    printf "\n%s%s\n", $self->_color_label_label('Phase: '), $self->_color_label_value($label);
+    $self->_print_section_header( 'Phase: ', $label );
 
     if ($description) {
-      printf "%s%s\n", $self->_color_attribute_label(' - description: '), $self->_color_attribute_value($description);
+      $self->_print_section_prelude( 'description: ', $description );
     }
     for my $role ( @{$roles} ) {
-      printf "%s%s\n", $self->_color_attribute_label(' - role: '), $self->_color_attribute_value($role);
+      $self->_print_section_prelude( 'role: ', $role );
     }
 
     for my $plugin (@plugins) {
-      printf "%s%s%s\n",
-        $self->_color_plugin_star(' * '),
-        $self->_color_plugin_name( $plugin->plugin_name ),
-        $self->_color_plugin_package( ' => ' . blessed($plugin) );
+      $seen_plugins->{ $plugin->plugin_name } = 1;
+      $self->_print_star_assoc( $plugin->plugin_name, blessed($plugin) );
+    }
+  }
+  my @unrecognised;
+  for my $plugin ( @{ $zilla->plugins } ) {
+    next if exists $seen_plugins->{ $plugin->plugin_name };
+    push @unrecognised, $plugin;
+  }
+  if (@unrecognised) {
+    $self->_print_section_header( 'Unrecognised: ', 'Phase not known' );
+    $self->_print_section_prelude( 'description: ', 'These plugins exist but were not in any predefined phase to scan for' );
+    for my $plugin (@unrecognised) {
+      $self->_print_star_assoc( $plugin->plugin_name, blessed($plugin) );
     }
   }
   return 0;
@@ -133,7 +163,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.1.4
+version 0.2.0
 
 =head1 SYNOPSIS
 
