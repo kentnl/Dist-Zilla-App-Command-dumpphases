@@ -90,12 +90,12 @@ sub _print_section_header {
 
 sub _print_section_prelude {
   my ( $self, $label, $value ) = @_;
-  printf "%s%s\n", $self->_color_attribute_label( ' - ' . $label ), $self->_color_attribute_value($value);
+  return printf "%s%s\n", $self->_color_attribute_label( ' - ' . $label ), $self->_color_attribute_value($value);
 }
 
 sub _print_star_assoc {
-  my ( $self, $left, $right ) = @_;
-  printf "%s%s%s\n",
+  my ( $self, $name, $value ) = @_;
+  return printf "%s%s%s\n",
     $self->_color_plugin_star(' * '),
     $self->_color_plugin_name($left),
     $self->_color_plugin_package( ' => ' . $right );
