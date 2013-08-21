@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+0.2.0 2013-08-21T14:32:08Z
  [!Major]
  - New feature, shows aggregate of plugins that were not in any predefined
    phase.
