@@ -97,8 +97,8 @@ sub _print_star_assoc {
   my ( $self, $name, $value ) = @_;
   return printf "%s%s%s\n",
     $self->_color_plugin_star(' * '),
-    $self->_color_plugin_name($left),
-    $self->_color_plugin_package( ' => ' . $right );
+    $self->_color_plugin_name($name),
+    $self->_color_plugin_package( ' => ' . $value );
 }
 
 ## use critic
