@@ -45,18 +45,19 @@ x_BuiltWith:
     Module::Build: 0.4007
     Moose::Autobox: 0.13
     Pod::Coverage::TrustPod: 0.100002
-    Scalar::Util: 1.3
+    Scalar::Util: 1.31
     Term::ANSIColor: 4.02
-    Test::CPAN::Changes: 0.22
+    Test::CPAN::Changes: 0.23
     Test::CPAN::Meta: 0.23
+    Test::Kwalitee: 1.12
     Test::More: 0.98
     Test::Pod: 1.48
     Test::Pod::Coverage: 1.08
-    Try::Tiny: 0.16
+    Try::Tiny: 0.18
     blib: 1.06
     perl: 'NA(skipped: perl)'
     strict: 1.07
-    version: 0.9902
+    version: 0.9903
     warnings: 1.18
   perl:
     original: v5.18.0
@@ -147,7 +148,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Test::Kwalitee
       name: '@Author::KENTNL/Test::Kwalitee'
-      version: 2.05
+      version: 2.06
     -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@Author::KENTNL/EOLTests'
