@@ -35,6 +35,16 @@ Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for C<dzil dumpp
 
 version 0.3.0
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::dumpphases::Role::Theme",
+    "interface":"role"
+}
+
+
+=end MetaPOD::JSON
+
 =head1 REQUIRED METHODS
 
 =head2 C<print_star_assoc>

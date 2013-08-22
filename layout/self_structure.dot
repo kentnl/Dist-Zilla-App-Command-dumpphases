@@ -1,0 +1,24 @@
+strict digraph Perl {
+	graph [compound=1, concentrate=1, overlap=false, rankdir=LR, ranksep=1, smoothing=triangle, splines=spline];
+	node [label="\N", shape=record, style=dotted];
+	edge [minlen=1];
+	"Dist::Zilla::App::Command" [label="<port1> Dist::Zilla::App::Command"];
+	"Dist::Zilla::App::Command::dumpphases" [label="{{<port1> class}|<port2> Dist::Zilla::App::Command::dumpphases}", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Dist::Zilla::dumpphases::Role::Theme" [label="{{<port1> role}|<port2> Dist::Zilla::dumpphases::Role::Theme}", shape=Mrecord, style=solid, color="#15b01a", fontsize=7, height="0.1"];
+	"Dist::Zilla::dumpphases::Role::Theme::SimpleColor" [label="{{<port1> role}|<port2> Dist::Zilla::dumpphases::Role::Theme::SimpleColor}", shape=Mrecord, style=solid, color="#15b01a", fontsize=7, height="0.1"];
+	"Dist::Zilla::dumpphases::Theme:::basic::blue" [label="{{<port1> class}|<port2> Dist::Zilla::dumpphases::Theme:::basic::blue}", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Dist::Zilla::dumpphases::Theme:::basic::green" [label="{{<port1> class}|<port2> Dist::Zilla::dumpphases::Theme:::basic::green}", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Dist::Zilla::dumpphases::Theme:::basic::plain" [label="{{<port1> class}|<port2> Dist::Zilla::dumpphases::Theme:::basic::plain}", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Dist::Zilla::dumpphases::Theme:::basic::red" [label="{{<port1> class}|<port2> Dist::Zilla::dumpphases::Theme:::basic::red}", shape=Mrecord, style=solid, color="#7e1e9c", fontsize=7, height="0.1"];
+	"Moo::Object" [label="<port1> Moo::Object"];
+	"Dist::Zilla::App::Command" -> "Dist::Zilla::App::Command::dumpphases" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+	"Dist::Zilla::dumpphases::Role::Theme" -> "Dist::Zilla::dumpphases::Role::Theme::SimpleColor" [arrowhead=open, arrowsize="0.5", color="#653700", dir=forward, fontsize=6, headclip=1, label="consumed by", samehead=head, tailclip=1, weight=5];
+	"Moo::Object" -> "Dist::Zilla::dumpphases::Theme:::basic::blue" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+	"Dist::Zilla::dumpphases::Role::Theme::SimpleColor" -> "Dist::Zilla::dumpphases::Theme:::basic::blue" [arrowhead=open, arrowsize="0.5", color="#653700", dir=forward, fontsize=6, headclip=1, label="consumed by", samehead=head, tailclip=1, weight=5];
+	"Moo::Object" -> "Dist::Zilla::dumpphases::Theme:::basic::green" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+	"Dist::Zilla::dumpphases::Role::Theme::SimpleColor" -> "Dist::Zilla::dumpphases::Theme:::basic::green" [arrowhead=open, arrowsize="0.5", color="#653700", dir=forward, fontsize=6, headclip=1, label="consumed by", samehead=head, tailclip=1, weight=5];
+	"Moo::Object" -> "Dist::Zilla::dumpphases::Theme:::basic::plain" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+	"Dist::Zilla::dumpphases::Role::Theme" -> "Dist::Zilla::dumpphases::Theme:::basic::plain" [arrowhead=open, arrowsize="0.5", color="#653700", dir=forward, fontsize=6, headclip=1, label="consumed by", samehead=head, tailclip=1, weight=5];
+	"Moo::Object" -> "Dist::Zilla::dumpphases::Theme:::basic::red" [arrowhead=open, arrowsize="0.5", color="#ff81c0", dir=forward, fontsize=6, headclip=1, label="inherited by", samehead=head, tailclip=1, weight=10];
+	"Dist::Zilla::dumpphases::Role::Theme::SimpleColor" -> "Dist::Zilla::dumpphases::Theme:::basic::red" [arrowhead=open, arrowsize="0.5", color="#653700", dir=forward, fontsize=6, headclip=1, label="consumed by", samehead=head, tailclip=1, weight=5];
+}

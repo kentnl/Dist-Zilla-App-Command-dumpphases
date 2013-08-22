@@ -13,6 +13,7 @@ BEGIN {
 
 
 
+
 use Dist::Zilla::App -command;
 use Moose::Autobox;
 use Try::Tiny;
@@ -139,6 +140,17 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 ( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
 
 =for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::App::Command::dumpphases",
+    "inherits":"Dist::Zilla::App::Command",
+    "interface":"class"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 DESCRIPTION
 

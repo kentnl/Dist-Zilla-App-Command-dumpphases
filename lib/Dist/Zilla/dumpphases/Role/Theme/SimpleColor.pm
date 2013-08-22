@@ -14,8 +14,6 @@ use Role::Tiny;
 # ABSTRACT: A role for themes that are simple single-color themes with variations of bold/uncolored.
 
 
-with 'Dist::Zilla::dumpphases::Role::Theme';
-
 
 requires 'color';
 
@@ -108,6 +106,19 @@ version 0.3.0
     ...
 
     dzil dumpphases --color-theme=foo
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::dumpphases::Role::Theme::SimpleColor",
+    "does":"Dist::Zilla::dumpphases::Role::Theme",
+    "interface":"role"
+}
+
+
+=end MetaPOD::JSON
+
+with 'Dist::Zilla::dumpphases::Role::Theme';
 
 =head1 REQUIRED METHODS
 

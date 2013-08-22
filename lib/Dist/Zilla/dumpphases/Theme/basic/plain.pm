@@ -11,6 +11,7 @@ BEGIN {
 
 # ABSTRACT: A plain-text theme for C<dzil dumpphases>
 
+
 use Moo;
 
 with 'Dist::Zilla::dumpphases::Role::Theme';
@@ -48,6 +49,18 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for C<dzil dum
 =head1 VERSION
 
 version 0.3.0
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::dumpphases::Theme:::basic::plain",
+    "does":"Dist::Zilla::dumpphases::Role::Theme",
+    "inherits":"Moo::Object",
+    "interface":"class"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 METHODS
 

@@ -39,6 +39,18 @@ version 0.3.0
 
     dzil dumpphases --color-theme=basic::blue
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::dumpphases::Theme:::basic::blue",
+    "does":"Dist::Zilla::dumpphases::Role::Theme::SimpleColor",
+    "inherits":"Moo::Object",
+    "interface":"class"
+}
+
+
+=end MetaPOD::JSON
+
 =head1 METHODS
 
 =head2 C<color>
