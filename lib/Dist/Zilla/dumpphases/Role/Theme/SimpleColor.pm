@@ -113,7 +113,7 @@ version 0.2.1
 
 =head2 C<color>
 
-You must define a method called C<color> that returns a string (or list of strings ) that C<Term::ANSIColor> recognises.
+You must define a method called C<color> that returns a string (or list of strings ) that C<Term::ANSIColor> recognizes.
 
 =head1 METHODS
 
