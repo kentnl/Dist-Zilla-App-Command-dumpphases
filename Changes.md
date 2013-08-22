@@ -5,7 +5,7 @@ title: Changes
 
 ## 0.3.1 2013-08-22T10:34:10Z
 ### Bug fixes
- - Accidentally left broken code with colored -> _colored transition
+ - Accidentally left broken code with colored -> `_colored` transition
 
 ### Documentation
  - Screenshot images added to all the themes.
