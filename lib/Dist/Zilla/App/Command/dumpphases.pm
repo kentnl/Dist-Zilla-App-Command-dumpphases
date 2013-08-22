@@ -131,6 +131,9 @@ version 0.3.0
   cd $PROJECT;
   dzil dumpphases
 
+  dzil dumpphases --color-theme=basic::plain # plain text
+  dzil dumpphases --color-theme=basic::green # green text
+
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
 ( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
@@ -150,6 +153,10 @@ If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variabl
 C<ANSI_COLORS_DISABLED>. E.g.,
 
 C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+
+Alternatively, since 0.3.0 you can specify a color-free theme:
+
+    dzil dumpphases --color-theme=basic::plain
 
 =head1 AUTHORS
 
