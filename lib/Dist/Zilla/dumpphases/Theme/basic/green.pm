@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::green::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Theme::basic::green::VERSION = '0.3.0';
+  $Dist::Zilla::dumpphases::Theme::basic::green::VERSION = '0.2.1';
 }
 
 use Moo;
@@ -86,7 +86,7 @@ Dist::Zilla::dumpphases::Theme::basic::green
 
 =head1 VERSION
 
-version 0.3.0
+version 0.2.1
 
 =head1 AUTHORS
 
