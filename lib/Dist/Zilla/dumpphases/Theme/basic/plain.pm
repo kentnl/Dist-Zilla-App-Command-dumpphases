@@ -18,6 +18,14 @@ package Dist::Zilla::dumpphases::Theme::basic::plain;
 
 =cut
 
+=head1 SYNOPSIS
+
+    dzil dumpphases --color-theme=basic::plain
+
+=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_plain.png" alt="Screenshot" width="677" height="412"/></center>
+
+=cut
+
 use Moo;
 
 with 'Dist::Zilla::dumpphases::Role::Theme';
