@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+0.3.1 2013-08-22T10:34:10Z
  [Bug fixes]
  - Accidentally left broken code with colored -> _colored transition
 
