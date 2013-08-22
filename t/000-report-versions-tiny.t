@@ -50,7 +50,7 @@ sub pmver {
 
 eval { $v .= pmver('Capture::Tiny','any version') };
 eval { $v .= pmver('Dist::Zilla::App','any version') };
-eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.8.0') };
+eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.8.1') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('Module::Build','0.4007') };
 eval { $v .= pmver('Module::Runtime','any version') };

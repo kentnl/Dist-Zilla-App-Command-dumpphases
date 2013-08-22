@@ -61,7 +61,7 @@ x_BuiltWith:
   modules:
     Capture::Tiny: 0.22
     Dist::Zilla::App: 4.300035
-    Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.0
+    Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.1
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     Module::Build: 0.4007
     Module::Runtime: 0.013
@@ -246,7 +246,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl
       name: '@Author::KENTNL/Author::KENTNL::MinimumPerl'
-      version: 1.8.0
+      version: 1.8.1
     -
       class: Dist::Zilla::Plugin::Authority
       name: '@Author::KENTNL/Authority'
