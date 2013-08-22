@@ -6,10 +6,11 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::plain::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.3.0';
+  $Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.3.1';
 }
 
 # ABSTRACT: A plain-text theme for C<dzil dumpphases>
+
 
 
 use Moo;
@@ -48,7 +49,11 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for C<dzil dum
 
 =head1 VERSION
 
-version 0.3.0
+version 0.3.1
+
+=head1 SYNOPSIS
+
+    dzil dumpphases --color-theme=basic::plain
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -61,6 +66,8 @@ version 0.3.0
 
 
 =end MetaPOD::JSON
+
+=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_plain.png" alt="Screenshot" width="677" height="412"/></center>
 
 =head1 METHODS
 

@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::blue::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Theme::basic::blue::VERSION = '0.3.0';
+  $Dist::Zilla::dumpphases::Theme::basic::blue::VERSION = '0.3.1';
 }
 
 # ABSTRACT: A blue color theme for C<dzil dumpphases>
@@ -33,7 +33,7 @@ Dist::Zilla::dumpphases::Theme::basic::blue - A blue color theme for C<dzil dump
 
 =head1 VERSION
 
-version 0.3.0
+version 0.3.1
 
 =head1 SYNOPSIS
 
@@ -50,6 +50,8 @@ version 0.3.0
 
 
 =end MetaPOD::JSON
+
+=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_blue.png" alt="Screenshot" width="708" height="372"/></center>
 
 =head1 METHODS
 
