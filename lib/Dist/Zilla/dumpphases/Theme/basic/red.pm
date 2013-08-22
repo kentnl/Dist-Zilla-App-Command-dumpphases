@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::red::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Theme::basic::red::VERSION = '0.3.0';
+  $Dist::Zilla::dumpphases::Theme::basic::red::VERSION = '0.2.1';
 }
 
 # ABSTRACT: A red color theme for C<dzil dumpphases>
@@ -33,7 +33,7 @@ Dist::Zilla::dumpphases::Theme::basic::red - A red color theme for C<dzil dumpph
 
 =head1 VERSION
 
-version 0.3.0
+version 0.2.1
 
 =head1 SYNOPSIS
 

@@ -7,7 +7,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Role::Theme::SimpleColor::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Role::Theme::SimpleColor::VERSION = '0.3.0';
+  $Dist::Zilla::dumpphases::Role::Theme::SimpleColor::VERSION = '0.2.1';
 }
 use Role::Tiny;
 
@@ -15,6 +15,8 @@ use Role::Tiny;
 
 
 with 'Dist::Zilla::dumpphases::Role::Theme';
+
+
 requires 'color';
 
 ## no critic ( RequireArgUnpacking )
@@ -93,7 +95,7 @@ Dist::Zilla::dumpphases::Role::Theme::SimpleColor - A role for themes that are s
 
 =head1 VERSION
 
-version 0.3.0
+version 0.2.1
 
 =head1 SYNOPSIS
 
@@ -106,6 +108,12 @@ version 0.3.0
     ...
 
     dzil dumpphases --color-theme=foo
+
+=head1 REQUIRED METHODS
+
+=head2 C<color>
+
+You must define a method called C<color> that returns a string (or list of strings ) that C<Term::ANSIColor> recognises.
 
 =head1 METHODS
 

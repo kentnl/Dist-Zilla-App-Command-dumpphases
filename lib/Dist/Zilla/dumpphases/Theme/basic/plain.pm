@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::plain::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.3.0';
+  $Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.2.1';
 }
 
 # ABSTRACT: A plain-text theme for C<dzil dumpphases>
@@ -47,7 +47,7 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for C<dzil dum
 
 =head1 VERSION
 
-version 0.3.0
+version 0.2.1
 
 =head1 METHODS
 
