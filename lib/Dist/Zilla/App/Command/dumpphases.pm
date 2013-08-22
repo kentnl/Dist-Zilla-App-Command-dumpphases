@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.2.0';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.2.1';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -163,7 +163,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.2.0
+version 0.2.1
 
 =head1 SYNOPSIS
 
