@@ -9,7 +9,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Role::Theme::VERSION = '0.2.1';
 }
 
-# ABSTRACT: Output formatting themes for dumpphases
+# ABSTRACT: Output formatting themes for C<dzil dumpphases>
 
 use Role::Tiny;
 
@@ -29,7 +29,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for dumpphases
+Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for C<dzil dumpphases>
 
 =head1 VERSION
 
