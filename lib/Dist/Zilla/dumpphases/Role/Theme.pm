@@ -43,7 +43,7 @@ Print some kind of associated data.
 
     $theme->print_star_assoc($label, $value);
 
-ie:
+e.g.:
 
     $theme->print_star_assoc('@Author::KENTNL/Test::CPAN::Changes', 'Dist::Zilla::Plugin::Test::CPAN::Changes');
 
@@ -51,7 +51,7 @@ recommended formatting is:
 
     \s  * \s label \s => \s $value
 
-Most of the time, C<$label> will be an alias of some kind (ie: an instance name), and $value will be the thing that alias refers to (ie: an instances class).
+Most of the time, C<$label> will be an alias of some kind (e.g: an instance name), and $value will be the thing that alias refers to (e.g.: an instances class).
 
 =head2 C<print_section_prelude>
 
