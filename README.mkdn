@@ -4,12 +4,15 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 # VERSION
 
-version 0.2.0
+version 0.3.0
 
 # SYNOPSIS
 
     cd $PROJECT;
     dzil dumpphases
+
+    dzil dumpphases --color-theme=basic::plain # plain text
+    dzil dumpphases --color-theme=basic::green # green text
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
@@ -28,6 +31,10 @@ If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](h
 `ANSI_COLORS_DISABLED`. E.g.,
 
 `ANSI_COLORS_DISABLED=1 dzil dumpphases`
+
+Alternatively, since 0.3.0 you can specify a color-free theme:
+
+    dzil dumpphases --color-theme=basic::plain
 
 # AUTHORS
 
