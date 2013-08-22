@@ -4,6 +4,18 @@ use warnings;
 package Dist::Zilla::dumpphases::Theme::basic::red;
 
 # ABSTRACT: A red color theme for C<dzil dumpphases>
+#
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::dumpphases::Theme:::basic::red",
+    "does":"Dist::Zilla::dumpphases::Role::Theme::SimpleColor",
+    "inherits":"Moo::Object",
+    "interface":"class"
+}
+
+=end MetaPOD::JSON
 
 =head1 SYNOPSIS
 

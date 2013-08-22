@@ -41,6 +41,18 @@ Alternatively, since 0.3.0 you can specify a color-free theme:
 
 =cut
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::App::Command::dumpphases",
+    "inherits":"Dist::Zilla::App::Command",
+    "interface":"class"
+}
+
+=end MetaPOD::JSON
+
+=cut
+
 use Dist::Zilla::App -command;
 use Moose::Autobox;
 use Try::Tiny;

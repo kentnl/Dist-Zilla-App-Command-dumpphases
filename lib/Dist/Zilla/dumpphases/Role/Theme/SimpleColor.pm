@@ -21,6 +21,16 @@ use Role::Tiny;
 
 =cut
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::dumpphases::Role::Theme::SimpleColor",
+    "does":"Dist::Zilla::dumpphases::Role::Theme",
+    "interface":"role"
+}
+
+=end MetaPOD::JSON
+
 with 'Dist::Zilla::dumpphases::Role::Theme';
 
 =requires C<color>

@@ -7,6 +7,15 @@ package Dist::Zilla::dumpphases::Role::Theme;
 
 use Role::Tiny;
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::dumpphases::Role::Theme",
+    "interface":"role"
+}
+
+=end MetaPOD::JSON
+
 =requires C<print_star_assoc>
 
 Print some kind of associated data.
