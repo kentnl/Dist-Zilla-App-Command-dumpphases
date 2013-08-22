@@ -69,7 +69,7 @@ Will be passed context about a dump stage that is about to be detailed.
 
     $theme->print_section_header($label, $value);
 
-C<$label> will be a the "kind" of dump that is, for detailing specific phases, C<$label> will be "Phase", and C<$value> will be a simple descriptor for that phase. ( ie: Phase , Prune files , or something like that ).
+C<$label> will be a the "kind" of dump that is, for detailing specific phases, C<$label> will be "Phase", and C<$value> will be a simple descriptor for that phase. ( e.g.: Phase , Prune files , or something like that ).
 
 Recommended format is simply
 
