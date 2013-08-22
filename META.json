@@ -76,6 +76,10 @@
          "file" : "lib/Dist/Zilla/dumpphases/Role/Theme.pm",
          "version" : "v0.2.1"
       },
+      "Dist::Zilla::dumpphases::Role::Theme::SimpleColor" : {
+         "file" : "lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm",
+         "version" : "v0.2.1"
+      },
       "Dist::Zilla::dumpphases::Theme::basic::blue" : {
          "file" : "lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm",
          "version" : "v0.2.1"

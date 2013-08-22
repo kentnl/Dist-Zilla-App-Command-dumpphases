@@ -9,68 +9,14 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::green::VERSION = '0.2.1';
 }
 
+# ABSTRACT: A green color theme for C<dzil dumpphases>
+
+
 use Moo;
 
-with 'Dist::Zilla::dumpphases::Role::Theme';
+with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
 
-## no critic ( RequireArgUnpacking )
-sub colored {
-  require Term::ANSIColor;
-  goto \&Term::ANSIColor::colored;
-}
-
-sub _color_label_label {
-  shift;
-  return colored( ['green'], @_ );
-}
-
-sub _color_label_value {
-  shift;
-  return colored( ['bold'], @_ );
-}
-
-sub _color_attribute_label {
-  shift;
-  return colored( [ 'green', 'bold' ], @_ );
-}
-
-sub _color_attribute_value {
-  shift;
-  return colored( ['green'], @_ );
-}
-
-sub _color_plugin_name {
-  shift;
-  return @_;
-}
-
-sub _color_plugin_package {
-  shift;
-  return colored( ['green'], @_ );
-}
-
-sub _color_plugin_star {
-  shift;
-  return colored( ['green'], @_ );
-}
-
-sub print_section_header {
-  my ( $self, $label, $comment ) = @_;
-  return printf "\n%s%s\n", $self->_color_label_label($label), $self->_color_label_value($comment);
-}
-
-sub print_section_prelude {
-  my ( $self, $label, $value ) = @_;
-  return printf "%s%s\n", $self->_color_attribute_label( ' - ' . $label ), $self->_color_attribute_value($value);
-}
-
-sub print_star_assoc {
-  my ( $self, $name, $value ) = @_;
-  return printf "%s%s%s\n",
-    $self->_color_plugin_star(' * '),
-    $self->_color_plugin_name($name),
-    $self->_color_plugin_package( ' => ' . $value );
-}
+sub color { return 'green' }
 
 1;
 
@@ -82,11 +28,15 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::dumpphases::Theme::basic::green
+Dist::Zilla::dumpphases::Theme::basic::green - A green color theme for C<dzil dumpphases>
 
 =head1 VERSION
 
 version 0.2.1
+
+=head1 SYNOPSIS
+
+    dzil dumpphases --color-theme=basic::green
 
 =head1 AUTHORS
 
