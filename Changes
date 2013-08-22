@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+0.3.0 2013-08-22T09:38:29Z
  [!Major]
  - Now supports custom color themes controllable on the CLI
  - Internals have MetaPOD coverage
