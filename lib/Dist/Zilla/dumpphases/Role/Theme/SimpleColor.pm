@@ -11,6 +11,9 @@ BEGIN {
 }
 use Role::Tiny;
 
+# ABSTRACT: A role for themes that are simple single-color themes with variations of bold/uncolored.
+
+
 with 'Dist::Zilla::dumpphases::Role::Theme';
 requires 'color';
 
@@ -86,11 +89,23 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::dumpphases::Role::Theme::SimpleColor
+Dist::Zilla::dumpphases::Role::Theme::SimpleColor - A role for themes that are simple single-color themes with variations of bold/uncolored.
 
 =head1 VERSION
 
 version 0.2.1
+
+=head1 SYNOPSIS
+
+    package Dist::Zilla::dumpphases::Theme::foo;
+
+    use Moo;
+    with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
+    sub color { 'magenta' };
+
+    ... 
+
+    dzil dumpphases --color-theme=foo
 
 =head1 METHODS
 
@@ -110,7 +125,7 @@ This satisfies that, printing label bold and colored, and the value simply color
 
 See L<Dist::Zilla::dumpphases::Role::Theme/print_star_assoc>.
 
-This satisfies that, printing label uncoloured, and the value simply colored.
+This satisfies that, printing label uncolored, and the value simply colored.
 
 =head1 AUTHORS
 
