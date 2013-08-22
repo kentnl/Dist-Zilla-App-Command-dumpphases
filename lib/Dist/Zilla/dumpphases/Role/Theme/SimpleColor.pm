@@ -49,7 +49,7 @@ sub _colored {
 
 sub _color_label_label {
   my $self = shift;
-  return colored( [ $self->color ], @_ );
+  return _colored( [ $self->color ], @_ );
 }
 
 sub _color_label_value {
