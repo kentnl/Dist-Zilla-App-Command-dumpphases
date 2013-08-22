@@ -70,31 +70,31 @@
    "provides" : {
       "Dist::Zilla::App::Command::dumpphases" : {
          "file" : "lib/Dist/Zilla/App/Command/dumpphases.pm",
-         "version" : "v0.3.0"
+         "version" : "v0.3.1"
       },
       "Dist::Zilla::dumpphases::Role::Theme" : {
          "file" : "lib/Dist/Zilla/dumpphases/Role/Theme.pm",
-         "version" : "v0.3.0"
+         "version" : "v0.3.1"
       },
       "Dist::Zilla::dumpphases::Role::Theme::SimpleColor" : {
          "file" : "lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm",
-         "version" : "v0.3.0"
+         "version" : "v0.3.1"
       },
       "Dist::Zilla::dumpphases::Theme::basic::blue" : {
          "file" : "lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm",
-         "version" : "v0.3.0"
+         "version" : "v0.3.1"
       },
       "Dist::Zilla::dumpphases::Theme::basic::green" : {
          "file" : "lib/Dist/Zilla/dumpphases/Theme/basic/green.pm",
-         "version" : "v0.3.0"
+         "version" : "v0.3.1"
       },
       "Dist::Zilla::dumpphases::Theme::basic::plain" : {
          "file" : "lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm",
-         "version" : "v0.3.0"
+         "version" : "v0.3.1"
       },
       "Dist::Zilla::dumpphases::Theme::basic::red" : {
          "file" : "lib/Dist/Zilla/dumpphases/Theme/basic/red.pm",
-         "version" : "v0.3.0"
+         "version" : "v0.3.1"
       }
    },
    "release_status" : "stable",
@@ -109,7 +109,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases"
       }
    },
-   "version" : "0.3.0",
+   "version" : "0.3.1",
    "x_BuiltWith" : {
       "modules" : {
          "Capture::Tiny" : "0.22",

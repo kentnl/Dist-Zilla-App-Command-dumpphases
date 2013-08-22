@@ -7,7 +7,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Role::Theme::SimpleColor::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Role::Theme::SimpleColor::VERSION = '0.3.0';
+  $Dist::Zilla::dumpphases::Role::Theme::SimpleColor::VERSION = '0.3.1';
 }
 use Role::Tiny;
 
@@ -25,7 +25,7 @@ sub _colored {
 
 sub _color_label_label {
   my $self = shift;
-  return colored( [ $self->color ], @_ );
+  return _colored( [ $self->color ], @_ );
 }
 
 sub _color_label_value {
@@ -93,7 +93,7 @@ Dist::Zilla::dumpphases::Role::Theme::SimpleColor - A role for themes that are s
 
 =head1 VERSION
 
-version 0.3.0
+version 0.3.1
 
 =head1 SYNOPSIS
 

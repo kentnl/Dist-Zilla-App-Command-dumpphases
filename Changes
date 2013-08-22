@@ -1,5 +1,12 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+0.3.1 2013-08-22T10:34:10Z
+ [Bug fixes]
+ - Accidentally left broken code with colored -> _colored transition
+
+ [Documentation]
+ - Screenshot images added to all the themes.
+
 0.3.0 2013-08-22T09:38:29Z
  [!Major]
  - Now supports custom color themes controllable on the CLI
