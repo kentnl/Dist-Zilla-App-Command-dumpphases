@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::blue::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Theme::basic::blue::VERSION = '0.2.1';
+  $Dist::Zilla::dumpphases::Theme::basic::blue::VERSION = '0.3.0';
 }
 
 # ABSTRACT: A blue color theme for C<dzil dumpphases>
@@ -15,6 +15,7 @@ BEGIN {
 use Moo;
 
 with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
+
 
 sub color { return 'blue' }
 
@@ -32,11 +33,19 @@ Dist::Zilla::dumpphases::Theme::basic::blue - A blue color theme for C<dzil dump
 
 =head1 VERSION
 
-version 0.2.1
+version 0.3.0
 
 =head1 SYNOPSIS
 
     dzil dumpphases --color-theme=basic::blue
+
+=head1 METHODS
+
+=head2 C<color>
+
+See L<Dist::Zilla::dumpphases::Role::Theme::SimpleColor/color> for details.
+
+This simply returns C<'blue'>
 
 =head1 AUTHORS
 

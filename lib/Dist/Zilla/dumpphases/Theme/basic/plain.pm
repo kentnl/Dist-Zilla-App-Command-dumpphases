@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::plain::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.2.1';
+  $Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.3.0';
 }
 
 # ABSTRACT: A plain-text theme for C<dzil dumpphases>
@@ -17,20 +17,20 @@ with 'Dist::Zilla::dumpphases::Role::Theme';
 
 
 sub print_section_header {
-    my ( $self, $label, $value ) = @_;
-    return printf "\n%s%s\n", $label, $value;
+  my ( $self, $label, $value ) = @_;
+  return printf "\n%s%s\n", $label, $value;
 }
 
 
 sub print_section_prelude {
-    my ( $self, $label, $value ) = @_;
-    return printf "%s%s\n", ' - ' . $label, $value;
+  my ( $self, $label, $value ) = @_;
+  return printf "%s%s\n", ' - ' . $label, $value;
 }
 
 
 sub print_star_assoc {
-    my ( $self, $name, $value ) = @_;
-    return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
+  my ( $self, $name, $value ) = @_;
+  return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
 
 1;
@@ -47,7 +47,7 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for C<dzil dum
 
 =head1 VERSION
 
-version 0.2.1
+version 0.3.0
 
 =head1 METHODS
 

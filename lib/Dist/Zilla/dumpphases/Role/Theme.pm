@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Role::Theme::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Role::Theme::VERSION = '0.2.1';
+  $Dist::Zilla::dumpphases::Role::Theme::VERSION = '0.3.0';
 }
 
 use Role::Tiny;
@@ -29,7 +29,7 @@ Dist::Zilla::dumpphases::Role::Theme
 
 =head1 VERSION
 
-version 0.2.1
+version 0.3.0
 
 =head1 AUTHORS
 
