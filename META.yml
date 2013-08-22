@@ -21,10 +21,31 @@ name: Dist-Zilla-App-Command-dumpphases
 provides:
   Dist::Zilla::App::Command::dumpphases:
     file: lib/Dist/Zilla/App/Command/dumpphases.pm
-    version: v0.2.0
+    version: v0.3.0
+  Dist::Zilla::dumpphases::Role::Theme:
+    file: lib/Dist/Zilla/dumpphases/Role/Theme.pm
+    version: v0.3.0
+  Dist::Zilla::dumpphases::Role::Theme::SimpleColor:
+    file: lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
+    version: v0.3.0
+  Dist::Zilla::dumpphases::Theme::basic::blue:
+    file: lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm
+    version: v0.3.0
+  Dist::Zilla::dumpphases::Theme::basic::green:
+    file: lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
+    version: v0.3.0
+  Dist::Zilla::dumpphases::Theme::basic::plain:
+    file: lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
+    version: v0.3.0
+  Dist::Zilla::dumpphases::Theme::basic::red:
+    file: lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
+    version: v0.3.0
 requires:
   Dist::Zilla::App: 0
+  Module::Runtime: 0
+  Moo: 0
   Moose::Autobox: 0
+  Role::Tiny: 0
   Scalar::Util: 0
   Term::ANSIColor: 0
   Try::Tiny: 0
@@ -35,7 +56,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases
   repository: https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases.git
-version: 0.2.0
+version: 0.3.0
 x_BuiltWith:
   modules:
     Capture::Tiny: 0.22
@@ -43,13 +64,16 @@ x_BuiltWith:
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.8.0
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     Module::Build: 0.4007
+    Module::Runtime: 0.013
+    Moo: 1.003
     Moose::Autobox: 0.13
     Pod::Coverage::TrustPod: 0.100002
+    Role::Tiny: 1.003001
     Scalar::Util: 1.31
     Term::ANSIColor: 4.02
     Test::CPAN::Changes: 0.23
     Test::CPAN::Meta: 0.23
-    Test::Kwalitee: 1.12
+    Test::Kwalitee: 1.13
     Test::More: 0.98
     Test::Pod: 1.48
     Test::Pod::Coverage: 1.08

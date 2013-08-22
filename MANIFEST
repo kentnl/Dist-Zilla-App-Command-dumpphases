@@ -7,7 +7,15 @@ META.json
 META.yml
 README
 dist.ini
+layout/self_structure.dot
+layout/self_structure.png
 lib/Dist/Zilla/App/Command/dumpphases.pm
+lib/Dist/Zilla/dumpphases/Role/Theme.pm
+lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
+lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm
+lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
+lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
+lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
 perlcritic.rc
 t/00-compile.t
 t/000-report-versions-tiny.t

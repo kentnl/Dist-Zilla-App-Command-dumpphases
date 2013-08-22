@@ -6,10 +6,11 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.2.0';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.3.0';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
+
 
 
 
@@ -21,6 +22,10 @@ use Scalar::Util qw( blessed );
 ## no critic ( ProhibitAmbiguousNames)
 sub abstract { return 'Dump a textual representation of each phase\'s parts' }
 ## use critic
+
+sub opt_spec {
+  return [ 'color-theme=s', 'color theme to use, ( eg: basic::blue )' ];
+}
 
 sub _phases {
   my (@phases) = (
@@ -47,70 +52,27 @@ sub _phases {
   return \@phases;
 }
 
-## no critic ( RequireArgUnpacking )
-sub _color_label_label {
-  shift;
-  return colored( ['blue'], @_ );
+sub _get_color_theme {
+  my ( $self, $opt, $default ) = @_;
+  return $default unless $opt->color_theme;
+  return $opt->color_theme;
 }
 
-sub _color_label_value {
-  shift;
-  return colored( ['bold'], @_ );
+sub _get_theme_instance {
+  my ( $self, $theme ) = @_;
+  require Module::Runtime;
+  my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $theme );
+  Module::Runtime::require_module($theme_module);
+  return $theme_module->new();
 }
-
-sub _color_attribute_label {
-  shift;
-  return colored( [ 'blue', 'bold' ], @_ );
-}
-
-sub _color_attribute_value {
-  shift;
-  return colored( ['blue'], @_ );
-}
-
-sub _color_plugin_name {
-  shift;
-  return @_;
-}
-
-sub _color_plugin_package {
-  shift;
-  return colored( ['blue'], @_ );
-}
-
-sub _color_plugin_star {
-  shift;
-  return colored( ['blue'], @_ );
-}
-
-sub _print_section_header {
-  my ( $self, $label, $comment ) = @_;
-  return printf "\n%s%s\n", $self->_color_label_label($label), $self->_color_label_value($comment);
-}
-
-sub _print_section_prelude {
-  my ( $self, $label, $value ) = @_;
-  return printf "%s%s\n", $self->_color_attribute_label( ' - ' . $label ), $self->_color_attribute_value($value);
-}
-
-sub _print_star_assoc {
-  my ( $self, $name, $value ) = @_;
-  return printf "%s%s%s\n",
-    $self->_color_plugin_star(' * '),
-    $self->_color_plugin_name($name),
-    $self->_color_plugin_package( ' => ' . $value );
-}
-
-## use critic
 
 sub execute {
   my ( $self, $opt, $args ) = @_;
   my $zilla = $self->zilla;
 
-  my $phases = $self->_phases;
+  my $theme = $self->_get_theme_instance( $self->_get_color_theme( $opt, 'basic::blue' ) );
 
-  require Term::ANSIColor;
-  Term::ANSIColor->import('colored');
+  my $phases = $self->_phases;
 
   my $seen_plugins = {};
 
@@ -120,18 +82,18 @@ sub execute {
     push @plugins, $zilla->plugins_with($_)->flatten for @{$roles};
     next unless @plugins;
 
-    $self->_print_section_header( 'Phase: ', $label );
+    $theme->print_section_header( 'Phase: ', $label );
 
     if ($description) {
-      $self->_print_section_prelude( 'description: ', $description );
+      $theme->print_section_prelude( 'description: ', $description );
     }
     for my $role ( @{$roles} ) {
-      $self->_print_section_prelude( 'role: ', $role );
+      $theme->print_section_prelude( 'role: ', $role );
     }
 
     for my $plugin (@plugins) {
       $seen_plugins->{ $plugin->plugin_name } = 1;
-      $self->_print_star_assoc( $plugin->plugin_name, blessed($plugin) );
+      $theme->print_star_assoc( $plugin->plugin_name, blessed($plugin) );
     }
   }
   my @unrecognised;
@@ -140,10 +102,10 @@ sub execute {
     push @unrecognised, $plugin;
   }
   if (@unrecognised) {
-    $self->_print_section_header( 'Unrecognised: ', 'Phase not known' );
-    $self->_print_section_prelude( 'description: ', 'These plugins exist but were not in any predefined phase to scan for' );
+    $theme->print_section_header( 'Unrecognised: ', 'Phase not known' );
+    $theme->print_section_prelude( 'description: ', 'These plugins exist but were not in any predefined phase to scan for' );
     for my $plugin (@unrecognised) {
-      $self->_print_star_assoc( $plugin->plugin_name, blessed($plugin) );
+      $theme->print_star_assoc( $plugin->plugin_name, blessed($plugin) );
     }
   }
   return 0;
@@ -163,18 +125,32 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.2.0
+version 0.3.0
 
 =head1 SYNOPSIS
 
   cd $PROJECT;
   dzil dumpphases
 
+  dzil dumpphases --color-theme=basic::plain # plain text
+  dzil dumpphases --color-theme=basic::green # green text
+
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
 ( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
 
 =for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::App::Command::dumpphases",
+    "inherits":"Dist::Zilla::App::Command",
+    "interface":"class"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 DESCRIPTION
 
@@ -189,6 +165,10 @@ If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variabl
 C<ANSI_COLORS_DISABLED>. E.g.,
 
 C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+
+Alternatively, since 0.3.0 you can specify a color-free theme:
+
+    dzil dumpphases --color-theme=basic::plain
 
 =head1 AUTHORS
 

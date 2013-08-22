@@ -19,14 +19,17 @@ my %module_build_args = (
     "Oliver Mengu\303\251 <dolmen\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-App-Command-dumpphases",
-  "dist_version" => "0.2.0",
+  "dist_version" => "0.3.0",
   "license" => "perl",
   "module_name" => "Dist::Zilla::App::Command::dumpphases",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Dist::Zilla::App" => 0,
+    "Module::Runtime" => 0,
+    "Moo" => 0,
     "Moose::Autobox" => 0,
+    "Role::Tiny" => 0,
     "Scalar::Util" => 0,
     "Term::ANSIColor" => 0,
     "Try::Tiny" => 0,

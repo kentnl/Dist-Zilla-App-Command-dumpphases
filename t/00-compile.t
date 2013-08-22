@@ -11,6 +11,12 @@ use Capture::Tiny qw{ capture };
 
 my @module_files = qw(
 Dist/Zilla/App/Command/dumpphases.pm
+Dist/Zilla/dumpphases/Role/Theme.pm
+Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
+Dist/Zilla/dumpphases/Theme/basic/blue.pm
+Dist/Zilla/dumpphases/Theme/basic/green.pm
+Dist/Zilla/dumpphases/Theme/basic/plain.pm
+Dist/Zilla/dumpphases/Theme/basic/red.pm
 );
 
 my @scripts = qw(
