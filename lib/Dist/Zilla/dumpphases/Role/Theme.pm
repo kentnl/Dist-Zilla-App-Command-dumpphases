@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Role::Theme::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Role::Theme::VERSION = '0.3.0';
+  $Dist::Zilla::dumpphases::Role::Theme::VERSION = '0.2.1';
 }
 
 # ABSTRACT: Output formatting themes for dumpphases
@@ -33,7 +33,7 @@ Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for dumpphases
 
 =head1 VERSION
 
-version 0.3.0
+version 0.2.1
 
 =head1 REQUIRED METHODS
 
@@ -71,7 +71,7 @@ Will be passed context about a dump stage that is about to be detailed.
 
 C<$label> will be a the "kind" of dump that is, for detailing specific phases, C<$label> will be "Phase", and C<$value> will be a simple descriptor for that phase. ( ie: Phase , Prune files , or something like that ).
 
-Recommended format is simply 
+Recommended format is simply
 
     \n$label$value\n
 
