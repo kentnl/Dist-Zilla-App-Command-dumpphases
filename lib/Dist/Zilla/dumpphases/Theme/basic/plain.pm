@@ -9,24 +9,28 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.2.1';
 }
 
+# ABSTRACT: A plain-text theme for C<dzil dumpphases>
+
 use Moo;
 
 with 'Dist::Zilla::dumpphases::Role::Theme';
 
-## no critic ( RequireArgUnpacking )
+
 sub print_section_header {
-  my ( $self, $label, $comment ) = @_;
-  return printf "\n%s%s\n", $label, $comment;
+    my ( $self, $label, $value ) = @_;
+    return printf "\n%s%s\n", $label, $value;
 }
+
 
 sub print_section_prelude {
-  my ( $self, $label, $value ) = @_;
-  return printf "%s%s\n", ' - ' . $label, $value;
+    my ( $self, $label, $value ) = @_;
+    return printf "%s%s\n", ' - ' . $label, $value;
 }
 
+
 sub print_star_assoc {
-  my ( $self, $name, $value ) = @_;
-  return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
+    my ( $self, $name, $value ) = @_;
+    return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
 
 1;
@@ -39,11 +43,38 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::dumpphases::Theme::basic::plain
+Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for C<dzil dumpphases>
 
 =head1 VERSION
 
 version 0.2.1
+
+=head1 METHODS
+
+=head2 C<print_section_header>
+
+See L<Dist::Zilla::dumpphases::Role::Theme/print_section_header>.
+
+This satisfies that, printing C<$label> and C<$value>,uncolored, as
+
+    \n
+    $label$value\n
+
+=head2 C<print_section_prelude>
+
+See L<Dist::Zilla::dumpphases::Role::Theme/print_section_prelude>.
+
+This satisfies that, printing C<$label> and C<$value> uncolored, as:
+
+     - $label$value\n
+
+=head2 C<print_star_assoc>
+
+See L<Dist::Zilla::dumpphases::Role::Theme/print_star_assoc>.
+
+This satisfies that, printing C<$label> and C<$value> uncolored, as:
+
+     * $label => $value
 
 =head1 AUTHORS
 

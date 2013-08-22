@@ -19,64 +19,66 @@ requires 'color';
 
 ## no critic ( RequireArgUnpacking )
 sub colored {
-  require Term::ANSIColor;
-  goto \&Term::ANSIColor::colored;
+    require Term::ANSIColor;
+    goto \&Term::ANSIColor::colored;
 }
 
 sub _color_label_label {
-  my $self = shift;
-  return colored( [ $self->color ], @_ );
+    my $self = shift;
+    return colored( [ $self->color ], @_ );
 }
 
 sub _color_label_value {
-  shift;
-  return colored( ['bold'], @_ );
+    shift;
+    return colored( ['bold'], @_ );
 }
 
 sub _color_attribute_label {
-  my $self = shift;
-  return colored( [ $self->color, 'bold' ], @_ );
+    my $self = shift;
+    return colored( [ $self->color, 'bold' ], @_ );
 }
 
 sub _color_attribute_value {
-  my $self = shift;
-  return colored( [ $self->color ], @_ );
+    my $self = shift;
+    return colored( [ $self->color ], @_ );
 }
 
 sub _color_plugin_name {
-  shift;
-  return @_;
+    shift;
+    return @_;
 }
 
 sub _color_plugin_package {
-  my $self = shift;
-  return colored( [ $self->color ], @_ );
+    my $self = shift;
+    return colored( [ $self->color ], @_ );
 }
 
 sub _color_plugin_star {
-  my $self = shift;
-  return colored( [ $self->color ], @_ );
+    my $self = shift;
+    return colored( [ $self->color ], @_ );
 }
 
 
 sub print_section_header {
-  my ( $self, $label, $comment ) = @_;
-  return printf "\n%s%s\n", $self->_color_label_label($label), $self->_color_label_value($comment);
+    my ( $self, $label, $comment ) = @_;
+    return printf "\n%s%s\n", $self->_color_label_label($label),
+      $self->_color_label_value($comment);
 }
 
 
 sub print_section_prelude {
-  my ( $self, $label, $value ) = @_;
-  return printf "%s%s\n", $self->_color_attribute_label( ' - ' . $label ), $self->_color_attribute_value($value);
+    my ( $self, $label, $value ) = @_;
+    return printf "%s%s\n", $self->_color_attribute_label( ' - ' . $label ),
+      $self->_color_attribute_value($value);
 }
 
 
 sub print_star_assoc {
-  my ( $self, $name, $value ) = @_;
-  return printf "%s%s%s\n",
-    $self->_color_plugin_star(' * '),
-    $self->_color_plugin_name($name),
-    $self->_color_plugin_package( ' => ' . $value );
+    my ( $self, $name, $value ) = @_;
+    return printf "%s%s%s\n",
+      $self->_color_plugin_star(' * '),
+      $self->_color_plugin_name($name),
+      $self->_color_plugin_package( ' => ' . $value );
 }
 
 1;
@@ -103,7 +105,7 @@ version 0.2.1
     with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
     sub color { 'magenta' };
 
-    ... 
+    ...
 
     dzil dumpphases --color-theme=foo
 
