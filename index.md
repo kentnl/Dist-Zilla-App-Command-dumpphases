@@ -5,6 +5,9 @@ title: Synopsis
 {% highlight bash %}
     cd $PROJECT;
     dzil dumpphases
+
+    dzil dumpphases --color-theme=basic::plain # plain text
+    dzil dumpphases --color-theme=basic::green # green text
 {%endhighlight%}
 
 ![](http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png)
@@ -28,4 +31,8 @@ If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](h
 ANSI_COLORS_DISABLED=1 dzil dumpphases
 {% endhighlight %}
 
+Alternatively, since 0.3.0 you can specify a color-free theme:
+{% highlight bash %}
+dzil dumpphases --color-theme=basic::plain
+{% endhighlight %}
 
