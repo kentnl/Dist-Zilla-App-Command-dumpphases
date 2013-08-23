@@ -1,6 +1,9 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
-0.3.2 2013-08-23T06:51:35Z
+0.3.2 2013-08-23T13:21:54Z
+ [Minor]
+ - Bundle images in dist
+ - Add Travis CI checking
 
 0.3.1 2013-08-22T10:34:10Z
  [Bug fixes]
