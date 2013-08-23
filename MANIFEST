@@ -1,4 +1,5 @@
 .perltidyrc
+.travis.yml
 Build.PL
 Changes
 LICENSE
@@ -16,6 +17,11 @@ lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
+media/example_01.png
+media/theme_basic_blue.png
+media/theme_basic_green.png
+media/theme_basic_plain.png
+media/theme_basic_red.png
 perlcritic.rc
 t/00-compile.t
 t/000-report-versions-tiny.t

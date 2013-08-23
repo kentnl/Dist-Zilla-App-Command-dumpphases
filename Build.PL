@@ -19,7 +19,7 @@ my %module_build_args = (
     "Oliver Mengu\303\251 <dolmen\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-App-Command-dumpphases",
-  "dist_version" => "0.3.1",
+  "dist_version" => "0.3.2",
   "license" => "perl",
   "module_name" => "Dist::Zilla::App::Command::dumpphases",
   "recommends" => {},
