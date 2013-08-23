@@ -3,6 +3,11 @@ layout: page
 title: Changes
 ---
 
+## 0.3.2 2013-08-23T13:21:54Z
+### Minor
+ - Bundle images in dist
+ - Add Travis CI checking
+
 ## 0.3.1 2013-08-22T10:34:10Z
 ### Bug fixes
  - Accidentally left broken code with colored -> `_colored` transition
