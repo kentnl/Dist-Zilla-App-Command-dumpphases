@@ -1,6 +1,16 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+ [Dependencies::Added / test requires]
+ - IO::Handle
+ - IPC::Open3
+
+ [Dependencies::Removed / test requires]
+ - Capture::Tiny
+ - blib
+
+ [Minor]
+ - Bump to get latest Test::Compile test.
 
 0.3.2 2013-08-23T13:21:54Z
  [Minor]
