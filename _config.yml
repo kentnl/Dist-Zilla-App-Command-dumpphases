@@ -17,7 +17,7 @@ github :
   repo : Dist-Zilla-App-Command-dumpphases
   user : kentfredric
 tagline: Dump a textual representation of each phase's parts.
-version: 0.3.2
+version: 0.3.3
 author :
   name : Kent Fredric
   email : kentnl@cpan.org
