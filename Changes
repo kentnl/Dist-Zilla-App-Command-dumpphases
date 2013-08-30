@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+0.3.3 2013-08-30T19:28:52Z
  [Dependencies::Added / test requires]
  - IO::Handle
  - IPC::Open3
