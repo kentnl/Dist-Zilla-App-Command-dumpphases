@@ -9,7 +9,9 @@ env:
     - STERILIZE_ENV=0
     - STERILIZE_ENV=1
 before_install:
-  - perl ./maint-travis-ci/sterilize_env.pl
+  - time perl ./maint-travis-ci/sterilize_env.pl
+install:
+  - time cpanm --quiet --notest --mirror http://cpan.metacpan.org/ --installdeps .
 branches:
   only:
     - "build/master"
