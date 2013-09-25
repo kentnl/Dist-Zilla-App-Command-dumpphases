@@ -19,7 +19,7 @@ my %module_build_args = (
     "Oliver Mengu\303\251 <dolmen\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-App-Command-dumpphases",
-  "dist_version" => "0.3.3",
+  "dist_version" => "0.3.4",
   "license" => "perl",
   "module_name" => "Dist::Zilla::App::Command::dumpphases",
   "recommends" => {},
@@ -39,6 +39,7 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "File::Spec" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "Test::More" => "0.98"

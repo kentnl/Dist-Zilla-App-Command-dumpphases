@@ -1,5 +1,15 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+0.3.4 2013-09-25T02:33:05Z
+ [Bugfix]
+ - Update compile tests to avoid bugs on Win32
+
+ [Dependencies::Added / test requires]
+ - File::Spec
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.8.1 → v1.8.3
+
 0.3.3 2013-08-30T19:28:52Z
  [Dependencies::Added / test requires]
  - IO::Handle

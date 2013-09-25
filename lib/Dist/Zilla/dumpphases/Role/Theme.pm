@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Role::Theme::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Role::Theme::VERSION = '0.3.3';
+  $Dist::Zilla::dumpphases::Role::Theme::VERSION = '0.3.4';
 }
 
 # ABSTRACT: Output formatting themes for C<dzil dumpphases>
@@ -33,7 +33,7 @@ Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for C<dzil dumpp
 
 =head1 VERSION
 
-version 0.3.3
+version 0.3.4
 
 =begin MetaPOD::JSON v1.1.0
 

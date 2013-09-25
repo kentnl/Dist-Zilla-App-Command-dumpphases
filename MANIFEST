@@ -17,6 +17,11 @@ lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
+maint-travis-ci/README.mkdn
+maint-travis-ci/merge_travis_yml.pl
+maint-travis-ci/sterilize_env.pl
+maint-travis-ci/sync_tree.pl
+maint-travis-ci/yamls/sterile.yaml
 media/example_01.png
 media/theme_basic_blue.png
 media/theme_basic_green.png
