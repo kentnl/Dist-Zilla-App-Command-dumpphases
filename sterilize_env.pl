@@ -27,16 +27,16 @@ sub safe_exec {
 }
 
 if ( not exists $ENV{STERILIZE_ENV} ) {
-    diag('STERILIZE_ENV unset');
-    exit 0;
+  diag('STERILIZE_ENV unset');
+  exit 0;
 }
 if ( $ENV{STERILIZE_ENV} < 1 ) {
-    diag('STERLIZIE_ENV < 1, Not Sterilizing');
-    exit 0;
+  diag('STERLIZIE_ENV < 1, Not Sterilizing');
+  exit 0;
 }
 if ( not exists $ENV{TRAVIS} ) {
-    diag('Is not running under travis!');
-    exit 1;
+  diag('Is not running under travis!');
+  exit 1;
 }
 for my $i (@INC) {
   next if $i !~ /site/;
