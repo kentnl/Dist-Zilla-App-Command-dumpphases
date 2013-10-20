@@ -36,4 +36,4 @@ my @paths = './t';
 if ( env_true('AUTHOR_TESTING') or env_true('RELEASE_TESTING') ) {
   push @paths, './xt';
 }
-safe_exec( 'prove', '--blib', '--shuffle', '--color', '--recurse', '--jobs', 30, @paths );
+safe_exec( 'prove', '--blib', '--shuffle', '--color', '--recurse', '--timer', '--jobs', 30, @paths );
