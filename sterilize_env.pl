@@ -4,8 +4,26 @@ use warnings;
 use utf8;
 
 sub diag {
-    print STDERR @_;
-    print STDERR "\n";
+  print STDERR @_;
+  print STDERR "\n";
+}
+
+sub safe_exec {
+  my ( $command, @params ) = @_;
+  diag("running $command @params");
+  my $exit = system( $command, @params );
+  if ( $exit != 0 ) {
+    my $low  = $exit & 0b11111111;
+    my $high = $exit >> 8;
+    warn "$command failed: $? $! and exit = $high , flags = $low";
+    if ( $high != 0 ) {
+      exit $high;
+    }
+    else {
+      exit 1;
+    }
+  }
+  return 1;
 }
 
 if ( not exists $ENV{STERILIZE_ENV} ) {
@@ -21,11 +39,11 @@ if ( not exists $ENV{TRAVIS} ) {
     exit 1;
 }
 for my $i (@INC) {
-    next if $i !~ /site/;
-    next if $i eq '.';
-    diag( 'Sterilizing files in ' . $i );
-    system( 'find', $i, '-type', 'f', '-delete' );
-    diag( 'Sterilizing dirs in ' . $i );
-    system( 'find', $i, '-depth', '-type', 'd', '-delete' );
+  next if $i !~ /site/;
+  next if $i eq '.';
+  diag( 'Sterilizing files in ' . $i );
+  safe_exec( 'find', $i, '-type', 'f', '-delete' );
+  diag( 'Sterilizing dirs in ' . $i );
+  safe_exec( 'find', $i, '-depth', '-type', 'd', '-delete' );
 }
 

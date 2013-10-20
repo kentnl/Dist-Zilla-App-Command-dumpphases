@@ -12,8 +12,15 @@ sub safe_exec {
   diag("running $command @params");
   my $exit = system( $command, @params );
   if ( $exit != 0 ) {
-    warn "$command failed: $? $!";
-    exit $exit;
+    my $low  = $exit & 0b11111111;
+    my $high = $exit >> 8;
+    warn "$command failed: $? $! and exit = $high , flags = $low";
+    if ( $high != 0 ) {
+      exit $high;
+    }
+    else {
+      exit 1;
+    }
   }
   return 1;
 }
