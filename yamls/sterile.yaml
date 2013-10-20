@@ -14,6 +14,10 @@ before_install:
   - time perl ./maint-travis-ci/sterilize_env.pl
 install:
   - time perl ./maint-travis-ci/install_deps.pl
+before_script:
+  - time perl ./maint-travis-ci/before_script.pl
+script:
+  - time perl ./maint-travis-ci/script.pl
 branches:
   only:
     - "build/master"
