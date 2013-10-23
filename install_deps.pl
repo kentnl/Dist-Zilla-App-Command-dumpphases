@@ -36,7 +36,9 @@ if ( env_true('DEVELOPER_DEPS') ) {
   push @params, '--dev';
 }
 if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
-  safe_exec( 'cpanm', @params, 'Dist::Zilla', 'Capture::Tiny' );
+  safe_exec( 'cpanm', @params, 'Dist::Zilla', 'Capture::Tiny', 'Pod::Weaver' );
+  safe_exec( 'cpanm', @params, '--dev', 'Dist::Zilla', 'Pod::Weaver' );
+
   require Capture::Tiny;
   my $stdout = Capture::Tiny::capture_stdout(
     sub {
