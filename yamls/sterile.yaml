@@ -32,6 +32,8 @@ before_script:
   - time perl ./maint-travis-ci/before_script.pl
 script:
   - time perl ./maint-travis-ci/script.pl
+after_failure:
+  - perl ./maint-travis-ci/report_fail_ctx.pl
 branches:
   only:
     - "build/master"
