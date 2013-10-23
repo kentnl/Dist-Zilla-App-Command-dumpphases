@@ -65,7 +65,7 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
   chdir '/tmp';
   safe_exec( 'git', 'clone', 'https://github.com/kentfredric/cpan-fixes.git' );
   chdir '/tmp/cpan-fixes';
-  cpanm( @params, './Dist-Zilla-Plugin-Git-2.010.tar.gz' );
+  cpanm( @params, './Dist-Zilla-Plugin-Git-2.017.tar.gz' );
 
   #cpanm( @params, './Dist-Zilla-Plugin-Prepender-1.132960.tar.gz' );
   chdir $cwd;
