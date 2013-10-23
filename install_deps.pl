@@ -2,6 +2,7 @@
 use strict;
 use warnings;
 use utf8;
+use Cwd qw(cwd);
 
 sub diag { print STDERR @_; print STDERR "\n" }
 sub env_exists { return exists $ENV{ $_[0] } }
@@ -60,7 +61,8 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
   cpanm( @params, '--dev',       'Dist::Zilla',   'Pod::Weaver' );
 
   mkdir '/tmp';
-  my $cwd = chdir '/tmp';
+  my $cwd = cwd();
+  chdir '/tmp';
   safe_exec( 'git', 'clone', 'https://github.com/kentfredric/cpan-fixes.git' );
   chdir '/tmp/cpan-fixes';
   cpanm( @params, './Dist-Zilla-Plugin-Git-2.010.tar.gz' );
