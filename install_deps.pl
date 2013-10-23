@@ -43,13 +43,17 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
       safe_exec( 'dzil', 'authordeps', '--missing' );
     }
   );
-  safe_exec( 'cpanm', @params, split /\n/, $stdout );
+  if ( $stdout !~ /^\s*$/msx ) {
+    safe_exec( 'cpanm', @params, split /\n/, $stdout );
+  }
   $stdout = Capture::Tiny::capture_stdout(
     sub {
       safe_exec( 'dzil', 'listdeps', '--missing' );
     }
   );
-  safe_exec( 'cpanm', @params, split /\n/, $stdout );
+  if ( $stdout !~ /^\s*$/msx ) {
+    safe_exec( 'cpanm', @params, split /\n/, $stdout );
+  }
 }
 else {
   safe_exec( 'cpanm', @params, '--installdeps', '.' );
