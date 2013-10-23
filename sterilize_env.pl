@@ -38,12 +38,9 @@ if ( not exists $ENV{TRAVIS} ) {
   diag('Is not running under travis!');
   exit 1;
 }
-for my $i (@INC) {
-  next if $i !~ /site/;
-  next if $i eq '.';
-  diag( 'Sterilizing files in ' . $i );
-  safe_exec( 'find', $i, '-type', 'f', '-delete' );
-  diag( 'Sterilizing dirs in ' . $i );
-  safe_exec( 'find', $i, '-depth', '-type', 'd', '-delete' );
+use Config;
+for my $libdir ( grep { $_ =~ /site(lib|arch)exp$/ } keys %Config ) {
+  safe_exec( 'find', $libdir, '-type', 'f', '-delete' );
+  safe_exec( 'find', $libdir, '-depth', '-type', 'd', '-delete' );
 }
 
