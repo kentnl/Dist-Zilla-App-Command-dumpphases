@@ -32,7 +32,7 @@ if ( not env_exists('TRAVIS') ) {
 }
 
 my (@params) = qw[ --quiet --notest --mirror http://cpan.metacpan.org/ --no-man-pages ];
-if ( env_true('DEVELOPER_DEPS') or env_is( 'TRAVIS_BRANCH', 'master' ) ) {
+if ( env_true('DEVELOPER_DEPS') ) {
   push @params, '--dev';
 }
 if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
