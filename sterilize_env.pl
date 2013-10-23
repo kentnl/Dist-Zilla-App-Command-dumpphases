@@ -40,7 +40,7 @@ if ( not exists $ENV{TRAVIS} ) {
 }
 use Config;
 for my $libdir ( grep { $_ =~ /site(lib|arch)exp$/ } keys %Config ) {
-  safe_exec( 'find', $libdir, '-type', 'f', '-delete' );
-  safe_exec( 'find', $libdir, '-depth', '-type', 'd', '-delete' );
+  safe_exec( 'find', $Config{$libdir}, '-type', 'f', '-delete' );
+  safe_exec( 'find', $Config{$libdir}, '-depth', '-type', 'd', '-delete' );
 }
 
