@@ -6,8 +6,8 @@ use utf8;
 
 sub diag { print STDERR @_; print STDERR "\n" }
 sub env_exists { return exists $ENV{ $_[0] } }
-sub env_true   { return env_exists( $_[0] ) and $ENV{ $_[0] } }
-sub env_is     { return env_exists( $_[0] ) and $ENV{ $_[0] } eq $_[1] }
+sub env_true   { return ( env_exists( $_[0] ) and $ENV{ $_[0] } ) }
+sub env_is     { return ( env_exists( $_[0] ) and $ENV{ $_[0] } eq $_[1] ) }
 
 sub safe_exec_nonfatal {
   my ( $command, @params ) = @_;
