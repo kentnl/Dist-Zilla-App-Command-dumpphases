@@ -8,7 +8,7 @@ sub env_exists { return exists $ENV{ $_[0] } }
 sub env_true   { return env_exists( $_[0] ) and $ENV{ $_[0] } }
 sub env_is     { return env_exists( $_[0] ) and $ENV{ $_[0] } eq $_[1] }
 
-sub safe_exec {
+sub safe_exec_nonfatal {
   my ( $command, @params ) = @_;
   diag("running $command @params");
   my $exit = system( $command, @params );
@@ -17,11 +17,31 @@ sub safe_exec {
     my $high = $exit >> 8;
     warn "$command failed: $? $! and exit = $high , flags = $low";
     if ( $high != 0 ) {
-      exit $high;
+      return $high;
     }
     else {
-      exit 1;
+      return 1;
     }
+
+  }
+  return 0;
+}
+
+sub safe_exec {
+  my ( $command, @params ) = @_;
+  my $exit_code = safe_exec_nonfatal( $command, @params );
+  if ( $exit_code != 0 ) {
+    exit $exit_code;
+  }
+  return 1;
+}
+
+sub cpanm {
+  my (@params) = @_;
+  my $exit_code = safe_exec_nonfatal( 'cpanm', @params );
+  if ( $exit_code != 0 ) {
+    safe_exec( 'tail', '-n', '200', '/home/travis/.cpanm/build.log' );
+    exit $exit_code;
   }
   return 1;
 }
@@ -36,8 +56,8 @@ if ( env_true('DEVELOPER_DEPS') ) {
   push @params, '--dev';
 }
 if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
-  safe_exec( 'cpanm', @params, 'Dist::Zilla', 'Capture::Tiny', 'Pod::Weaver' );
-  safe_exec( 'cpanm', @params, '--dev', 'Dist::Zilla', 'Pod::Weaver' );
+  cpanm( @params, 'Dist::Zilla', 'Capture::Tiny', 'Pod::Weaver' );
+  cpanm( @params, '--dev',       'Dist::Zilla',   'Pod::Weaver' );
 
   require Capture::Tiny;
   my $stdout = Capture::Tiny::capture_stdout(
@@ -46,7 +66,7 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
     }
   );
   if ( $stdout !~ /^\s*$/msx ) {
-    safe_exec( 'cpanm', @params, split /\n/, $stdout );
+    cpanm( @params, split /\n/, $stdout );
   }
   $stdout = Capture::Tiny::capture_stdout(
     sub {
@@ -54,19 +74,19 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
     }
   );
   if ( $stdout !~ /^\s*$/msx ) {
-    safe_exec( 'cpanm', @params, split /\n/, $stdout );
+    cpanm( @params, split /\n/, $stdout );
   }
 }
 else {
-  safe_exec( 'cpanm', @params, '--installdeps', '.' );
+  cpanm( @params, '--installdeps', '.' );
   if ( env_true('AUTHOR_TESTING') or env_true('RELEASE_TESTING') ) {
     require CPAN::Meta;
     my $meta    = CPAN::Meta->load_file('META.json');
     my $prereqs = $meta->effective_prereqs;
     my $reqs    = $prereqs->requirements_for( 'develop', 'requires' );
-    for my $module ( sort $reqs->required_modules ) {
-      safe_exec( 'cpanm', @params, $module . '~' . $reqs->requirements_for_module($module) );
-    }
+
+    cpanm( @params, map { $_ . '~' . $reqs->requirements_for_module($_) } $reqs->required_modules );
+
   }
 }
 
