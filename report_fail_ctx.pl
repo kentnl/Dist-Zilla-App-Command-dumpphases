@@ -1,4 +1,4 @@
-#!/usr/bin/env perl 
+#!/usr/bin/env perl
 
 use strict;
 use warnings;
@@ -38,5 +38,5 @@ sub safe_exec {
 }
 
 diag("Last 1000 lines of cpanm build log");
-safe_exec('tail', '-n', '1000',  $ENV{HOME} . '/.cpanm/build.log');
+safe_exec( 'tail', '-n', '1000', $ENV{HOME} . '/.cpanm/build.log' );
 
