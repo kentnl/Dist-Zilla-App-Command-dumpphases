@@ -59,6 +59,14 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
   cpanm( @params, 'Dist::Zilla', 'Capture::Tiny', 'Pod::Weaver' );
   cpanm( @params, '--dev',       'Dist::Zilla',   'Pod::Weaver' );
 
+  mkdir '/tmp';
+  my $cwd = chdir '/tmp';
+  safe_exec( 'git', 'clone', 'https://github.com/kentfredric/cpan-fixes.git' );
+  chdir '/tmp/cpan-fixes';
+  cpanm( @params, './Dist-Zilla-Plugin-Git-2.010.tar.gz' );
+
+  #cpanm( @params, './Dist-Zilla-Plugin-Prepender-1.132960.tar.gz' );
+  chdir $cwd;
   require Capture::Tiny;
   my $stdout = Capture::Tiny::capture_stdout(
     sub {
