@@ -87,7 +87,7 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
   if ( $stdout !~ /^\s*$/msx ) {
     cpanm( @params, split /\n/, $stdout );
   }
-  cpanm( @params, 'Dist::Zilla::Plugin::ReadMeAnyFromPod~<0.132962' );
+  cpanm( @params, 'Dist::Zilla::Plugin::ReadmeAnyFromPod~<0.132962' );
 }
 else {
   cpanm( @params, '--installdeps', '.' );
