@@ -76,8 +76,12 @@ my $extra_sterile = {
     remove => [ 'Module/Build.pm', 'Module/Build/Base.pm', 'Module/Build/Compat.pm', 'Module/Build/Cookbook.pm', 'autobox.pm' ],
   },
   '5.10' => {
-    remove => [ 'autobox.pm' ],
-    install => ['Module::Build~<0.340201'],
+    remove  => ['autobox.pm'],
+    install => ['Module::Build~<0.340202'],
+  },
+  '5.12' => {
+    remove  => ['autobox.pm'],
+    install => ['Module::Build~<0.3604'],
   },
 };
 
