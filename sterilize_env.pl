@@ -63,7 +63,6 @@ sub no_sterile_warning {
     exit 0 unless env_true('MAYBE_BREAK_MODULE_BUILD');
     diag("\e[35m PROCEEDING\e[0m");
   }
-
 }
 
 if ( not env_true('STERILIZE_ENV') ) {
@@ -90,16 +89,21 @@ if ( not env_true('TRAVIS') ) {
   exit 1;
 }
 
+use Config;
+
+my @all_libs  = map { $Config{$_} } grep { $_ =~ /(lib|arch)exp$/ } keys %Config;
+my @site_libs = map { $Config{$_} } grep { $_ =~ /site(lib|arch)exp$/ } keys %Config;
+
 for my $perl_ver ( keys %{$extra_sterile} ) {
   if ( env_is( 'TRAVIS_PERL_VERSION', $perl_ver ) ) {
     diag("Running custom sterilization fixups");
     my $fixups = $extra_sterile->{$perl_ver};
-    if ( $fixups->{install} ) {
-      cpanm( '--quiet', '--notest', '--no-man-pages', $_ ) for @{ $fixups->{install} };
+    for my $target ( @{ $fixups->{install} } ) {
+      cpanm( '--quiet', '--notest', '--no-man-pages', $target );
     }
     if ( $fixups->{remove} ) {
       diag("Removing Bad things from all Config paths");
-      for my $libdir ( grep { $_ =~ /(lib|arch)exp$/ keys %Config } ) {
+      for my $libdir (@all_libs) {
         for my $removal ( @{ $fixups->{remove} } ) {
           my $path = $libdir . '/' . $removal;
           if ( -e -f $path ) {
@@ -111,8 +115,7 @@ for my $perl_ver ( keys %{$extra_sterile} ) {
     }
   }
 }
-use Config;
-for my $libdir ( grep { $_ =~ /site(lib|arch)exp$/ } keys %Config ) {
-  safe_exec( 'find', $Config{$libdir}, '-type', 'f', '-delete' );
-  safe_exec( 'find', $Config{$libdir}, '-depth', '-type', 'd', '-delete' );
+for my $libdir (@site_libs) {
+  safe_exec( 'find', $libdir, '-type', 'f', '-delete' );
+  safe_exec( 'find', $libdir, '-depth', '-type', 'd', '-delete' );
 }
