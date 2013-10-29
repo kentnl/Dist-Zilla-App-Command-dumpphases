@@ -47,6 +47,26 @@ sub cpanm {
   return 1;
 }
 
+my $got_fixes;
+
+sub get_fixes {
+  return if $got_fixes;
+  my $cwd = cwd();
+  chdir '/tmp';
+  safe_exec( 'git', 'clone', 'https://github.com/kentfredric/cpan-fixes.git' );
+  chdir $cwd;
+  $got_fixes = 1;
+}
+
+sub cpanm_fix {
+  my (@params) = @_;
+  get_fixes();
+  my $cwd = cwd();
+  chdir '/tmp/cpan-fixes';
+  cpanm(@params);
+  chdir $cwd;
+}
+
 if ( not env_exists('TRAVIS') ) {
   diag('Is not running under travis!');
   exit 1;
@@ -61,15 +81,7 @@ if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
   cpanm( @params, '--dev',       'Dist::Zilla',   'Pod::Weaver' );
   safe_exec( 'git', 'config', '--global', 'user.email', 'kentfredric+travisci@gmail.com' );
   safe_exec( 'git', 'config', '--global', 'user.name',  'Travis CI ( On behalf of Kent Fredric )' );
-  mkdir '/tmp';
-  my $cwd = cwd();
-  chdir '/tmp';
-  safe_exec( 'git', 'clone', 'https://github.com/kentfredric/cpan-fixes.git' );
-  chdir '/tmp/cpan-fixes';
-  cpanm( @params, './Dist-Zilla-Plugin-Git-2.017.tar.gz' );
 
-  #cpanm( @params, './Dist-Zilla-Plugin-Prepender-1.132960.tar.gz' );
-  chdir $cwd;
   require Capture::Tiny;
   my $stdout = Capture::Tiny::capture_stdout(
     sub {
