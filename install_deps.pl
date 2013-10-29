@@ -71,7 +71,14 @@ if ( not env_exists('TRAVIS') ) {
   diag('Is not running under travis!');
   exit 1;
 }
-
+if ( not env_exists('STERILIZE_ENV') ) {
+  diag("\e[31STERILIZE_ENV is not set, skipping, because this is probably Travis's Default ( and unwanted ) target");
+  exit 0;
+}
+if ( env_is( 'TRAVIS_BRANCH', 'master' ) and env_is( 'TRAVIS_PERL_VERSION', '5.8' ) ) {
+  diag("\e[31minstalldeps skipped on 5.8 on master, because \@Git, a dependency of \@Author::KENTNL, is unavailble on 5.8\e[0m");
+  exit 0;
+}
 my (@params) = qw[ --quiet --notest --mirror http://cpan.metacpan.org/ --no-man-pages ];
 if ( env_true('DEVELOPER_DEPS') ) {
   push @params, '--dev';
