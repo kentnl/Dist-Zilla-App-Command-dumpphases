@@ -64,7 +64,10 @@ sub no_sterile_warning {
     diag("\e[35m PROCEEDING\e[0m");
   }
 }
-
+if ( not env_exists('STERILIZE_ENV') ) {
+  diag("\e[31STERILIZE_ENV is not set, skipping, because this is probably Travis's Default ( and unwanted ) target");
+  exit 0;
+}
 if ( not env_true('STERILIZE_ENV') ) {
   diag('STERILIZE_ENV unset or false, not sterilizing');
   exit 0;
@@ -91,8 +94,8 @@ if ( not env_true('TRAVIS') ) {
 
 use Config;
 
-my @all_libs  = map { $Config{$_} } grep { $_ =~ /(lib|arch)exp$/ } keys %Config;
-my @site_libs = map { $Config{$_} } grep { $_ =~ /site(lib|arch)exp$/ } keys %Config;
+my @all_libs  = grep { defined and length and -e } map { $Config{$_} } grep { $_ =~ /(lib|arch)exp$/ } keys %Config;
+my @site_libs = grep { defined and length and -e } map { $Config{$_} } grep { $_ =~ /site(lib|arch)exp$/ } keys %Config;
 
 for my $perl_ver ( keys %{$extra_sterile} ) {
   if ( env_is( 'TRAVIS_PERL_VERSION', $perl_ver ) ) {
