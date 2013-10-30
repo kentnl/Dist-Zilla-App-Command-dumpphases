@@ -54,8 +54,8 @@ if ( not env_true('TRAVIS') ) {
 
 use Config;
 
-my @all_libs  = grep { defined and length and -e } map { $Config{$_} } grep { $_ =~ /(lib|arch)exp$/ } keys %Config;
-my @site_libs = grep { defined and length and -e } map { $Config{$_} } grep { $_ =~ /site(lib|arch)exp$/ } keys %Config;
+my @all_libs  = grep { defined and length and -e $_ } map { $Config{$_} } grep { $_ =~ /(lib|arch)exp$/ } keys %Config;
+my @site_libs = grep { defined and length and -e $_ } map { $Config{$_} } grep { $_ =~ /site(lib|arch)exp$/ } keys %Config;
 
 for my $perl_ver ( keys %{$extra_sterile} ) {
   if ( env_is( 'TRAVIS_PERL_VERSION', $perl_ver ) ) {
@@ -70,7 +70,7 @@ for my $perl_ver ( keys %{$extra_sterile} ) {
         for my $removal ( @{ $fixups->{remove} } ) {
           my $path = $libdir . '/' . $removal;
           diag("\e[32m ? $path \e[0m");
-          if ( -e -f $path ) {
+          if ( -e $path and -f $path ) {
             unlink $path;
             diag("Removed $path");
           }
