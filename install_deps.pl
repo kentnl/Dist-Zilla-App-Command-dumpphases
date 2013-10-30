@@ -25,7 +25,7 @@ if ( env_true('DEVELOPER_DEPS') ) {
 }
 if ( env_is( 'TRAVIS_BRANCH', 'master' ) ) {
   cpanm( @params, 'Dist::Zilla', 'Capture::Tiny', 'Pod::Weaver' );
-  cpanm( @params, '--dev',       'Dist::Zilla',   'Pod::Weaver' );
+  cpanm( @params, '--dev',       'Dist::Zilla~<5.002',   'Pod::Weaver' );
   safe_exec( 'git', 'config', '--global', 'user.email', 'kentfredric+travisci@gmail.com' );
   safe_exec( 'git', 'config', '--global', 'user.name',  'Travis CI ( On behalf of Kent Fredric )' );
 
