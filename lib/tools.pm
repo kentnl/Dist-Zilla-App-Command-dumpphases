@@ -114,7 +114,7 @@ sub deploy_sterile {
     my $value = $Config{$key};
     next unless defined $value;
     next unless length $value;
-    my $clean_path = '/tmp/perl5-sterile/' . $value;
+    my $clean_path = '/tmp/perl5-sterile/' . $key;
     if ( -e $clean_path and -f $clean_path ) {
       diag("\e[31mRsyncing over $value\e[0m");
       $clean_path =~ s{/?$}{/};
