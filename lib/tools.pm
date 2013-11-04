@@ -120,7 +120,7 @@ sub deploy_sterile {
       diag("\e[31mRsyncing over $value\e[0m");
       $clean_path =~ s{/?$}{/};
       $value =~ s{/?$}{/};
-      safe_exec( 'rsync', '-avp', '--delete-delay', $clean_path, $value );
+      safe_exec( 'rsync', '-a', '--delete-delay', $clean_path, $value );
     }
   }
 }
