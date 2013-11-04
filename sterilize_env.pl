@@ -75,8 +75,8 @@ for my $perl_ver ( keys %{$extra_sterile} ) {
   if ( env_is( 'TRAVIS_PERL_VERSION', $perl_ver ) ) {
     diag("Running custom sterilization fixups");
     my $fixups = $extra_sterile->{$perl_ver};
-    if ( @{ $fixups->{install} } ) {
-      cpanm( '--quiet', '--notest', '--no-man-pages', @{ $fixups->{install} } );
+    for my $dep ( @{ $fixups->{install} } ) {
+      cpanm( '--skip-satisified', '--quiet', '--notest', '--no-man-pages', $dep );
     }
     if ( $fixups->{remove} ) {
       diag("Removing Bad things from all Config paths");
