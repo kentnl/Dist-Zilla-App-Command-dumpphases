@@ -72,12 +72,13 @@ if ( not env_true('TRAVIS') ) {
 
 use Config;
 
-my @all_libs =
-  grep { defined and length and -e $_ }
-  map { $Config{$_} } grep { $_ =~ /(lib|arch)exp$/ } keys %Config;
-my @site_libs =
-  grep { defined and length and -e $_ }
-  map { $Config{$_} } grep { $_ =~ /site(lib|arch)exp$/ } keys %Config;
+sub valid_libs {
+  return grep { defined and length and -e $_ }
+    map { $Config{$_} } @_;
+}
+
+my (@all_libs)  = valid_libs( grep { $_ =~ /(lib|arch)exp$/ } keys %Config );
+my (@site_libs) = valid_libs( grep { $_ =~ /site(lib|arch)exp$/ } keys %Config );
 
 my ($corelist_file) = $corelists . '/' . $] . '.zsv';
 my ($skiplist_file) = $corelists . '/' . $] . '_skip.zsv';
@@ -107,7 +108,7 @@ if ( -e $corelist_file and -f $corelist_file ) {
     cpanm( '--skip-satisfied', '--dev', '--quiet', '--notest', '--no-man-pages', $module . '~<=' . $version );
   }
   diag("Removing Bad things from all Config paths");
-  for my $libdir (@sitelibs) {
+  for my $libdir (@site_libs) {
     safe_exec( 'find', $libdir, '-type', 'f', '-delete' );
     safe_exec( 'find', $libdir, '-depth', '-type', 'd', '-delete' );
   }
