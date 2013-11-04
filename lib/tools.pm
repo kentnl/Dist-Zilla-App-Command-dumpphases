@@ -4,6 +4,7 @@ use warnings;
 package tools;
 
 use Cwd qw(cwd);
+use Config;
 
 sub diag {
   my $handle = \*STDERR;
@@ -76,6 +77,53 @@ sub get_fixes {
   $got_fixes = 1;
 }
 
+my $got_sterile;
+
+sub get_sterile {
+  return if $got_sterile;
+  my $cwd = cwd();
+  chdir '/tmp';
+  my $version = $[;
+  safe_exec(
+    'git', 'clone', '--depth=10',
+    '--branch=' . $version,
+    'https://github.com/kentfredric/perl5-sterile.git',
+    'perl5-sterile'
+  );
+  chdir $cwd;
+  $got_sterile = 1;
+}
+my $fixed_up;
+
+sub fixup_sterile {
+  return if $fixed_up;
+  get_sterile();
+  my $cwd = cwd();
+  chdir '/tmp/perl5-sterile';
+  safe_exec( 'bash', 'patch_fixlist.sh', '/home/travis/perl5/perlbrew/perls/' . $ENV{TRAVIS_PERL_VERSION} );
+  chdir $cwd;
+  $fixed_up = 1;
+}
+my $sterile_deployed;
+
+sub deploy_sterile {
+  return if $sterile_deployed;
+  fixup_sterile();
+  for my $key ( keys %Config ) {
+    next unless $key =~ /(lib|arch)exp$/;
+    my $value = $Config{$key};
+    next unless defined $value;
+    next unless length $value;
+    my $clean_path = '/tmp/perl5-sterile/' . $value;
+    if ( -e $clean_path and -f $clean_path ) {
+      diag("\e[31mRsyncing over $value\e[0m");
+      $clean_path =~ s{/?$}{/};
+      $value =~ s{/?$}{/};
+      safe_exec( 'rsync', '-avp', '--delete-delay', $clean_path, $value );
+    }
+  }
+}
+
 sub cpanm_fix {
   my (@params) = @_;
   get_fixes();
@@ -118,6 +166,7 @@ sub import {
   $caller_stash->{cpanm_fix}          = *cpanm_fix;
   $caller_stash->{parse_meta_json}    = *parse_meta_json;
   $caller_stash->{capture_stdout}     = *capture_stdout;
+  $caller_stash->{deploy_sterile}     = *deploy_sterile;
 }
 
 1;
