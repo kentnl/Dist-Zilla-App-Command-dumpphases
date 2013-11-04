@@ -85,7 +85,7 @@ sub get_sterile {
   chdir '/tmp';
   my $version = $];
   safe_exec(
-    'git', 'clone', '--depth=10',
+    'git', 'clone', '--depth=1',
     '--branch=' . $version,
     'https://github.com/kentfredric/perl5-sterile.git',
     'perl5-sterile'
