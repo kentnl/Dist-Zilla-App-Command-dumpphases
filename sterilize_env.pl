@@ -76,7 +76,7 @@ for my $perl_ver ( keys %{$extra_sterile} ) {
     diag("Running custom sterilization fixups");
     my $fixups = $extra_sterile->{$perl_ver};
     for my $dep ( @{ $fixups->{install} } ) {
-      cpanm( '--skip-satisified', '--quiet', '--notest', '--no-man-pages', $dep );
+      cpanm( '--skip-satisfied', '--dev', '--quiet', '--notest', '--no-man-pages', $dep );
     }
     if ( $fixups->{remove} ) {
       diag("Removing Bad things from all Config paths");
