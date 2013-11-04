@@ -83,7 +83,7 @@ sub get_sterile {
   return if $got_sterile;
   my $cwd = cwd();
   chdir '/tmp';
-  my $version = $[;
+  my $version = $];
   safe_exec(
     'git', 'clone', '--depth=10',
     '--branch=' . $version,
