@@ -93,6 +93,7 @@ if ( -e $skiplist_file and -f $skiplist_file ) {
   local $/ = "\0\n";
   while ( my $line = <$fh> ) {
     my ($module) = split /\0/, $line;
+    diag("\e[34m$module\e[0m");
     $skip->{$module} = 1;
   }
 }
@@ -102,6 +103,7 @@ if ( -e $protectlist_file and -f $protectlist_file ) {
   local $/ = "\0\n";
   while ( my $line = <$fh> ) {
     my ($file) = split /\0/, $line;
+    diag("\e[34m$file\e[0m");
     $protect->{$file} = 1;
   }
 }
@@ -133,8 +135,11 @@ if ( -e $corelist_file and -f $corelist_file ) {
       require File::Spec;
       my $rel = File::Spec->abs2rel( $file, $libdir );
       if ( not exists $protect->{$rel} ) {
-        diag("\e[33m Unprotected, Removed: $rel");
+        diag("\e[33m Unprotected, $rel\e[0m");
         unlink $file;
+      }
+      else {
+        diag("\e[34m Protected, $rel\e[0m");
       }
     }
   }
