@@ -80,12 +80,15 @@ sub valid_libs {
 my (@all_libs)  = valid_libs( grep { $_ =~ /(lib|arch)exp$/ } keys %Config );
 my (@site_libs) = valid_libs( grep { $_ =~ /site(lib|arch)exp$/ } keys %Config );
 
-my ($corelist_file) = $corelists . '/' . $] . '.zsv';
-my ($skiplist_file) = $corelists . '/' . $] . '_skip.zsv';
+my ($corelist_file)    = $corelists . '/' . $] . '.zsv';
+my ($skiplist_file)    = $corelists . '/' . $] . '_skip.zsv';
+my ($protectlist_file) = $corelists . '/' . $] . '_protect.zsv';
 
-my $skip = {};
+my $skip    = {};
+my $protect = {};
 
 if ( -e $skiplist_file and -f $skiplist_file ) {
+  diag("\e[33m Reading skips from $skiplist_file\e[0m");
   open my $fh, '<', $skiplist_file;
   local $/ = "\0\n";
   while ( my $line = <$fh> ) {
@@ -93,7 +96,16 @@ if ( -e $skiplist_file and -f $skiplist_file ) {
     $skip->{$module} = 1;
   }
 }
-my $protect = {};
+if ( -e $protectlist_file and -f $protectlist_file ) {
+  diag("\e[33m Reading protections from $protectlist_file\e[0m");
+  open my $fh, '<', $protectlist_file;
+  local $/ = "\0\n";
+  while ( my $line = <$fh> ) {
+    my ($file) = split /\0/, $line;
+    $protect->{$file} = 1;
+  }
+}
+
 if ( -e $corelist_file and -f $corelist_file ) {
   diag("\e[32m Found corelist file for this perl: $], sterilizing with\e[0m");
   open my $fh, '<', $corelist_file;
@@ -105,6 +117,7 @@ if ( -e $corelist_file and -f $corelist_file ) {
     $fn .= '.pm';
     $protect->{$fn} = 1;
     next if $skip->{$module};
+    next if not defined $version or not length $version;
     cpanm( '--skip-satisfied', '--dev', '--quiet', '--notest', '--no-man-pages', $module . '~<=' . $version );
   }
   diag("Removing Bad things from all Config paths");
