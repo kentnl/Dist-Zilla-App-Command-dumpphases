@@ -57,7 +57,6 @@ my $extra_sterile = {
       'ExtUtils::MM_VMS~<=6.56',   'ExtUtils::Mksymlists~<=6.56',  'ExtUtils::testlib~<=6.56', 'ExtUtils::MM_Win32~<=6.56',
       'File::Spec~<=3.31_01',      'File::Spec::Mac~<=3.30',       'File::Spec::OS2~<=3.30',   'File::Spec::Unix~<=3.30',
       'File::Spec::VMS~<=3.30',    'File::Spec::Win32~<=3.30',     'Data::Dumper~<=2.125',     'File::Spec::Functions~<=3.30',
-      'Carp::Heavy~<=1.17',
     ],
   },
 };
