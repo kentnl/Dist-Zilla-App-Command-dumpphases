@@ -42,8 +42,23 @@ my $extra_sterile = {
     install => ['Module::Build~<0.340202'],
   },
   '5.12' => {
-    remove  => ['autobox.pm'],
-    install => ['Module::Build~<0.3604'],
+    remove => [
+      ( 'autobox.pm', 'TAP/Parser/SourceHandler.pm', 'TAP/Parser/SourceHandler/Executable.pm' ),
+      ( 'TAP/Parser/SourceHandler/File.pm', 'TAP/Parser/SourceHandler/Handle.pm', 'TAP/Parser/SourceHandler/Perl.pm' ),
+      ( 'TAP/Parser/SourceHandler/RawTAP.pm', 'CPAN/Meta/YAML.pm',    'JSON/PP.pm',           'JSON/PP/Boolean.pm' ),
+      ( 'Module/Metadata.pm',                 'Perl/OSType.pm',       'CPAN/Meta.pm',         'CPAN/Meta/Converter.pm' ),
+      ( 'CPAN/Meta/Feature.pm',               'CPAN/Meta/History.pm', 'CPAN/Meta/Prereqs.pm', 'CPAN/Meta/Spec.pm' ),
+      ( 'CPAN/Meta/Validator.pm',             'Version/Requirements.pm' ),
+      ('ExtUtils/Miniperl.pm'),
+    ],
+    install => [
+      'Module::Build~<=0.3603',    'ExtUtils::MakeMaker~<=6.56',   'Test::Harness~<=3.17',     'ExtUtils::Liblist~<=6.56',
+      'ExtUtils::Manifest~<=1.57', 'ExtUtils::Mkbootstrap~<=6.56', 'ExtUtils::MM_OS2~<=6.56',  'ExtUtils::MM_Unix~<=6.56',
+      'ExtUtils::MM_VMS~<=6.56',   'ExtUtils::Mksymlists~<=6.56',  'ExtUtils::testlib~<=6.56', 'ExtUtils::MM_Win32~<=6.56',
+      'File::Spec~<=3.31_01',      'File::Spec::Mac~<=3.30',       'File::Spec::OS2~<=3.30',   'File::Spec::Unix~<=3.30',
+      'File::Spec::VMS~<=3.30',    'File::Spec::Win32~<=3.30',     'Data::Dumper~<=2.125',     'File::Spec::Functions~<=3.30',
+      'Carp::Heavy~<=1.17',
+    ],
   },
 };
 
@@ -61,8 +76,8 @@ for my $perl_ver ( keys %{$extra_sterile} ) {
   if ( env_is( 'TRAVIS_PERL_VERSION', $perl_ver ) ) {
     diag("Running custom sterilization fixups");
     my $fixups = $extra_sterile->{$perl_ver};
-    for my $target ( @{ $fixups->{install} } ) {
-      cpanm( '--quiet', '--notest', '--no-man-pages', $target );
+    if ( @{ $fixups->{install} } ) {
+      cpanm( '--quiet', '--notest', '--no-man-pages', @{ $fixups->{install} } );
     }
     if ( $fixups->{remove} ) {
       diag("Removing Bad things from all Config paths");
