@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.3.4';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.3.5';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -35,6 +35,7 @@ sub _phases {
     [ 'ShareDir',          ['-ShareDir'],        undef ],
     [ 'Before Build',      ['-BeforeBuild'],     undef ],
     [ 'Gather Files',      ['-FileGatherer'],    'Add files to your distribution somehow' ],
+    [ 'Encoding'           ['-EncodingProviderXX'], 'Determine what encoding to use for files' ],
     [ 'Prune Files',       ['-FilePruner'],      'Remove fils from your distribution' ],
     [ 'Munge Files',       ['-FileMunger'],      'Modify files in the distribution in-memory' ],
     [ 'Register Preqreqs', ['-PrereqSource'],    'Advertise prerequisites to the distribution metadata' ],
@@ -117,7 +118,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -125,7 +126,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.3.4
+version 0.3.5
 
 =head1 SYNOPSIS
 

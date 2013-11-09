@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.033
+# this test was generated with Dist::Zilla::Plugin::Test::Compile 2.037
 
 use Test::More  tests => 7 + ($ENV{AUTHOR_TESTING} ? 1 : 0);
 
@@ -21,6 +21,8 @@ my @module_files = (
 
 # no fake home requested
 
+my $inc_switch = -d 'blib' ? '-Mblib' : '-Ilib';
+
 use File::Spec;
 use IPC::Open3;
 use IO::Handle;
@@ -32,11 +34,11 @@ for my $lib (@module_files)
     open my $stdin, '<', File::Spec->devnull or die "can't open devnull: $!";
     my $stderr = IO::Handle->new;
 
-    my $pid = open3($stdin, '>&STDERR', $stderr, $^X, '-Mblib', '-e', "require q[$lib]");
+    my $pid = open3($stdin, '>&STDERR', $stderr, $^X, $inc_switch, '-e', "require q[$lib]");
     binmode $stderr, ':crlf' if $^O eq 'MSWin32';
     my @_warnings = <$stderr>;
     waitpid($pid, 0);
-    is($? >> 8, 0, "$lib loaded ok");
+    is($?, 0, "$lib loaded ok");
 
     if (@_warnings)
     {

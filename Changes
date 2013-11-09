@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+0.3.5 2013-11-09T22:40:50Z
+
 0.3.4 2013-09-25T02:33:05Z
  [Bugfix]
  - Update compile tests to avoid bugs on Win32
