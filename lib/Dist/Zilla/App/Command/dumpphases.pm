@@ -35,7 +35,7 @@ sub _phases {
     [ 'ShareDir',          ['-ShareDir'],        undef ],
     [ 'Before Build',      ['-BeforeBuild'],     undef ],
     [ 'Gather Files',      ['-FileGatherer'],    'Add files to your distribution somehow' ],
-    [ 'Encoding'           ['-EncodingProviderXX'], 'Determine what encoding to use for files' ],
+    [ 'Encoding',           ['-EncodingProviderXX'], 'Determine what encoding to use for files' ],
     [ 'Prune Files',       ['-FilePruner'],      'Remove fils from your distribution' ],
     [ 'Munge Files',       ['-FileMunger'],      'Modify files in the distribution in-memory' ],
     [ 'Register Preqreqs', ['-PrereqSource'],    'Advertise prerequisites to the distribution metadata' ],
