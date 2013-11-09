@@ -15,7 +15,9 @@ matrix:
       env:  STERILIZE_ENV=0
     - perl: "5.19"
       env:  STERILIZE_ENV=0
-    - perl: "5.12"
+    - perl: "5.8"
+      env:  STERILIZE_ENV=1
+    - perl: "5.10"
       env:  STERILIZE_ENV=1
     - perl: "5.19"
       env:  STERILIZE_ENV=1
@@ -36,6 +38,7 @@ after_failure:
   - perl ./maint-travis-ci/report_fail_ctx.pl
 branches:
   only:
+    - "master"
     - "build/master"
     - "releases"
 
