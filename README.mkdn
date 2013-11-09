@@ -4,7 +4,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 # VERSION
 
-version 0.3.4
+version 0.3.5
 
 # SYNOPSIS
 
@@ -16,7 +16,7 @@ version 0.3.4
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
-( Everyone else can visit [http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example\_01.png](http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example\_01.png) )
+( Everyone else can visit [http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png](http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png) )
 
 {
     "namespace":"Dist::Zilla::App::Command::dumpphases",
@@ -35,7 +35,7 @@ This Command exists primarily to make developing Plugin Bundles and debugging
 dist.ini a bit easier, especially for newbies who may not fully understand
 Bundles yet.
 
-If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](http://search.cpan.org/perldoc?Term::ANSIColor)
+If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](https://metacpan.org/pod/Term::ANSIColor)
 `ANSI_COLORS_DISABLED`. E.g.,
 
 `ANSI_COLORS_DISABLED=1 dzil dumpphases`
@@ -48,7 +48,7 @@ Alternatively, since 0.3.0 you can specify a color-free theme:
 
 - Kent Fredric <kentnl@cpan.org>
 - Alan Young <harleypig@gmail.com>
-- Oliver MenguÃ© <dolmen@cpan.org>
+- Oliver Mengué <dolmen@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
