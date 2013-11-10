@@ -7,7 +7,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Role::Theme::SimpleColor::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Role::Theme::SimpleColor::VERSION = '0.3.4';
+  $Dist::Zilla::dumpphases::Role::Theme::SimpleColor::VERSION = '0.4.0';
 }
 use Role::Tiny;
 
@@ -85,7 +85,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -93,7 +93,7 @@ Dist::Zilla::dumpphases::Role::Theme::SimpleColor - A role for themes that are s
 
 =head1 VERSION
 
-version 0.3.4
+version 0.4.0
 
 =head1 SYNOPSIS
 

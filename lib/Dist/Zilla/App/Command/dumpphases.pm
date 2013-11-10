@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.3.4';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.4.0';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -29,25 +29,26 @@ sub opt_spec {
 
 sub _phases {
   my (@phases) = (
-    [ 'Version',           ['-VersionProvider'], 'Provide a version for the distribution' ],
-    [ 'MetaData',          ['-MetaProvider'],    'Specify MetaData for the distribution' ],
-    [ 'ExecFiles',         ['-ExecFiles'],       undef ],
-    [ 'ShareDir',          ['-ShareDir'],        undef ],
-    [ 'Before Build',      ['-BeforeBuild'],     undef ],
-    [ 'Gather Files',      ['-FileGatherer'],    'Add files to your distribution somehow' ],
-    [ 'Prune Files',       ['-FilePruner'],      'Remove fils from your distribution' ],
-    [ 'Munge Files',       ['-FileMunger'],      'Modify files in the distribution in-memory' ],
-    [ 'Register Preqreqs', ['-PrereqSource'],    'Advertise prerequisites to the distribution metadata' ],
-    [ 'Install Tool',      ['-InstallTool'],     'Add a tool ( or tool-based files) for end users to install your dist with' ],
-    [ 'After Build',       ['-AfterBuild'],      undef ],
-    [ 'Before Archive',    ['-BeforeArchive'],   undef ],
-    [ 'Releaser',          ['-Releaser'],        'Broadcast a copy of a built distribution to somewhere' ],
-    [ 'Before Release',    ['-BeforeRelease'],   undef ],
-    [ 'After Release',     ['-AfterRelease'],    undef ],
-    [ 'Test Runner',       ['-TestRunner'],      undef ],
-    [ 'Build Runner',      ['-BuildRunner'],     undef ],
-    [ 'BeforeMint',        ['-BeforeMint'],      undef ],
-    [ 'AfterMint',         ['-AfterMint'],       undef ],
+    [ 'Version',           ['-VersionProvider'],  'Provide a version for the distribution' ],
+    [ 'MetaData',          ['-MetaProvider'],     'Specify MetaData for the distribution' ],
+    [ 'ExecFiles',         ['-ExecFiles'],        undef ],
+    [ 'ShareDir',          ['-ShareDir'],         undef ],
+    [ 'Before Build',      ['-BeforeBuild'],      undef ],
+    [ 'Gather Files',      ['-FileGatherer'],     'Add files to your distribution somehow' ],
+    [ 'Encoding',          ['-EncodingProvider'], 'Determine what encoding to use for files' ],
+    [ 'Prune Files',       ['-FilePruner'],       'Remove fils from your distribution' ],
+    [ 'Munge Files',       ['-FileMunger'],       'Modify files in the distribution in-memory' ],
+    [ 'Register Preqreqs', ['-PrereqSource'],     'Advertise prerequisites to the distribution metadata' ],
+    [ 'Install Tool',      ['-InstallTool'],      'Add a tool ( or tool-based files) for end users to install your dist with' ],
+    [ 'After Build',       ['-AfterBuild'],       undef ],
+    [ 'Before Archive',    ['-BeforeArchive'],    undef ],
+    [ 'Releaser',          ['-Releaser'],         'Broadcast a copy of a built distribution to somewhere' ],
+    [ 'Before Release',    ['-BeforeRelease'],    undef ],
+    [ 'After Release',     ['-AfterRelease'],     undef ],
+    [ 'Test Runner',       ['-TestRunner'],       undef ],
+    [ 'Build Runner',      ['-BuildRunner'],      undef ],
+    [ 'BeforeMint',        ['-BeforeMint'],       undef ],
+    [ 'AfterMint',         ['-AfterMint'],        undef ],
   );
   return \@phases;
 }
@@ -117,7 +118,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -125,7 +126,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.3.4
+version 0.4.0
 
 =head1 SYNOPSIS
 

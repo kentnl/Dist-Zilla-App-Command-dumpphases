@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::dumpphases::Theme::basic::blue::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::dumpphases::Theme::basic::blue::VERSION = '0.3.4';
+  $Dist::Zilla::dumpphases::Theme::basic::blue::VERSION = '0.4.0';
 }
 
 # ABSTRACT: A blue color theme for C<dzil dumpphases>
@@ -25,7 +25,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -33,7 +33,7 @@ Dist::Zilla::dumpphases::Theme::basic::blue - A blue color theme for C<dzil dump
 
 =head1 VERSION
 
-version 0.3.4
+version 0.4.0
 
 =head1 SYNOPSIS
 
