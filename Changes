@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
-0.4.0 2013-11-09T22:48:56Z
+0.3.5 2013-11-10T18:14:45Z
  [00 Minor]
  - Add native display of -EncodingProvider role.
 
