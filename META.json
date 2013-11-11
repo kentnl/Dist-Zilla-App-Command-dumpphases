@@ -85,6 +85,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Carp" : "0",
             "Dist::Zilla::App" : "0",
             "Module::Runtime" : "0",
             "Moo" : "0",
@@ -110,6 +111,10 @@
    "provides" : {
       "Dist::Zilla::App::Command::dumpphases" : {
          "file" : "lib/Dist/Zilla/App/Command/dumpphases.pm",
+         "version" : "v0.4.1"
+      },
+      "Dist::Zilla::App::Command::dumpwith" : {
+         "file" : "lib/Dist/Zilla/App/Command/dumpwith.pm",
          "version" : "v0.4.1"
       },
       "Dist::Zilla::dumpphases::Role::Theme" : {
@@ -152,6 +157,7 @@
    "version" : "0.4.1",
    "x_BuiltWith" : {
       "modules" : {
+         "Carp" : "1.32",
          "Dist::Zilla::App" : "5.006",
          "Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl" : "2.002000",
          "Dist::Zilla::Plugin::Authority" : "1.006",
@@ -366,13 +372,14 @@
             "config" : {
                "Dist::Zilla::Plugin::Test::Compile::PerFile" : {
                   "file" : [
+                     "lib/Dist/Zilla/dumpphases/Theme/basic/red.pm",
+                     "lib/Dist/Zilla/dumpphases/Role/Theme.pm",
+                     "lib/Dist/Zilla/App/Command/dumpphases.pm",
+                     "lib/Dist/Zilla/App/Command/dumpwith.pm",
+                     "lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm",
                      "lib/Dist/Zilla/dumpphases/Theme/basic/green.pm",
                      "lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm",
-                     "lib/Dist/Zilla/App/Command/dumpphases.pm",
-                     "lib/Dist/Zilla/dumpphases/Theme/basic/red.pm",
-                     "lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm",
-                     "lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm",
-                     "lib/Dist/Zilla/dumpphases/Role/Theme.pm"
+                     "lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm"
                   ],
                   "path_translator" : "base64_filter",
                   "prefix" : "t/00-compile",

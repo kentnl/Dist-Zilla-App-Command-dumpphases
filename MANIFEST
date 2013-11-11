@@ -11,6 +11,7 @@ dist.ini
 layout/self_structure.dot
 layout/self_structure.png
 lib/Dist/Zilla/App/Command/dumpphases.pm
+lib/Dist/Zilla/App/Command/dumpwith.pm
 lib/Dist/Zilla/dumpphases/Role/Theme.pm
 lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm
@@ -37,6 +38,7 @@ media/theme_basic_red.png
 perlcritic.rc
 t/00-compile.t
 t/00-compile/lib_Dist_Zilla_App_Command_dumpphases_pm.t
+t/00-compile/lib_Dist_Zilla_App_Command_dumpwith_pm.t
 t/00-compile/lib_Dist_Zilla_dumpphases_Role_Theme_SimpleColor_pm.t
 t/00-compile/lib_Dist_Zilla_dumpphases_Role_Theme_pm.t
 t/00-compile/lib_Dist_Zilla_dumpphases_Theme_basic_blue_pm.t

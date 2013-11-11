@@ -25,6 +25,7 @@ my %module_build_args = (
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "Carp" => 0,
     "Dist::Zilla::App" => 0,
     "Module::Runtime" => 0,
     "Moo" => 0,
