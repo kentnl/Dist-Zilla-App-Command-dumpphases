@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.5.0';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.4.1';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -54,8 +54,8 @@ sub execute {
   for my $phase ( Dist::Zilla::Util::RoleDB->new()->phases ) {
     my ( $label );
     $label = $phase->name;
-    $label =~ s/^-//;
-    $label =~ s/([a-z])([A-Z])/$1 $2/g;
+    $label =~ s/\A-//msx;
+    $label =~ s/([a-z])([A-Z])/$1 $2/gmsx;
 
     my @plugins;
     push @plugins, $zilla->plugins_with($phase->name)->flatten;
@@ -100,7 +100,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.5.0
+version 0.4.1
 
 =head1 SYNOPSIS
 
