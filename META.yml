@@ -8,10 +8,10 @@ build_requires:
   File::Spec: 0
   IO::Handle: 0
   IPC::Open3: 0
-  Module::Build: 0.4008
+  Module::Build: 0.4200
   Test::More: 1.001002
 configure_requires:
-  Module::Build: 0.4008
+  Module::Build: 0.4200
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.006, CPAN::Meta::Converter version 2.132830'
 license: perl
@@ -22,9 +22,6 @@ name: Dist-Zilla-App-Command-dumpphases
 provides:
   Dist::Zilla::App::Command::dumpphases:
     file: lib/Dist/Zilla/App/Command/dumpphases.pm
-    version: v0.4.1
-  Dist::Zilla::App::Command::dumpwith:
-    file: lib/Dist/Zilla/App/Command/dumpwith.pm
     version: v0.4.1
   Dist::Zilla::dumpphases::Role::Theme:
     file: lib/Dist/Zilla/dumpphases/Role/Theme.pm
@@ -45,8 +42,8 @@ provides:
     file: lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
     version: v0.4.1
 requires:
-  Carp: 0
   Dist::Zilla::App: 0
+  Dist::Zilla::Util::RoleDB: 0
   Module::Runtime: 0
   Moo: 0
   Moose::Autobox: 0
@@ -64,7 +61,6 @@ resources:
 version: 0.4.1
 x_BuiltWith:
   modules:
-    Carp: 1.32
     Dist::Zilla::App: 5.006
     Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl: 2.002000
     Dist::Zilla::Plugin::Authority: 1.006
@@ -110,10 +106,11 @@ x_BuiltWith:
     Dist::Zilla::Plugin::UploadToCPAN: 5.006
     Dist::Zilla::PluginBundle::Author::KENTNL: 2.002000
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.7.2
+    Dist::Zilla::Util::RoleDB: 0.001000
     File::Spec: 3.45
     IO::Handle: 1.35
     IPC::Open3: 1.16
-    Module::Build: 0.4008
+    Module::Build: 0.4200
     Module::Runtime: 0.013
     Moo: 1.003001
     Moose::Autobox: 0.15
@@ -248,14 +245,13 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Test::Compile::PerFile:
           file:
-            - lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
-            - lib/Dist/Zilla/dumpphases/Role/Theme.pm
-            - lib/Dist/Zilla/App/Command/dumpphases.pm
-            - lib/Dist/Zilla/App/Command/dumpwith.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm
+            - lib/Dist/Zilla/App/Command/dumpphases.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
             - lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
+            - lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
+            - lib/Dist/Zilla/dumpphases/Role/Theme.pm
           path_translator: base64_filter
           prefix: t/00-compile
           skip: []

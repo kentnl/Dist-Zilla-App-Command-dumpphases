@@ -3,13 +3,12 @@ use warnings;
 
 # this test was generated with Dist::Zilla::Plugin::Test::Compile 2.037
 
-use Test::More  tests => 8;
+use Test::More  tests => 7;
 
 
 
 my @module_files = (
     'Dist/Zilla/App/Command/dumpphases.pm',
-    'Dist/Zilla/App/Command/dumpwith.pm',
     'Dist/Zilla/dumpphases/Role/Theme.pm',
     'Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm',
     'Dist/Zilla/dumpphases/Theme/basic/blue.pm',
