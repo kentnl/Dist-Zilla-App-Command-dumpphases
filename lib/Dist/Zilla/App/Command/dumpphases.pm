@@ -55,7 +55,7 @@ sub execute {
     my ( $label );
     $label = $phase->name;
     $label =~ s/\A-//msx;
-    $label =~ s/([a-z])([A-Z])/$1 $2/gmsx;
+    $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
     push @plugins, $zilla->plugins_with($phase->name)->flatten;
