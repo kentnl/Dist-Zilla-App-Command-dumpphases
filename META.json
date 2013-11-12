@@ -111,31 +111,31 @@
    "provides" : {
       "Dist::Zilla::App::Command::dumpphases" : {
          "file" : "lib/Dist/Zilla/App/Command/dumpphases.pm",
-         "version" : "v0.4.1"
+         "version" : "v0.5.0"
       },
       "Dist::Zilla::dumpphases::Role::Theme" : {
          "file" : "lib/Dist/Zilla/dumpphases/Role/Theme.pm",
-         "version" : "v0.4.1"
+         "version" : "v0.5.0"
       },
       "Dist::Zilla::dumpphases::Role::Theme::SimpleColor" : {
          "file" : "lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm",
-         "version" : "v0.4.1"
+         "version" : "v0.5.0"
       },
       "Dist::Zilla::dumpphases::Theme::basic::blue" : {
          "file" : "lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm",
-         "version" : "v0.4.1"
+         "version" : "v0.5.0"
       },
       "Dist::Zilla::dumpphases::Theme::basic::green" : {
          "file" : "lib/Dist/Zilla/dumpphases/Theme/basic/green.pm",
-         "version" : "v0.4.1"
+         "version" : "v0.5.0"
       },
       "Dist::Zilla::dumpphases::Theme::basic::plain" : {
          "file" : "lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm",
-         "version" : "v0.4.1"
+         "version" : "v0.5.0"
       },
       "Dist::Zilla::dumpphases::Theme::basic::red" : {
          "file" : "lib/Dist/Zilla/dumpphases/Theme/basic/red.pm",
-         "version" : "v0.4.1"
+         "version" : "v0.5.0"
       }
    },
    "release_status" : "stable",
@@ -150,7 +150,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases"
       }
    },
-   "version" : "0.4.1",
+   "version" : "0.5.0",
    "x_BuiltWith" : {
       "modules" : {
          "Dist::Zilla::App" : "5.006",
@@ -368,13 +368,13 @@
             "config" : {
                "Dist::Zilla::Plugin::Test::Compile::PerFile" : {
                   "file" : [
-                     "lib/Dist/Zilla/App/Command/dumpphases.pm",
                      "lib/Dist/Zilla/dumpphases/Theme/basic/red.pm",
-                     "lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm",
-                     "lib/Dist/Zilla/dumpphases/Theme/basic/green.pm",
+                     "lib/Dist/Zilla/dumpphases/Role/Theme.pm",
                      "lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm",
+                     "lib/Dist/Zilla/dumpphases/Theme/basic/green.pm",
+                     "lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm",
                      "lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm",
-                     "lib/Dist/Zilla/dumpphases/Role/Theme.pm"
+                     "lib/Dist/Zilla/App/Command/dumpphases.pm"
                   ],
                   "path_translator" : "base64_filter",
                   "prefix" : "t/00-compile",
