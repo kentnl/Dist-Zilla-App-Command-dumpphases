@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.4.0';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.5.0';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -25,32 +25,6 @@ sub abstract { return 'Dump a textual representation of each phase\'s parts' }
 
 sub opt_spec {
   return [ 'color-theme=s', 'color theme to use, ( eg: basic::blue )' ];
-}
-
-sub _phases {
-  my (@phases) = (
-    [ 'Version',           ['-VersionProvider'],  'Provide a version for the distribution' ],
-    [ 'MetaData',          ['-MetaProvider'],     'Specify MetaData for the distribution' ],
-    [ 'ExecFiles',         ['-ExecFiles'],        undef ],
-    [ 'ShareDir',          ['-ShareDir'],         undef ],
-    [ 'Before Build',      ['-BeforeBuild'],      undef ],
-    [ 'Gather Files',      ['-FileGatherer'],     'Add files to your distribution somehow' ],
-    [ 'Encoding',          ['-EncodingProvider'], 'Determine what encoding to use for files' ],
-    [ 'Prune Files',       ['-FilePruner'],       'Remove fils from your distribution' ],
-    [ 'Munge Files',       ['-FileMunger'],       'Modify files in the distribution in-memory' ],
-    [ 'Register Preqreqs', ['-PrereqSource'],     'Advertise prerequisites to the distribution metadata' ],
-    [ 'Install Tool',      ['-InstallTool'],      'Add a tool ( or tool-based files) for end users to install your dist with' ],
-    [ 'After Build',       ['-AfterBuild'],       undef ],
-    [ 'Before Archive',    ['-BeforeArchive'],    undef ],
-    [ 'Releaser',          ['-Releaser'],         'Broadcast a copy of a built distribution to somewhere' ],
-    [ 'Before Release',    ['-BeforeRelease'],    undef ],
-    [ 'After Release',     ['-AfterRelease'],     undef ],
-    [ 'Test Runner',       ['-TestRunner'],       undef ],
-    [ 'Build Runner',      ['-BuildRunner'],      undef ],
-    [ 'BeforeMint',        ['-BeforeMint'],       undef ],
-    [ 'AfterMint',         ['-AfterMint'],        undef ],
-  );
-  return \@phases;
 }
 
 sub _get_color_theme {
@@ -73,24 +47,24 @@ sub execute {
 
   my $theme = $self->_get_theme_instance( $self->_get_color_theme( $opt, 'basic::blue' ) );
 
-  my $phases = $self->_phases;
-
   my $seen_plugins = {};
 
-  for my $phase ( @{$phases} ) {
-    my ( $label, $roles, $description ) = @{$phase};
+  require Dist::Zilla::Util::RoleDB;
+
+  for my $phase ( Dist::Zilla::Util::RoleDB->new()->phases ) {
+    my ( $label );
+    $label = $phase->name;
+    $label =~ s/\A-//msx;
+    $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
+
     my @plugins;
-    push @plugins, $zilla->plugins_with($_)->flatten for @{$roles};
+    push @plugins, $zilla->plugins_with($phase->name)->flatten;
     next unless @plugins;
 
     $theme->print_section_header( 'Phase: ', $label );
-
-    if ($description) {
-      $theme->print_section_prelude( 'description: ', $description );
-    }
-    for my $role ( @{$roles} ) {
-      $theme->print_section_prelude( 'role: ', $role );
-    }
+    $theme->print_section_prelude( 'description: ', $phase->description );
+    $theme->print_section_prelude( 'role: ', $phase->name );
+    $theme->print_section_prelude( 'phase_method: ', $phase->phase_method );
 
     for my $plugin (@plugins) {
       $seen_plugins->{ $plugin->plugin_name } = 1;
@@ -126,7 +100,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.4.0
+version 0.5.0
 
 =head1 SYNOPSIS
 

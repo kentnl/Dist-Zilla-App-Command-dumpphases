@@ -7,10 +7,10 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4008"
+    "Module::Build" => "0.4200"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4008"
+    "Module::Build" => "0.4200"
   },
   "dist_abstract" => "Dump a textual representation of each phase's parts.",
   "dist_author" => [
@@ -19,13 +19,14 @@ my %module_build_args = (
     "Oliver Mengu\x{e9} <dolmen\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-App-Command-dumpphases",
-  "dist_version" => "0.4.0",
+  "dist_version" => "0.5.0",
   "license" => "perl",
   "module_name" => "Dist::Zilla::App::Command::dumpphases",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Dist::Zilla::App" => 0,
+    "Dist::Zilla::Util::RoleDB" => 0,
     "Module::Runtime" => 0,
     "Moo" => 0,
     "Moose::Autobox" => 0,
@@ -51,7 +52,7 @@ my %fallback_build_requires = (
   "File::Spec" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
-  "Module::Build" => "0.4008",
+  "Module::Build" => "0.4200",
   "Test::More" => "1.001002"
 );
 

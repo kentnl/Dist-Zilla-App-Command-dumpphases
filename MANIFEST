@@ -36,6 +36,13 @@ media/theme_basic_plain.png
 media/theme_basic_red.png
 perlcritic.rc
 t/00-compile.t
+t/00-compile/lib_Dist_Zilla_App_Command_dumpphases_pm.t
+t/00-compile/lib_Dist_Zilla_dumpphases_Role_Theme_SimpleColor_pm.t
+t/00-compile/lib_Dist_Zilla_dumpphases_Role_Theme_pm.t
+t/00-compile/lib_Dist_Zilla_dumpphases_Theme_basic_blue_pm.t
+t/00-compile/lib_Dist_Zilla_dumpphases_Theme_basic_green_pm.t
+t/00-compile/lib_Dist_Zilla_dumpphases_Theme_basic_plain_pm.t
+t/00-compile/lib_Dist_Zilla_dumpphases_Theme_basic_red_pm.t
 t/000-report-versions-tiny.t
 weaver.ini
 xt/author/critic.t
