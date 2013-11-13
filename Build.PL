@@ -19,17 +19,19 @@ my %module_build_args = (
     "Oliver Mengu\x{e9} <dolmen\@cpan.org>"
   ],
   "dist_name" => "Dist-Zilla-App-Command-dumpphases",
-  "dist_version" => "0.5.1",
+  "dist_version" => "0.6.0",
   "license" => "perl",
   "module_name" => "Dist::Zilla::App::Command::dumpphases",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
+    "Carp" => 0,
     "Dist::Zilla::App" => 0,
     "Dist::Zilla::Util::RoleDB" => 0,
     "Module::Runtime" => 0,
     "Moo" => 0,
-    "Moose::Autobox" => 0,
+    "Path::ScanINC" => 0,
+    "Path::Tiny" => 0,
     "Role::Tiny" => 0,
     "Scalar::Util" => 0,
     "Term::ANSIColor" => 0,
@@ -40,18 +42,16 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
-    "File::Spec" => 0,
-    "IO::Handle" => 0,
-    "IPC::Open3" => 0,
+    "Cwd" => 0,
+    "Dist::Zilla::App::Tester" => 0,
     "Test::More" => "1.001002"
   }
 );
 
 
 my %fallback_build_requires = (
-  "File::Spec" => 0,
-  "IO::Handle" => 0,
-  "IPC::Open3" => 0,
+  "Cwd" => 0,
+  "Dist::Zilla::App::Tester" => 0,
   "Module::Build" => "0.4200",
   "Test::More" => "1.001002"
 );

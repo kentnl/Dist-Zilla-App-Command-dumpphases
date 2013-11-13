@@ -1,5 +1,31 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+0.6.0 2013-11-13T03:54:53Z
+ [00 Minor]
+ - Color handling is now validated, and spews list of dynamically
+   determined themes on your system
+ - TERMINOLOGY documentation moved down
+ - Tests added (Finally!)
+ - Moose autobox code removed.
+ - Actually remove Test::Compile
+
+ [Dependencies::Added / runtime requires]
+ - Carp
+ - Path::ScanINC
+ - Path::Tiny
+
+ [Dependencies::Added / test requires]
+ - Cwd
+ - Dist::Zilla::App::Tester
+
+ [Dependencies::Removed / runtime requires]
+ - Moose::Autobox
+
+ [Dependencies::Removed / test requires]
+ - File::Spec
+ - IO::Handle
+ - IPC::Open3
+
 0.5.1 2013-11-13T00:46:05Z
  [00 Doc Fix]
  - Added a TERMINOLOGY section, to help clear up the use of the term

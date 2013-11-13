@@ -7,6 +7,7 @@ MANIFEST
 META.json
 META.yml
 README
+corpus/basic_01/dist.ini
 dist.ini
 layout/self_structure.dot
 layout/self_structure.png
@@ -35,7 +36,6 @@ media/theme_basic_green.png
 media/theme_basic_plain.png
 media/theme_basic_red.png
 perlcritic.rc
-t/00-compile.t
 t/00-compile/lib_Dist_Zilla_App_Command_dumpphases_pm.t
 t/00-compile/lib_Dist_Zilla_dumpphases_Role_Theme_SimpleColor_pm.t
 t/00-compile/lib_Dist_Zilla_dumpphases_Role_Theme_pm.t
@@ -44,6 +44,11 @@ t/00-compile/lib_Dist_Zilla_dumpphases_Theme_basic_green_pm.t
 t/00-compile/lib_Dist_Zilla_dumpphases_Theme_basic_plain_pm.t
 t/00-compile/lib_Dist_Zilla_dumpphases_Theme_basic_red_pm.t
 t/000-report-versions-tiny.t
+t/01-noparam.t
+t/02-bad-theme.t
+t/03-green-theme.t
+t/04-red-theme.t
+t/05-plain-theme.t
 weaver.ini
 xt/author/critic.t
 xt/release/cpan-changes.t

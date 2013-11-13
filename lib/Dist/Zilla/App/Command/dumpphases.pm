@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.5.1';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.6.0';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -15,7 +15,6 @@ BEGIN {
 
 
 use Dist::Zilla::App -command;
-use Moose::Autobox;
 use Try::Tiny;
 use Scalar::Util qw( blessed );
 
@@ -23,8 +22,45 @@ use Scalar::Util qw( blessed );
 sub abstract { return 'Dump a textual representation of each phase\'s parts' }
 ## use critic
 
+
 sub opt_spec {
   return [ 'color-theme=s', 'color theme to use, ( eg: basic::blue )' ];
+}
+
+sub validate_args {
+  my ( $self, $opt, $args ) = @_;
+  return unless defined $opt->color_theme;
+  my $themes = $self->_available_themes;
+  if ( not exists $themes->{ $opt->color_theme } ) {
+    require Carp;
+    Carp::croak(
+      'Invalid theme specification <' . $opt->color_theme . '>, available themes are: ' . ( join q{, }, sort keys %{$themes} ) );
+  }
+}
+
+sub _available_themes {
+  my ($self) = @_;
+  require Path::ScanINC;
+  my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
+  my (%themes);
+  require Path::Tiny;
+  for my $dir (@theme_dirs) {
+    my $it = Path::Tiny->new($dir)->iterator(
+      {
+        recurse         => 1,
+        follow_symlinks => 0,
+      }
+    );
+    while ( my $item = $it->() ) {
+      next unless $item =~ /[.]pm\z/msx;
+      next unless -f $item;
+      my $theme_name = $item->relative($dir);
+      $theme_name =~ s{[.]pm\z}{}msx;
+      $theme_name =~ s{/}{::}msxg;
+      $themes{$theme_name} = 1;
+    }
+  }
+  return \%themes;
 }
 
 sub _get_color_theme {
@@ -58,7 +94,7 @@ sub execute {
     $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
-    push @plugins, $zilla->plugins_with( $phase->name )->flatten;
+    push @plugins, @{$zilla->plugins_with( $phase->name )};
     next unless @plugins;
 
     $theme->print_section_header( 'Phase: ', $label );
@@ -100,7 +136,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.5.1
+version 0.6.0
 
 =head1 SYNOPSIS
 
@@ -115,6 +151,35 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 ( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
 
 =for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::App::Command::dumpphases",
+    "inherits":"Dist::Zilla::App::Command",
+    "interface":"class"
+}
+
+
+=end MetaPOD::JSON
+
+=head1 DESCRIPTION
+
+Working out what Plugins will execute in which order during which phase can be a
+little confusing sometimes.
+
+This Command exists primarily to make developing Plugin Bundles and debugging
+dist.ini a bit easier, especially for newbies who may not fully understand
+Bundles yet.
+
+If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
+C<ANSI_COLORS_DISABLED>. E.g.,
+
+C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+
+Alternatively, since 0.3.0 you can specify a color-free theme:
+
+    dzil dumpphases --color-theme=basic::plain
 
 =head1 TERMINOLOGY
 
@@ -167,34 +232,35 @@ Which means it could occur as early as creating C<META.json> or it could occur a
 This C<App::Command> command will indeed list all of the above, but for the sake of ease of use, the "Third kind" is informally
 under the umbrella of a "phase".
 
-=begin MetaPOD::JSON v1.1.0
+=head1 METHODS
 
-{
-    "namespace":"Dist::Zilla::App::Command::dumpphases",
-    "inherits":"Dist::Zilla::App::Command",
-    "interface":"class"
-}
+=head2 C<opt_spec>
 
+This command takes one optional parameter
 
-=end MetaPOD::JSON
+=over 4
 
-=head1 DESCRIPTION
+=item * C<color-theme>
 
-Working out what Plugins will execute in which order during which phase can be a
-little confusing sometimes.
+    dzil dumpphases --color-theme=<THEME>
 
-This Command exists primarily to make developing Plugin Bundles and debugging
-dist.ini a bit easier, especially for newbies who may not fully understand
-Bundles yet.
+The name of a color theme to use.
 
-If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
-C<ANSI_COLORS_DISABLED>. E.g.,
+Existing themes are:
 
-C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+=over 4
 
-Alternatively, since 0.3.0 you can specify a color-free theme:
+=item * C<basic::blue>
 
-    dzil dumpphases --color-theme=basic::plain
+=item * C<basic::green>
+
+=item * C<basic::red>
+
+=item * C<basic::plain>
+
+=back
+
+=back
 
 =head1 AUTHORS
 

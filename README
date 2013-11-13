@@ -3,7 +3,7 @@ NAME
     each phase's parts.
 
 VERSION
-    version 0.5.1
+    version 0.6.0
 
 SYNOPSIS
       cd $PROJECT;
@@ -18,6 +18,23 @@ SYNOPSIS
     ( Everyone else can visit
     <http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/ex
     ample_01.png> )
+
+DESCRIPTION
+    Working out what Plugins will execute in which order during which phase
+    can be a little confusing sometimes.
+
+    This Command exists primarily to make developing Plugin Bundles and
+    debugging dist.ini a bit easier, especially for newbies who may not
+    fully understand Bundles yet.
+
+    If you want to turn colors off, use "Term::ANSIcolor"'s environment
+    variable "ANSI_COLORS_DISABLED". E.g.,
+
+    "ANSI_COLORS_DISABLED=1 dzil dumpphases"
+
+    Alternatively, since 0.3.0 you can specify a color-free theme:
+
+        dzil dumpphases --color-theme=basic::plain
 
 TERMINOLOGY
     Technically speaking, this utility deals with more than just "phases",
@@ -80,22 +97,25 @@ TERMINOLOGY
     the sake of ease of use, the "Third kind" is informally under the
     umbrella of a "phase".
 
-DESCRIPTION
-    Working out what Plugins will execute in which order during which phase
-    can be a little confusing sometimes.
+METHODS
+  "opt_spec"
+    This command takes one optional parameter
 
-    This Command exists primarily to make developing Plugin Bundles and
-    debugging dist.ini a bit easier, especially for newbies who may not
-    fully understand Bundles yet.
+    *   "color-theme"
 
-    If you want to turn colors off, use "Term::ANSIcolor"'s environment
-    variable "ANSI_COLORS_DISABLED". E.g.,
+            dzil dumpphases --color-theme=<THEME>
 
-    "ANSI_COLORS_DISABLED=1 dzil dumpphases"
+        The name of a color theme to use.
 
-    Alternatively, since 0.3.0 you can specify a color-free theme:
+        Existing themes are:
 
-        dzil dumpphases --color-theme=basic::plain
+        *   "basic::blue"
+
+        *   "basic::green"
+
+        *   "basic::red"
+
+        *   "basic::plain"
 
 AUTHORS
     *   Kent Fredric <kentnl@cpan.org>
