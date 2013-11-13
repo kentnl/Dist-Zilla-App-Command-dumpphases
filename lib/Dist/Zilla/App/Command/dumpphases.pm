@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.5.1';
+  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.5.2';
 }
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
@@ -100,7 +100,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.5.1
+version 0.5.2
 
 =head1 SYNOPSIS
 
@@ -115,6 +115,35 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 ( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
 
 =for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::App::Command::dumpphases",
+    "inherits":"Dist::Zilla::App::Command",
+    "interface":"class"
+}
+
+
+=end MetaPOD::JSON
+
+=head1 DESCRIPTION
+
+Working out what Plugins will execute in which order during which phase can be a
+little confusing sometimes.
+
+This Command exists primarily to make developing Plugin Bundles and debugging
+dist.ini a bit easier, especially for newbies who may not fully understand
+Bundles yet.
+
+If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
+C<ANSI_COLORS_DISABLED>. E.g.,
+
+C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+
+Alternatively, since 0.3.0 you can specify a color-free theme:
+
+    dzil dumpphases --color-theme=basic::plain
 
 =head1 TERMINOLOGY
 
@@ -166,35 +195,6 @@ Which means it could occur as early as creating C<META.json> or it could occur a
 
 This C<App::Command> command will indeed list all of the above, but for the sake of ease of use, the "Third kind" is informally
 under the umbrella of a "phase".
-
-=begin MetaPOD::JSON v1.1.0
-
-{
-    "namespace":"Dist::Zilla::App::Command::dumpphases",
-    "inherits":"Dist::Zilla::App::Command",
-    "interface":"class"
-}
-
-
-=end MetaPOD::JSON
-
-=head1 DESCRIPTION
-
-Working out what Plugins will execute in which order during which phase can be a
-little confusing sometimes.
-
-This Command exists primarily to make developing Plugin Bundles and debugging
-dist.ini a bit easier, especially for newbies who may not fully understand
-Bundles yet.
-
-If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
-C<ANSI_COLORS_DISABLED>. E.g.,
-
-C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
-
-Alternatively, since 0.3.0 you can specify a color-free theme:
-
-    dzil dumpphases --color-theme=basic::plain
 
 =head1 AUTHORS
 
