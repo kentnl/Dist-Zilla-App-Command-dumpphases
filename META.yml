@@ -5,6 +5,8 @@ author:
   - 'Alan Young <harleypig@gmail.com>'
   - 'Oliver Mengué <dolmen@cpan.org>'
 build_requires:
+  Cwd: 0
+  Dist::Zilla::App::Tester: 0
   File::Spec: 0
   IO::Handle: 0
   IPC::Open3: 0
@@ -42,11 +44,14 @@ provides:
     file: lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
     version: v0.5.2
 requires:
+  Carp: 0
   Dist::Zilla::App: 0
   Dist::Zilla::Util::RoleDB: 0
   Module::Runtime: 0
   Moo: 0
   Moose::Autobox: 0
+  Path::ScanINC: 0
+  Path::Tiny: 0
   Role::Tiny: 0
   Scalar::Util: 0
   Term::ANSIColor: 0
@@ -61,7 +66,10 @@ resources:
 version: 0.5.2
 x_BuiltWith:
   modules:
+    Carp: 1.32
+    Cwd: 3.45
     Dist::Zilla::App: 5.006
+    Dist::Zilla::App::Tester: 5.006
     Dist::Zilla::Plugin::Author::KENTNL::MinimumPerl: 2.002000
     Dist::Zilla::Plugin::Authority: 1.006
     Dist::Zilla::Plugin::AutoPrereqs: 5.006
@@ -114,6 +122,8 @@ x_BuiltWith:
     Module::Runtime: 0.013
     Moo: 1.003001
     Moose::Autobox: 0.15
+    Path::ScanINC: 0.003
+    Path::Tiny: 0.044
     Pod::Coverage::TrustPod: 0.100003
     Role::Tiny: 1.003002
     Scalar::Util: 1.35
@@ -245,12 +255,12 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Test::Compile::PerFile:
           file:
+            - lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
             - lib/Dist/Zilla/dumpphases/Role/Theme.pm
             - lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
             - lib/Dist/Zilla/App/Command/dumpphases.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm
-            - lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
           path_translator: base64_filter
           prefix: t/00-compile

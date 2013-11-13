@@ -48,7 +48,10 @@ sub pmver {
     return sprintf('%-45s => %-10s%-15s%s', $module, $pmver, $wanted, "\n");
 }
 
+eval { $v .= pmver('Carp','any version') };
+eval { $v .= pmver('Cwd','any version') };
 eval { $v .= pmver('Dist::Zilla::App','any version') };
+eval { $v .= pmver('Dist::Zilla::App::Tester','any version') };
 eval { $v .= pmver('Dist::Zilla::Util::RoleDB','any version') };
 eval { $v .= pmver('File::Spec','any version') };
 eval { $v .= pmver('IO::Handle','any version') };
@@ -57,6 +60,8 @@ eval { $v .= pmver('Module::Build','0.4200') };
 eval { $v .= pmver('Module::Runtime','any version') };
 eval { $v .= pmver('Moo','any version') };
 eval { $v .= pmver('Moose::Autobox','any version') };
+eval { $v .= pmver('Path::ScanINC','any version') };
+eval { $v .= pmver('Path::Tiny','any version') };
 eval { $v .= pmver('Role::Tiny','any version') };
 eval { $v .= pmver('Scalar::Util','any version') };
 eval { $v .= pmver('Term::ANSIColor','any version') };
