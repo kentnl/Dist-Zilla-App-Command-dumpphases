@@ -49,7 +49,6 @@ requires:
   Dist::Zilla::Util::RoleDB: 0
   Module::Runtime: 0
   Moo: 0
-  Moose::Autobox: 0
   Path::ScanINC: 0
   Path::Tiny: 0
   Role::Tiny: 0
@@ -121,7 +120,6 @@ x_BuiltWith:
     Module::Build: 0.4200
     Module::Runtime: 0.013
     Moo: 1.003001
-    Moose::Autobox: 0.15
     Path::ScanINC: 0.003
     Path::Tiny: 0.044
     Pod::Coverage::TrustPod: 0.100003
@@ -255,13 +253,13 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Test::Compile::PerFile:
           file:
-            - lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
             - lib/Dist/Zilla/dumpphases/Role/Theme.pm
-            - lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
-            - lib/Dist/Zilla/App/Command/dumpphases.pm
-            - lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm
+            - lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
+            - lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
+            - lib/Dist/Zilla/App/Command/dumpphases.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
+            - lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
           path_translator: base64_filter
           prefix: t/00-compile
           skip: []

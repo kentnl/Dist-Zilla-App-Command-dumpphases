@@ -59,7 +59,6 @@ eval { $v .= pmver('IPC::Open3','any version') };
 eval { $v .= pmver('Module::Build','0.4200') };
 eval { $v .= pmver('Module::Runtime','any version') };
 eval { $v .= pmver('Moo','any version') };
-eval { $v .= pmver('Moose::Autobox','any version') };
 eval { $v .= pmver('Path::ScanINC','any version') };
 eval { $v .= pmver('Path::Tiny','any version') };
 eval { $v .= pmver('Role::Tiny','any version') };

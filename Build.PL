@@ -30,7 +30,6 @@ my %module_build_args = (
     "Dist::Zilla::Util::RoleDB" => 0,
     "Module::Runtime" => 0,
     "Moo" => 0,
-    "Moose::Autobox" => 0,
     "Path::ScanINC" => 0,
     "Path::Tiny" => 0,
     "Role::Tiny" => 0,
