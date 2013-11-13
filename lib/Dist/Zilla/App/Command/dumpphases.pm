@@ -22,6 +22,7 @@ use Scalar::Util qw( blessed );
 sub abstract { return 'Dump a textual representation of each phase\'s parts' }
 ## use critic
 
+
 sub opt_spec {
   return [ 'color-theme=s', 'color theme to use, ( eg: basic::blue )' ];
 }
@@ -230,6 +231,34 @@ Which means it could occur as early as creating C<META.json> or it could occur a
 
 This C<App::Command> command will indeed list all of the above, but for the sake of ease of use, the "Third kind" is informally
 under the umbrella of a "phase".
+
+=head1 METHODS
+
+=head2 C<opt_spec>
+
+This command takes one optional parameter
+
+=over 4
+
+=item * C<color-theme>
+
+The name of a color theme to use.
+
+Pre-existing themes are:
+
+=over 4
+
+=item * C<basic::blue>
+
+=item * C<basic::green>
+
+=item * C<basic::red>
+
+=item * C<basic::plain>
+
+=back
+
+=back
 
 =head1 AUTHORS
 
