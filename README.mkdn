@@ -91,6 +91,25 @@ There are 3 Primary kinds of plugin
 This `App::Command` command will indeed list all of the above, but for the sake of ease of use, the "Third kind" is informally
 under the umbrella of a "phase".
 
+# METHODS
+
+## `opt_spec`
+
+This command takes one optional parameter
+
+- `color-theme`
+
+        dzil dumpphases --color-theme=<THEME>
+
+    The name of a color theme to use.
+
+    Existing themes are:
+
+    - `basic::blue`
+    - `basic::green`
+    - `basic::red`
+    - `basic::plain`
+
 # AUTHORS
 
 - Kent Fredric <kentnl@cpan.org>

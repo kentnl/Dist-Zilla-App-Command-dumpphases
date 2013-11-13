@@ -112,6 +112,36 @@ use Scalar::Util qw( blessed );
 sub abstract { return 'Dump a textual representation of each phase\'s parts' }
 ## use critic
 
+=method C<opt_spec>
+
+This command takes one optional parameter
+
+=over 4
+
+=item * C<color-theme>
+
+    dzil dumpphases --color-theme=<THEME>
+
+The name of a color theme to use.
+
+Existing themes are:
+
+=over 4
+
+=item * C<basic::blue>
+
+=item * C<basic::green>
+
+=item * C<basic::red>
+
+=item * C<basic::plain>
+
+=back
+
+=back
+
+=cut
+
 sub opt_spec {
   return [ 'color-theme=s', 'color theme to use, ( eg: basic::blue )' ];
 }
