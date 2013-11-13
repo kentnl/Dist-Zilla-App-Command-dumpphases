@@ -105,9 +105,6 @@
          "requires" : {
             "Cwd" : "0",
             "Dist::Zilla::App::Tester" : "0",
-            "File::Spec" : "0",
-            "IO::Handle" : "0",
-            "IPC::Open3" : "0",
             "Test::More" : "1.001002"
          }
       }
@@ -206,9 +203,6 @@
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.002000",
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "1.7.2",
          "Dist::Zilla::Util::RoleDB" : "0.001000",
-         "File::Spec" : "3.45",
-         "IO::Handle" : "1.35",
-         "IPC::Open3" : "1.16",
          "Module::Build" : "0.4200",
          "Module::Runtime" : "0.013",
          "Moo" : "1.003001",
@@ -376,13 +370,13 @@
             "config" : {
                "Dist::Zilla::Plugin::Test::Compile::PerFile" : {
                   "file" : [
-                     "lib/Dist/Zilla/dumpphases/Theme/basic/green.pm",
-                     "lib/Dist/Zilla/App/Command/dumpphases.pm",
-                     "lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm",
                      "lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm",
-                     "lib/Dist/Zilla/dumpphases/Role/Theme.pm",
+                     "lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm",
                      "lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm",
-                     "lib/Dist/Zilla/dumpphases/Theme/basic/red.pm"
+                     "lib/Dist/Zilla/App/Command/dumpphases.pm",
+                     "lib/Dist/Zilla/dumpphases/Theme/basic/red.pm",
+                     "lib/Dist/Zilla/dumpphases/Theme/basic/green.pm",
+                     "lib/Dist/Zilla/dumpphases/Role/Theme.pm"
                   ],
                   "path_translator" : "base64_filter",
                   "prefix" : "t/00-compile",
@@ -689,22 +683,6 @@
             },
             "name" : "@Author::KENTNL/::Role::BundleDeps",
             "version" : "5.006"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::Test::Compile",
-            "config" : {
-               "Dist::Zilla::Plugin::Test::Compile" : {
-                  "filename" : "t/00-compile.t",
-                  "module_finder" : [
-                     ":InstallModules"
-                  ],
-                  "script_finder" : [
-                     ":ExecFiles"
-                  ]
-               }
-            },
-            "name" : "Test::Compile",
-            "version" : "2.037"
          },
          {
             "class" : "Dist::Zilla::Plugin::Prereqs",

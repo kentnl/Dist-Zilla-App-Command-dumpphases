@@ -36,7 +36,6 @@ media/theme_basic_green.png
 media/theme_basic_plain.png
 media/theme_basic_red.png
 perlcritic.rc
-t/00-compile.t
 t/00-compile/lib_Dist_Zilla_App_Command_dumpphases_pm.t
 t/00-compile/lib_Dist_Zilla_dumpphases_Role_Theme_SimpleColor_pm.t
 t/00-compile/lib_Dist_Zilla_dumpphases_Role_Theme_pm.t

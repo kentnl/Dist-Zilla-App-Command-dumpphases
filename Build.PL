@@ -44,9 +44,6 @@ my %module_build_args = (
   "test_requires" => {
     "Cwd" => 0,
     "Dist::Zilla::App::Tester" => 0,
-    "File::Spec" => 0,
-    "IO::Handle" => 0,
-    "IPC::Open3" => 0,
     "Test::More" => "1.001002"
   }
 );
@@ -55,9 +52,6 @@ my %module_build_args = (
 my %fallback_build_requires = (
   "Cwd" => 0,
   "Dist::Zilla::App::Tester" => 0,
-  "File::Spec" => 0,
-  "IO::Handle" => 0,
-  "IPC::Open3" => 0,
   "Module::Build" => "0.4200",
   "Test::More" => "1.001002"
 );
