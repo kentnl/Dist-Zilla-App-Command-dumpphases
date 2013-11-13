@@ -3,7 +3,7 @@ NAME
     each phase's parts.
 
 VERSION
-    version 0.5.0
+    version 0.5.1
 
 SYNOPSIS
       cd $PROJECT;
@@ -18,6 +18,67 @@ SYNOPSIS
     ( Everyone else can visit
     <http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/ex
     ample_01.png> )
+
+TERMINOLOGY
+    Technically speaking, this utility deals with more than just "phases",
+    it will in fact dump all plugins used, and it will in the process of
+    doing so, dump things that are part of the clearly defined "phases" that
+    occur within "Dist::Zilla".
+
+    However, if you want to be pedantic, and understand how "Dist::Zilla"
+    works, then you must understand, many of the things this module calls
+    "phases" are not so much phases.
+
+    At its core, "Dist::Zilla" has an array, on which all "Plugin"s are
+    stored.
+
+    A "Plugin", in itself, will not do very much ( at least, not unless they
+    do instantiation-time changes like "[Bootstrap::lib]"
+
+    There are 3 Primary kinds of plugin
+
+    *   Auxiliary Plugins
+
+        Plugins which exist to augment other plugins ( For instance,
+        "-FileFinder"'s ).
+
+        "Dist::Zilla" itself essentially ignores these, and their
+        consumption is entirely regulated by other "plugin"s.
+
+    *   Phase Plugins
+
+        Plugins which hook into a specific and determinate phase of the
+        "Dist::Zilla" build/test/release cycle.
+
+        These all provide primary methods, which "Dist::Zilla" directly
+        calls somewhere in its core code base.
+
+        Good examples of Phase plugins perform "-FileGatherer"
+
+    *   A Third Kind
+
+        There's a third kind of Plugin, which is somewhere between the other
+        two, which I presently lack a name for.
+
+        Like the Phases, they provide primary methods, which are called by
+        "Dist::Zilla" directly, and they provide information for
+        infrastructural components of the "Dist::Zilla" development process.
+
+        However, they're not strictly "phases", because exactly when they
+        will be called ( or if they will be called at all ) is heavily
+        dependent on usage.
+
+        For instance, "-VersionProvider", which is dependent on a few
+        variables, and is called only when its needed, the first time its
+        needed.
+
+        Which means it could occur as early as creating "META.json" or it
+        could occur as late as just before it writes the distribution out to
+        disk.
+
+    This "App::Command" command will indeed list all of the above, but for
+    the sake of ease of use, the "Third kind" is informally under the
+    umbrella of a "phase".
 
 DESCRIPTION
     Working out what Plugins will execute in which order during which phase
