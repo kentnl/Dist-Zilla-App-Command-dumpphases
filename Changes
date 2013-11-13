@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
-0.5.2 2013-11-13T01:49:46Z
+0.5.2 2013-11-13T01:51:37Z
  [00 Minor]
  - Color handling is now validated, and spews list of dynamically
    determined themes on your system
@@ -25,7 +25,7 @@ Release history for Dist-Zilla-App-Command-dumpphases
  - File::Spec
  - IO::Handle
  - IPC::Open3
- 
+
 0.5.1 2013-11-13T00:46:05Z
  [00 Doc Fix]
  - Added a TERMINOLOGY section, to help clear up the use of the term
