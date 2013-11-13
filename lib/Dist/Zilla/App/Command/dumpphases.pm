@@ -153,7 +153,7 @@ sub validate_args {
   if ( not exists $themes->{ $opt->color_theme } ) {
     require Carp;
     Carp::croak(
-      'Invalid theme specificaion <' . $opt->color_theme . '>, available themes are: ' . ( join q{, }, sort keys %{$themes} ) );
+      'Invalid theme specification <' . $opt->color_theme . '>, available themes are: ' . ( join q{, }, sort keys %{$themes} ) );
   }
 }
 
