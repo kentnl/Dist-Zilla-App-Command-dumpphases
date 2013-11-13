@@ -37,13 +37,13 @@ TERMINOLOGY
 
     There are 3 Primary kinds of plugin
 
-    *   Auxilary Plugins
+    *   Auxiliary Plugins
 
         Plugins which exist to augment other plugins ( For instance,
         "-FileFinder"'s ).
 
         "Dist::Zilla" itself essentially ignores these, and their
-        counsumption is entirely regulated by other "plugin"s.
+        consumption is entirely regulated by other "plugin"s.
 
     *   Phase Plugins
 
@@ -51,7 +51,7 @@ TERMINOLOGY
         "Dist::Zilla" build/test/release cycle.
 
         These all provide primary methods, which "Dist::Zilla" directly
-        calls somewhere in its core codebase.
+        calls somewhere in its core code base.
 
         Good examples of Phase plugins perform "-FileGatherer"
 

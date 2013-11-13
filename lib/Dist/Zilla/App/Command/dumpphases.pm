@@ -133,17 +133,17 @@ There are 3 Primary kinds of plugin
 
 =over 4
 
-=item * Auxilary Plugins
+=item * Auxiliary Plugins
 
 Plugins which exist to augment other plugins ( For instance, L<< C<-FileFinder>'s|Dist::Zilla::Role::FileFinder >> ).
 
-C<Dist::Zilla> itself essentially ignores these, and their counsumption is entirely regulated by other C<plugin>s.
+C<Dist::Zilla> itself essentially ignores these, and their consumption is entirely regulated by other C<plugin>s.
 
 =item * Phase Plugins
 
 Plugins which hook into a specific and determinate phase of the C<Dist::Zilla> build/test/release cycle.
 
-These all provide primary methods, which C<Dist::Zilla> directly calls somewhere in its core codebase.
+These all provide primary methods, which C<Dist::Zilla> directly calls somewhere in its core code base.
 
 Good examples of Phase plugins perform L<< C<-FileGatherer>|Dist::Zilla::Role::FileGatherer >>
 
