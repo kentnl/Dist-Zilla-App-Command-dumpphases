@@ -246,7 +246,7 @@ This command takes one optional parameter
 
 The name of a color theme to use.
 
-Pre-existing themes are:
+Existing themes are:
 
 =over 4
 
