@@ -247,12 +247,12 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Test::Compile::PerFile:
           file:
-            - lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
-            - lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/blue.pm
-            - lib/Dist/Zilla/App/Command/dumpphases.pm
-            - lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
             - lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
+            - lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
+            - lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
+            - lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
+            - lib/Dist/Zilla/App/Command/dumpphases.pm
             - lib/Dist/Zilla/dumpphases/Role/Theme.pm
           path_translator: base64_filter
           prefix: t/00-compile
