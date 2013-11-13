@@ -1,6 +1,10 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+ [00 Doc Fix]
+ - Added a TERMINOLOGY section, to help clear up the use of the term
+   "phase" relative to this module, as it deals with a few things that
+   aren't really "phases" in the proper sense of the term.
 
 0.5.0 2013-11-12T23:24:04Z
  [00 Major]
