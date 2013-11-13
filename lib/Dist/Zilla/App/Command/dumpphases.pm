@@ -91,18 +91,18 @@ sub execute {
   require Dist::Zilla::Util::RoleDB;
 
   for my $phase ( Dist::Zilla::Util::RoleDB->new()->phases ) {
-    my ( $label );
+    my ($label);
     $label = $phase->name;
     $label =~ s/\A-//msx;
     $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
-    push @plugins, $zilla->plugins_with($phase->name)->flatten;
+    push @plugins, $zilla->plugins_with( $phase->name )->flatten;
     next unless @plugins;
 
     $theme->print_section_header( 'Phase: ', $label );
-    $theme->print_section_prelude( 'description: ', $phase->description );
-    $theme->print_section_prelude( 'role: ', $phase->name );
+    $theme->print_section_prelude( 'description: ',  $phase->description );
+    $theme->print_section_prelude( 'role: ',         $phase->name );
     $theme->print_section_prelude( 'phase_method: ', $phase->phase_method );
 
     for my $plugin (@plugins) {
