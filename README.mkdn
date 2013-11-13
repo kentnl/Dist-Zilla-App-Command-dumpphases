@@ -4,7 +4,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 # VERSION
 
-version 0.5.1
+version 0.5.2
 
 # SYNOPSIS
 
@@ -17,6 +17,32 @@ version 0.5.1
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
 ( Everyone else can visit [http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png](http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png) )
+
+{
+    "namespace":"Dist::Zilla::App::Command::dumpphases",
+    "inherits":"Dist::Zilla::App::Command",
+    "interface":"class"
+}
+
+
+
+# DESCRIPTION
+
+Working out what Plugins will execute in which order during which phase can be a
+little confusing sometimes.
+
+This Command exists primarily to make developing Plugin Bundles and debugging
+dist.ini a bit easier, especially for newbies who may not fully understand
+Bundles yet.
+
+If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](https://metacpan.org/pod/Term::ANSIColor)
+`ANSI_COLORS_DISABLED`. E.g.,
+
+`ANSI_COLORS_DISABLED=1 dzil dumpphases`
+
+Alternatively, since 0.3.0 you can specify a color-free theme:
+
+    dzil dumpphases --color-theme=basic::plain
 
 # TERMINOLOGY
 
@@ -64,32 +90,6 @@ There are 3 Primary kinds of plugin
 
 This `App::Command` command will indeed list all of the above, but for the sake of ease of use, the "Third kind" is informally
 under the umbrella of a "phase".
-
-{
-    "namespace":"Dist::Zilla::App::Command::dumpphases",
-    "inherits":"Dist::Zilla::App::Command",
-    "interface":"class"
-}
-
-
-
-# DESCRIPTION
-
-Working out what Plugins will execute in which order during which phase can be a
-little confusing sometimes.
-
-This Command exists primarily to make developing Plugin Bundles and debugging
-dist.ini a bit easier, especially for newbies who may not fully understand
-Bundles yet.
-
-If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](https://metacpan.org/pod/Term::ANSIColor)
-`ANSI_COLORS_DISABLED`. E.g.,
-
-`ANSI_COLORS_DISABLED=1 dzil dumpphases`
-
-Alternatively, since 0.3.0 you can specify a color-free theme:
-
-    dzil dumpphases --color-theme=basic::plain
 
 # AUTHORS
 
