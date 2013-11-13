@@ -242,6 +242,8 @@ This command takes one optional parameter
 
 =item * C<color-theme>
 
+    dzil dumpphases --color-theme=<THEME>
+
 The name of a color theme to use.
 
 Pre-existing themes are:
