@@ -1,6 +1,6 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
-0.5.2 2013-11-13T01:51:37Z
+0.6.0 2013-11-13T01:52:39Z
  [00 Minor]
  - Color handling is now validated, and spews list of dynamically
    determined themes on your system
