@@ -7,6 +7,7 @@ Release history for Dist-Zilla-App-Command-dumpphases
  - TERMINOLOGY documentation moved down
  - Tests added (Finally!)
  - Moose autobox code removed.
+ - Actually remove Test::Compile
 
  [Dependencies::Added / runtime requires]
  - Carp
@@ -19,6 +20,11 @@ Release history for Dist-Zilla-App-Command-dumpphases
 
  [Dependencies::Removed / runtime requires]
  - Moose::Autobox
+
+ [Dependencies::Removed / test requires]
+ - File::Spec
+ - IO::Handle
+ - IPC::Open3
 
 0.5.1 2013-11-13T00:46:05Z
  [00 Doc Fix]
