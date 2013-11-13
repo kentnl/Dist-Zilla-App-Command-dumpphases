@@ -117,6 +117,42 @@ sub opt_spec {
   return [ 'color-theme=s', 'color theme to use, ( eg: basic::blue )' ];
 }
 
+sub validate_args {
+  my ( $self, $opt, $args ) = @_;
+  return unless defined $opt->color_theme;
+  my $themes = $self->_available_themes;
+  if ( not exists $themes->{ $opt->color_theme } ) {
+    require Carp;
+    Carp::croak(
+      'Invalid theme specificaion <' . $opt->color_theme . '>, available themes are: ' . ( join q{, }, sort keys %{$themes} ) );
+  }
+}
+
+sub _available_themes {
+  my ($self) = @_;
+  require Path::ScanINC;
+  my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
+  my (%themes);
+  require Path::Tiny;
+  for my $dir (@theme_dirs) {
+    my $it = Path::Tiny->new($dir)->iterator(
+      {
+        recurse         => 1,
+        follow_symlinks => 0,
+      }
+    );
+    while ( my $item = $it->() ) {
+      next unless $item =~ /[.]pm\z/msx;
+      next unless -f $item;
+      my $theme_name = $item->relative($dir);
+      $theme_name =~ s{[.]pm\z}{}msx;
+      $theme_name =~ s{/}{::}msxg;
+      $themes{$theme_name} = 1;
+    }
+  }
+  return \%themes;
+}
+
 sub _get_color_theme {
   my ( $self, $opt, $default ) = @_;
   return $default unless $opt->color_theme;
