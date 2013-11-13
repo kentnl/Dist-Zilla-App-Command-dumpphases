@@ -105,7 +105,6 @@ under the umbrella of a "phase".
 =cut
 
 use Dist::Zilla::App -command;
-use Moose::Autobox;
 use Try::Tiny;
 use Scalar::Util qw( blessed );
 
@@ -184,7 +183,7 @@ sub execute {
     $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
-    push @plugins, $zilla->plugins_with( $phase->name )->flatten;
+    push @plugins, @{$zilla->plugins_with( $phase->name )};
     next unless @plugins;
 
     $theme->print_section_header( 'Phase: ', $label );
