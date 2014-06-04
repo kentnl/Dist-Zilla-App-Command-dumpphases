@@ -7,6 +7,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: A blue color theme for C<dzil dumpphases>
 
+# AUTHORITY
+
 =begin MetaPOD::JSON v1.1.0
 
 {

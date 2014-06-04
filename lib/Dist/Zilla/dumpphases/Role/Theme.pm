@@ -7,6 +7,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: Output formatting themes for C<dzil dumpphases>
 
+# AUTHORITY
+
 use Role::Tiny;
 
 =begin MetaPOD::JSON v1.1.0
