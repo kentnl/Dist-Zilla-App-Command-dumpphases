@@ -55,8 +55,9 @@ requires:
   Scalar::Util: '0'
   Term::ANSIColor: '0'
   Try::Tiny: '0'
-  perl: '5.006'
+  perl: '5.008'
   strict: '0'
+  utf8: '0'
   warnings: '0'
 resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-App-Command-dumpphases/issues
@@ -134,6 +135,7 @@ x_BuiltWith:
     Test::Pod::Coverage: '1.08'
     Try::Tiny: '0.22'
     strict: '1.08'
+    utf8: '1.13'
     version: '0.9908'
     warnings: '1.23'
   perl:
