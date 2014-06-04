@@ -32,9 +32,9 @@ dist.ini a bit easier, especially for newbies who may not fully understand
 Bundles yet.
 
 If you want to turn colors off, use [`Term::ANSIcolor`'s environment variable](https://metacpan.org/pod/Term::ANSIColor)
-`ANSI_COLORS_DISABLED`. E.g.,
+`ANSI_COLORS_DISABLED`. E.g:
 
-`ANSI_COLORS_DISABLED=1 dzil dumpphases`
+    ANSI_COLORS_DISABLED=1 dzil dumpphases
 
 Alternatively, since 0.3.0 you can specify a color-free theme:
 
