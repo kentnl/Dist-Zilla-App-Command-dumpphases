@@ -7,7 +7,7 @@ package Dist::Zilla::dumpphases::Role::Theme;
 
 our $VERSION = '1.000000';
 
-# ABSTRACT: Output formatting themes for C<dzil dumpphases>
+# ABSTRACT: Output formatting themes for dzil dumpphases
 
 # AUTHORITY
 

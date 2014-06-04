@@ -7,7 +7,7 @@ package Dist::Zilla::dumpphases::Theme::basic::plain;
 
 our $VERSION = '1.000000';
 
-# ABSTRACT: A plain-text theme for C<dzil dumpphases>
+# ABSTRACT: A plain-text theme for dzil dumpphases
 
 # AUTHORITY
 

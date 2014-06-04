@@ -7,7 +7,7 @@ package Dist::Zilla::dumpphases::Theme::basic::green;
 
 our $VERSION = '1.000000';
 
-# ABSTRACT: A green color theme for C<dzil dumpphases>
+# ABSTRACT: A green color theme for dzil dumpphases
 
 # AUTHORITY
 
