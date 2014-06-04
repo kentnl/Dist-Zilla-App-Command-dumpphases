@@ -51,7 +51,7 @@ many of the things this module calls "phases" are not so much phases.
 
 At its core, `Dist::Zilla` has an array, on which all [`Plugin`s](https://metacpan.org/pod/Dist::Zilla::Role::Plugin) are stored.
 
-A `Plugin`, in itself, will not do very much ( at least, not unless they do instantiation-time changes like [`[Bootstrap::lib]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Bootstrap::lib)
+A `Plugin`, in itself, will not do very much ( at least, not unless they do instantiation-time changes like [`[Bootstrap::lib]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Bootstrap::lib) )
 
 There are 3 Primary kinds of plugin
 
