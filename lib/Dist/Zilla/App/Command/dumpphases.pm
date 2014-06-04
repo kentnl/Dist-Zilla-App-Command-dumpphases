@@ -2,14 +2,104 @@ use strict;
 use warnings;
 
 package Dist::Zilla::App::Command::dumpphases;
-BEGIN {
-  $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.6.0';
-}
-
+$Dist::Zilla::App::Command::dumpphases::VERSION = '0.006001';
 # ABSTRACT: Dump a textual representation of each phase's parts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -21,6 +111,35 @@ use Scalar::Util qw( blessed );
 ## no critic ( ProhibitAmbiguousNames)
 sub abstract { return 'Dump a textual representation of each phase\'s parts' }
 ## use critic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 sub opt_spec {
@@ -136,7 +255,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.6.0
+version 0.006001
 
 =head1 SYNOPSIS
 
@@ -282,7 +401,7 @@ Oliver Mengué <dolmen@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -2,14 +2,27 @@ use strict;
 use warnings;
 
 package Dist::Zilla::dumpphases::Theme::basic::plain;
-BEGIN {
-  $Dist::Zilla::dumpphases::Theme::basic::plain::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.6.0';
-}
-
+$Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.006001';
 # ABSTRACT: A plain-text theme for C<dzil dumpphases>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -18,16 +31,44 @@ use Moo;
 with 'Dist::Zilla::dumpphases::Role::Theme';
 
 
+
+
+
+
+
+
+
+
+
+
 sub print_section_header {
   my ( $self, $label, $value ) = @_;
   return printf "\n%s%s\n", $label, $value;
 }
 
 
+
+
+
+
+
+
+
+
+
 sub print_section_prelude {
   my ( $self, $label, $value ) = @_;
   return printf "%s%s\n", ' - ' . $label, $value;
 }
+
+
+
+
+
+
+
+
+
 
 
 sub print_star_assoc {
@@ -49,7 +90,7 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for C<dzil dum
 
 =head1 VERSION
 
-version 0.6.0
+version 0.006001
 
 =head1 SYNOPSIS
 
@@ -116,7 +157,7 @@ Oliver Mengué <dolmen@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
