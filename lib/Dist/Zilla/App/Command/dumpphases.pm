@@ -108,7 +108,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-use Dist::Zilla::App -command;
+use Dist::Zilla::App '-command';
 use Try::Tiny;
 use Scalar::Util qw( blessed );
 

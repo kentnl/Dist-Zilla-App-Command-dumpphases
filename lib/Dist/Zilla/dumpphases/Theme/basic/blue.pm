@@ -28,7 +28,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-use Moo;
+use Moo qw( with );
 
 with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
 
