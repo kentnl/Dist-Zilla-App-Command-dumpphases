@@ -30,7 +30,7 @@ our $VERSION = '1.000000';
 
 =cut
 
-use Moo;
+use Moo qw( with );
 
 with 'Dist::Zilla::dumpphases::Role::Theme';
 

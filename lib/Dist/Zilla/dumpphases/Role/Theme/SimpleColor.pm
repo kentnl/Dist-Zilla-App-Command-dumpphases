@@ -10,7 +10,7 @@ our $VERSION = '1.000000';
 
 # AUTHORITY
 
-use Role::Tiny;
+use Role::Tiny qw( requires );
 
 =head1 SYNOPSIS
 

@@ -108,7 +108,7 @@ under the umbrella of a "phase".
 
 =cut
 
-use Dist::Zilla::App -command;
+use Dist::Zilla::App '-command';
 use Try::Tiny;
 use Scalar::Util qw( blessed );
 
