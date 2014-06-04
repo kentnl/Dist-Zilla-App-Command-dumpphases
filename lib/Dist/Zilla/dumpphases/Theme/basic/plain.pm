@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Dist::Zilla::dumpphases::Theme::basic::plain;
-$Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.006001';
+
+our $VERSION = '1.000000';
+
 # ABSTRACT: A plain-text theme for C<dzil dumpphases>
 
 
@@ -90,7 +92,7 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for C<dzil dum
 
 =head1 VERSION
 
-version 0.006001
+version 1.000000
 
 =head1 SYNOPSIS
 

@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Dist::Zilla::dumpphases::Role::Theme;
-$Dist::Zilla::dumpphases::Role::Theme::VERSION = '0.006001';
+
+our $VERSION = '1.000000';
+
 # ABSTRACT: Output formatting themes for C<dzil dumpphases>
 
 use Role::Tiny;
@@ -79,7 +81,7 @@ Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for C<dzil dumpp
 
 =head1 VERSION
 
-version 0.006001
+version 1.000000
 
 =begin MetaPOD::JSON v1.1.0
 

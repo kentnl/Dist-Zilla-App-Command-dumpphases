@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Dist::Zilla::App::Command::dumpphases;
-$Dist::Zilla::App::Command::dumpphases::VERSION = '0.006001';
+
+our $VERSION = '1.000000';
+
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
 
@@ -213,7 +215,7 @@ sub execute {
     $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
-    push @plugins, @{$zilla->plugins_with( $phase->name )};
+    push @plugins, @{ $zilla->plugins_with( $phase->name ) };
     next unless @plugins;
 
     $theme->print_section_header( 'Phase: ', $label );
@@ -255,7 +257,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.006001
+version 1.000000
 
 =head1 SYNOPSIS
 

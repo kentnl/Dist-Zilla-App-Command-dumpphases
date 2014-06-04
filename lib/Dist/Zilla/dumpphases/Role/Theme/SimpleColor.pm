@@ -3,7 +3,9 @@ use strict;
 use warnings;
 
 package Dist::Zilla::dumpphases::Role::Theme::SimpleColor;
-$Dist::Zilla::dumpphases::Role::Theme::SimpleColor::VERSION = '0.006001';
+
+our $VERSION = '1.000000';
+
 use Role::Tiny;
 
 # ABSTRACT: A role for themes that are simple single-color themes with variations of bold/uncolored.
@@ -139,7 +141,7 @@ Dist::Zilla::dumpphases::Role::Theme::SimpleColor - A role for themes that are s
 
 =head1 VERSION
 
-version 0.006001
+version 1.000000
 
 =head1 SYNOPSIS
 

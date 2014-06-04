@@ -16,6 +16,7 @@ normal_form       = numify
 mantissa          = 6
 toolkit           = eumm
 toolkit_hardness  = soft
+bumpversions      = 1
 
 ; version_major     = 0
 ; version_minor     = 1

@@ -2,7 +2,9 @@ use strict;
 use warnings;
 
 package Dist::Zilla::dumpphases::Theme::basic::blue;
-$Dist::Zilla::dumpphases::Theme::basic::blue::VERSION = '0.006001';
+
+our $VERSION = '1.000000';
+
 # ABSTRACT: A blue color theme for C<dzil dumpphases>
 
 
@@ -52,7 +54,7 @@ Dist::Zilla::dumpphases::Theme::basic::blue - A blue color theme for C<dzil dump
 
 =head1 VERSION
 
-version 0.006001
+version 1.000000
 
 =head1 SYNOPSIS
 
