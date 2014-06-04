@@ -20,7 +20,7 @@ $bundle->configure;
 
 my @stopwords = (
   qw(
-    screenshot Plugin Plugins ini Mengué instantiation
+    screenshot Plugin Plugins ini Mengué instantiation dzil dumpphases
     )
 );
 for my $wordlist (@stopwords) {

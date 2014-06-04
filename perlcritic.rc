@@ -124,7 +124,7 @@ allow_includes = 1
 
 [Documentation::PodSpelling]
 spell_command = aspell list --lang en_US
-stop_words = screenshot Plugin Plugins ini Mengué instantiation
+stop_words = screenshot Plugin Plugins ini Mengué instantiation dzil dumpphases
 
 [Documentation::ProhibitAdjacentLinks]
 
