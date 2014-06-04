@@ -298,9 +298,9 @@ dist.ini a bit easier, especially for newbies who may not fully understand
 Bundles yet.
 
 If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
-C<ANSI_COLORS_DISABLED>. E.g.,
+C<ANSI_COLORS_DISABLED>. E.g:
 
-C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+  ANSI_COLORS_DISABLED=1 dzil dumpphases
 
 Alternatively, since 0.3.0 you can specify a color-free theme:
 
@@ -317,7 +317,7 @@ many of the things this module calls "phases" are not so much phases.
 
 At its core, C<Dist::Zilla> has an array, on which all L<< C<Plugin>s|Dist::Zilla::Role::Plugin >> are stored.
 
-A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >>
+A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >> )
 
 There are 3 Primary kinds of plugin
 
