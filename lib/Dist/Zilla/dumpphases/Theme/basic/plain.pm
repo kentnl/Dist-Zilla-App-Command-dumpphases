@@ -1,5 +1,7 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::dumpphases::Theme::basic::plain;
 
@@ -46,7 +48,7 @@ with 'Dist::Zilla::dumpphases::Role::Theme';
 
 
 sub print_section_header {
-  my ( $self, $label, $value ) = @_;
+  my ( undef, $label, $value ) = @_;
   return printf "\n%s%s\n", $label, $value;
 }
 
@@ -61,7 +63,7 @@ sub print_section_header {
 
 
 sub print_section_prelude {
-  my ( $self, $label, $value ) = @_;
+  my ( undef, $label, $value ) = @_;
   return printf "%s%s\n", ' - ' . $label, $value;
 }
 
@@ -76,7 +78,7 @@ sub print_section_prelude {
 
 
 sub print_star_assoc {
-  my ( $self, $name, $value ) = @_;
+  my ( undef, $name, $value ) = @_;
   return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
 
