@@ -12,7 +12,8 @@ copyright_holder = Kent Fredric <kentnl@cpan.org>
 [@Author::KENTNL]
 :version          = 1.0.8
 git_versions      = 1
-normal_form       = normal_3
+normal_form       = numify
+mantissa          = 6
 
 ; version_major     = 0
 ; version_minor     = 1
