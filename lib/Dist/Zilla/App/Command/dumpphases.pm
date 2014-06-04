@@ -3,6 +3,8 @@ use warnings;
 
 package Dist::Zilla::App::Command::dumpphases;
 
+our $VERSION = '1.000000';
+
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
 =head1 SYNOPSIS

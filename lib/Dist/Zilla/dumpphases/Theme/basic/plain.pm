@@ -3,6 +3,8 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Theme::basic::plain;
 
+our $VERSION = '1.000000';
+
 # ABSTRACT: A plain-text theme for C<dzil dumpphases>
 
 =begin MetaPOD::JSON v1.1.0

@@ -3,6 +3,8 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Theme::basic::red;
 
+our $VERSION = '1.000000';
+
 # ABSTRACT: A red color theme for C<dzil dumpphases>
 #
 

@@ -3,6 +3,8 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Role::Theme;
 
+our $VERSION = '1.000000';
+
 # ABSTRACT: Output formatting themes for C<dzil dumpphases>
 
 use Role::Tiny;
