@@ -7,6 +7,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: A plain-text theme for C<dzil dumpphases>
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 
 
 

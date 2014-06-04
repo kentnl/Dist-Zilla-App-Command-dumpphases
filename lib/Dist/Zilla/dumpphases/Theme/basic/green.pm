@@ -7,6 +7,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: A green color theme for C<dzil dumpphases>
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 
 
 

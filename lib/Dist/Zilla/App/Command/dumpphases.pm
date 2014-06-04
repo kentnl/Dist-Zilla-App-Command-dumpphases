@@ -7,6 +7,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 
 
 

@@ -7,6 +7,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: Output formatting themes for C<dzil dumpphases>
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Role::Tiny;
 
 
