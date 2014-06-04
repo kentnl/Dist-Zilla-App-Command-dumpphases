@@ -174,7 +174,7 @@ sub _available_themes {
       {
         recurse         => 1,
         follow_symlinks => 0,
-      }
+      },
     );
     while ( my $item = $it->() ) {
       next unless $item =~ /[.]pm\z/msx;
