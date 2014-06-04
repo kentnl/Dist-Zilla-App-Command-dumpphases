@@ -178,7 +178,7 @@ sub _available_themes {
     );
     while ( my $item = $it->() ) {
       next unless $item =~ /[.]pm\z/msx;
-      next unless -f $item;
+      next if -d $item;
       my $theme_name = $item->relative($dir);
       $theme_name =~ s{[.]pm\z}{}msx;
       $theme_name =~ s{/}{::}msxg;
@@ -219,7 +219,7 @@ sub execute {
     $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
-    push @plugins, @{$zilla->plugins_with( $phase->name )};
+    push @plugins, @{ $zilla->plugins_with( $phase->name ) };
     next unless @plugins;
 
     $theme->print_section_header( 'Phase: ', $label );

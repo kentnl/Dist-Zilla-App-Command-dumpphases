@@ -7,7 +7,7 @@ package Dist::Zilla::dumpphases::Theme::basic::plain;
 
 our $VERSION = '1.000000';
 
-# ABSTRACT: A plain-text theme for C<dzil dumpphases>
+# ABSTRACT: A plain-text theme for dzil dumpphases
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -92,7 +92,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for C<dzil dumpphases>
+Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for dzil dumpphases
 
 =head1 VERSION
 

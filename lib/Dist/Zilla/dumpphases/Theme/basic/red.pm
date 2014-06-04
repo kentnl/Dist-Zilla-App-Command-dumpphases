@@ -7,7 +7,7 @@ package Dist::Zilla::dumpphases::Theme::basic::red;
 
 our $VERSION = '1.000000';
 
-# ABSTRACT: A red color theme for C<dzil dumpphases>
+# ABSTRACT: A red color theme for dzil dumpphases
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -54,7 +54,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::dumpphases::Theme::basic::red - A red color theme for C<dzil dumpphases>
+Dist::Zilla::dumpphases::Theme::basic::red - A red color theme for dzil dumpphases
 
 =head1 VERSION
 

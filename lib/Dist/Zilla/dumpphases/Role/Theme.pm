@@ -7,7 +7,7 @@ package Dist::Zilla::dumpphases::Role::Theme;
 
 our $VERSION = '1.000000';
 
-# ABSTRACT: Output formatting themes for C<dzil dumpphases>
+# ABSTRACT: Output formatting themes for dzil dumpphases
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
@@ -81,7 +81,7 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for C<dzil dumpphases>
+Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for dzil dumpphases
 
 =head1 VERSION
 
