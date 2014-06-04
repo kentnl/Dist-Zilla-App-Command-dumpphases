@@ -4,7 +4,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 # VERSION
 
-version 0.6.0
+version 0.006001
 
 # SYNOPSIS
 
@@ -16,15 +16,11 @@ version 0.6.0
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
-( Everyone else can visit [http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png](http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png) )
+( Everyone else can visit [http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example\_01.png](http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png) )
 
-{
-    "namespace":"Dist::Zilla::App::Command::dumpphases",
-    "inherits":"Dist::Zilla::App::Command",
-    "interface":"class"
-}
-
-
+<div>
+    <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+</div>
 
 # DESCRIPTION
 
@@ -114,11 +110,11 @@ This command takes one optional parameter
 
 - Kent Fredric <kentnl@cpan.org>
 - Alan Young <harleypig@gmail.com>
-- Oliver Mengué <dolmen@cpan.org>
+- Oliver MenguÃ© <dolmen@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
