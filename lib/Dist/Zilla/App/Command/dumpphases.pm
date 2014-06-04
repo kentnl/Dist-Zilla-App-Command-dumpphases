@@ -153,7 +153,7 @@ sub opt_spec {
 }
 
 sub validate_args {
-  my ( $self, $opt, $args ) = @_;
+  my ( $self, $opt, undef ) = @_;
   return unless defined $opt->color_theme;
   my $themes = $self->_available_themes;
   if ( not exists $themes->{ $opt->color_theme } ) {
@@ -164,7 +164,7 @@ sub validate_args {
 }
 
 sub _available_themes {
-  my ($self) = @_;
+  my (undef) = @_;
   require Path::ScanINC;
   my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
   my (%themes);
@@ -189,13 +189,13 @@ sub _available_themes {
 }
 
 sub _get_color_theme {
-  my ( $self, $opt, $default ) = @_;
+  my ( undef, $opt, $default ) = @_;
   return $default unless $opt->color_theme;
   return $opt->color_theme;
 }
 
 sub _get_theme_instance {
-  my ( $self, $theme ) = @_;
+  my ( undef, $theme ) = @_;
   require Module::Runtime;
   my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $theme );
   Module::Runtime::require_module($theme_module);
@@ -203,7 +203,7 @@ sub _get_theme_instance {
 }
 
 sub execute {
-  my ( $self, $opt, $args ) = @_;
+  my ( $self, $opt, undef ) = @_;
   my $zilla = $self->zilla;
 
   my $theme = $self->_get_theme_instance( $self->_get_color_theme( $opt, 'basic::blue' ) );
