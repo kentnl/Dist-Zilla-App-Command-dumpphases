@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Role::Theme;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 # ABSTRACT: Output formatting themes for dzil dumpphases
 

@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+1.000000 2014-06-05T00:01:36Z
  [00 Major]
  - Moderate packaging changes that will affect hand-operated downstreams.
 
