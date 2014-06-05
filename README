@@ -3,7 +3,7 @@ NAME
     each phase's parts.
 
 VERSION
-    version 0.6.0
+    version 1.000000
 
 SYNOPSIS
       cd $PROJECT;
@@ -28,9 +28,9 @@ DESCRIPTION
     fully understand Bundles yet.
 
     If you want to turn colors off, use "Term::ANSIcolor"'s environment
-    variable "ANSI_COLORS_DISABLED". E.g.,
+    variable "ANSI_COLORS_DISABLED". E.g:
 
-    "ANSI_COLORS_DISABLED=1 dzil dumpphases"
+      ANSI_COLORS_DISABLED=1 dzil dumpphases
 
     Alternatively, since 0.3.0 you can specify a color-free theme:
 
@@ -50,7 +50,7 @@ TERMINOLOGY
     stored.
 
     A "Plugin", in itself, will not do very much ( at least, not unless they
-    do instantiation-time changes like "[Bootstrap::lib]"
+    do instantiation-time changes like "[Bootstrap::lib]" )
 
     There are 3 Primary kinds of plugin
 
@@ -125,7 +125,7 @@ AUTHORS
     *   Oliver Mengué <dolmen@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+    This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

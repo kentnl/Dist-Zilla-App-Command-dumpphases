@@ -1,37 +1,84 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::dumpphases::Theme::basic::plain;
-BEGIN {
-  $Dist::Zilla::dumpphases::Theme::basic::plain::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::dumpphases::Theme::basic::plain::VERSION = '0.6.0';
-}
 
-# ABSTRACT: A plain-text theme for C<dzil dumpphases>
+our $VERSION = '1.000000';
+
+# ABSTRACT: A plain-text theme for dzil dumpphases
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-use Moo;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use Moo qw( with );
 
 with 'Dist::Zilla::dumpphases::Role::Theme';
 
 
+
+
+
+
+
+
+
+
+
+
 sub print_section_header {
-  my ( $self, $label, $value ) = @_;
+  my ( undef, $label, $value ) = @_;
   return printf "\n%s%s\n", $label, $value;
 }
 
 
+
+
+
+
+
+
+
+
+
 sub print_section_prelude {
-  my ( $self, $label, $value ) = @_;
+  my ( undef, $label, $value ) = @_;
   return printf "%s%s\n", ' - ' . $label, $value;
 }
 
 
+
+
+
+
+
+
+
+
+
 sub print_star_assoc {
-  my ( $self, $name, $value ) = @_;
+  my ( undef, $name, $value ) = @_;
   return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
 
@@ -45,11 +92,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for C<dzil dumpphases>
+Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for dzil dumpphases
 
 =head1 VERSION
 
-version 0.6.0
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -116,7 +163,7 @@ Oliver Mengué <dolmen@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

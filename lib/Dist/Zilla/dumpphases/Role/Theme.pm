@@ -1,17 +1,72 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::dumpphases::Role::Theme;
-BEGIN {
-  $Dist::Zilla::dumpphases::Role::Theme::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::dumpphases::Role::Theme::VERSION = '0.6.0';
-}
 
-# ABSTRACT: Output formatting themes for C<dzil dumpphases>
+our $VERSION = '1.000000';
 
-use Role::Tiny;
+# ABSTRACT: Output formatting themes for dzil dumpphases
+
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Role::Tiny qw( requires );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -29,11 +84,11 @@ __END__
 
 =head1 NAME
 
-Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for C<dzil dumpphases>
+Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for dzil dumpphases
 
 =head1 VERSION
 
-version 0.6.0
+version 1.000000
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -61,11 +116,13 @@ recommended formatting is:
 
     \s  * \s label \s => \s $value
 
-Most of the time, C<$label> will be an alias of some kind (e.g: an instance name), and $value will be the thing that alias refers to (e.g.: an instances class).
+Most of the time, C<$label> will be an alias of some kind (e.g: an instance name), and $value will be the thing that alias
+refers to (e.g.: an instances class).
 
 =head2 C<print_section_prelude>
 
-Will be passed meta-info pertaining to the section currently being dumped, such as section descriptions, or applicable roles for sections.
+Will be passed meta-info pertaining to the section currently being dumped, such as section descriptions, or applicable roles
+for sections.
 
     $theme->print_section_prelude($label, $value);
 
@@ -79,7 +136,8 @@ Will be passed context about a dump stage that is about to be detailed.
 
     $theme->print_section_header($label, $value);
 
-C<$label> will be a the "kind" of dump that is, for detailing specific phases, C<$label> will be "Phase", and C<$value> will be a simple descriptor for that phase. ( e.g.: Phase , Prune files , or something like that ).
+C<$label> will be a the "kind" of dump that is, for detailing specific phases, C<$label> will be "Phase", and C<$value> will be
+a simple descriptor for that phase. ( e.g.: Phase , Prune files , or something like that ).
 
 Recommended format is simply
 
@@ -105,7 +163,7 @@ Oliver Mengué <dolmen@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

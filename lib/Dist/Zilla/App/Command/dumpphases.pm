@@ -1,20 +1,116 @@
+use 5.008;    # utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::App::Command::dumpphases;
-BEGIN {
-  $Dist::Zilla::App::Command::dumpphases::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::App::Command::dumpphases::VERSION = '0.6.0';
-}
+
+our $VERSION = '1.000000';
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-use Dist::Zilla::App -command;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use Dist::Zilla::App '-command';
 use Try::Tiny;
 use Scalar::Util qw( blessed );
 
@@ -23,12 +119,41 @@ sub abstract { return 'Dump a textual representation of each phase\'s parts' }
 ## use critic
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub opt_spec {
   return [ 'color-theme=s', 'color theme to use, ( eg: basic::blue )' ];
 }
 
 sub validate_args {
-  my ( $self, $opt, $args ) = @_;
+  my ( $self, $opt, undef ) = @_;
   return unless defined $opt->color_theme;
   my $themes = $self->_available_themes;
   if ( not exists $themes->{ $opt->color_theme } ) {
@@ -39,7 +164,7 @@ sub validate_args {
 }
 
 sub _available_themes {
-  my ($self) = @_;
+  my (undef) = @_;
   require Path::ScanINC;
   my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
   my (%themes);
@@ -49,11 +174,11 @@ sub _available_themes {
       {
         recurse         => 1,
         follow_symlinks => 0,
-      }
+      },
     );
     while ( my $item = $it->() ) {
       next unless $item =~ /[.]pm\z/msx;
-      next unless -f $item;
+      next if -d $item;
       my $theme_name = $item->relative($dir);
       $theme_name =~ s{[.]pm\z}{}msx;
       $theme_name =~ s{/}{::}msxg;
@@ -64,13 +189,13 @@ sub _available_themes {
 }
 
 sub _get_color_theme {
-  my ( $self, $opt, $default ) = @_;
+  my ( undef, $opt, $default ) = @_;
   return $default unless $opt->color_theme;
   return $opt->color_theme;
 }
 
 sub _get_theme_instance {
-  my ( $self, $theme ) = @_;
+  my ( undef, $theme ) = @_;
   require Module::Runtime;
   my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $theme );
   Module::Runtime::require_module($theme_module);
@@ -78,7 +203,7 @@ sub _get_theme_instance {
 }
 
 sub execute {
-  my ( $self, $opt, $args ) = @_;
+  my ( $self, $opt, undef ) = @_;
   my $zilla = $self->zilla;
 
   my $theme = $self->_get_theme_instance( $self->_get_color_theme( $opt, 'basic::blue' ) );
@@ -94,7 +219,7 @@ sub execute {
     $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
-    push @plugins, @{$zilla->plugins_with( $phase->name )};
+    push @plugins, @{ $zilla->plugins_with( $phase->name ) };
     next unless @plugins;
 
     $theme->print_section_header( 'Phase: ', $label );
@@ -136,7 +261,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 0.6.0
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -173,9 +298,9 @@ dist.ini a bit easier, especially for newbies who may not fully understand
 Bundles yet.
 
 If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
-C<ANSI_COLORS_DISABLED>. E.g.,
+C<ANSI_COLORS_DISABLED>. E.g:
 
-C<ANSI_COLORS_DISABLED=1 dzil dumpphases>
+  ANSI_COLORS_DISABLED=1 dzil dumpphases
 
 Alternatively, since 0.3.0 you can specify a color-free theme:
 
@@ -192,7 +317,7 @@ many of the things this module calls "phases" are not so much phases.
 
 At its core, C<Dist::Zilla> has an array, on which all L<< C<Plugin>s|Dist::Zilla::Role::Plugin >> are stored.
 
-A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >>
+A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >> )
 
 There are 3 Primary kinds of plugin
 
@@ -282,7 +407,7 @@ Oliver Mengué <dolmen@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
