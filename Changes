@@ -1,6 +1,19 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+ [00 Major]
+ - Moderate packaging changes that will affect hand-operated downstreams.
+
+ [01 New Version Scheme]
+ - Version scheme is now x.yyyyyy instead of x.y.z
+ - https://questhub.io/realm/perl/quest/5388d3a9bbd0be2224000129
+ - This is the primary reason for the 1.x on the box.
+
+ [02 Switched to EUMM]
+ - Used ExtUtils::MakeMaker for deployment instead of Module::Build
+ - https://questhub.io/realm/perl/quest/5388cc12bbd0be5b2500011f
+ - Dependencies softened.
+
  [Dependencies::Stats]
  - Dependencies changed since 0.6.0, see Changes.deps* for details
  - build: -1
