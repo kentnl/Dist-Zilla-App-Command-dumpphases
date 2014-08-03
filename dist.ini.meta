@@ -17,6 +17,8 @@ mantissa          = 6
 toolkit           = eumm
 toolkit_hardness  = soft
 bumpversions      = 1
+copyfiles         = LICENSE
+srcreadme         = mkdn
 
 ; version_major     = 0
 ; version_minor     = 1
@@ -29,3 +31,4 @@ bumpversions      = 1
 twitter_hash_tags = #perl #cpan
 
 [Prereqs]
+Path::ScanINC = 0.011 ; Win32 fixes

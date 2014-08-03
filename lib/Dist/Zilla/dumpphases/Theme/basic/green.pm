@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Theme::basic::green;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 # ABSTRACT: A green color theme for dzil dumpphases
 
@@ -58,7 +58,7 @@ Dist::Zilla::dumpphases::Theme::basic::green - A green color theme for dzil dump
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 SYNOPSIS
 
