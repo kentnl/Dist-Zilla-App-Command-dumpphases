@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Theme::basic::blue;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # ABSTRACT: A blue color theme for dzil dumpphases
 

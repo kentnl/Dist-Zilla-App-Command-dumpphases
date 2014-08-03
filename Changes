@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+1.000001 2014-08-03T04:00:28Z
  [Bugfix]
  - Require a newer Path::ScanINC due to Win32 issues.
 
