@@ -3,7 +3,7 @@ NAME
     each phase's parts.
 
 VERSION
-    version 1.000001
+    version 1.000002
 
 SYNOPSIS
       cd $PROJECT;
