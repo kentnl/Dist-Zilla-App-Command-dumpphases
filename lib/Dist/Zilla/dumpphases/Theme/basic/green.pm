@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Theme::basic::green;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # ABSTRACT: A green color theme for dzil dumpphases
 
@@ -58,7 +58,7 @@ Dist::Zilla::dumpphases::Theme::basic::green - A green color theme for dzil dump
 
 =head1 VERSION
 
-version 1.000001
+version 1.000002
 
 =head1 SYNOPSIS
 
@@ -76,7 +76,7 @@ version 1.000001
 
 =end MetaPOD::JSON
 
-=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_green.png" alt="Screenshot" width="715" height="372"/></center>
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_green.png" alt="Screenshot" width="715" height="372"/></center>
 
 =head1 METHODS
 

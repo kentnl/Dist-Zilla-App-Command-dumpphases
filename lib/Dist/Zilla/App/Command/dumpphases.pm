@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::App::Command::dumpphases;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.000002';
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
@@ -261,7 +261,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 1.000001
+version 1.000002
 
 =head1 SYNOPSIS
 
@@ -273,9 +273,9 @@ version 1.000001
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
-( Everyone else can visit L<http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
+( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
 
-=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
 
 =begin MetaPOD::JSON v1.1.0
 
