@@ -31,3 +31,4 @@ srcreadme         = mkdn
 twitter_hash_tags = #perl #cpan
 
 [Prereqs]
+Path::ScanINC = 0.011 ; Win32 fixes
