@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Role::Theme::SimpleColor;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 # ABSTRACT: A role for themes that are simple single-color themes with variations of bold/uncolored.
 
@@ -144,7 +144,7 @@ Dist::Zilla::dumpphases::Role::Theme::SimpleColor - A role for themes that are s
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 SYNOPSIS
 

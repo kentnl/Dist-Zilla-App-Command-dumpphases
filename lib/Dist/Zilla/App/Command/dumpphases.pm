@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::App::Command::dumpphases;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
@@ -261,7 +261,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 SYNOPSIS
 
