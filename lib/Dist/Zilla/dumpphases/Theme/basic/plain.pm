@@ -28,7 +28,7 @@ our $VERSION = '1.000002';
 
     dzil dumpphases --color-theme=basic::plain
 
-=for html <center><img src="http://kentfredric.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_plain.png" alt="Screenshot" width="677" height="412"/></center>
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_plain.png" alt="Screenshot" width="677" height="412"/></center>
 
 =cut
 

@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+ [Bugfix]
+ - Fix documentaiton links to point to kentnl org
 
 1.000001 2014-08-03T04:00:28Z
  [Bugfix]
