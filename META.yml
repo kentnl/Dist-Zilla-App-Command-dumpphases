@@ -47,7 +47,7 @@ requires:
   Dist::Zilla::Util::RoleDB: '0'
   Module::Runtime: '0'
   Moo: '0'
-  Path::ScanINC: '0'
+  Path::ScanINC: '0.011'
   Path::Tiny: '0'
   Role::Tiny: '0'
   Scalar::Util: '0'
