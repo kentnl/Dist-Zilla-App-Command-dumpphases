@@ -22,6 +22,10 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
     <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
 </div>
 
+# SEE ALSO
+
+- [`Dist::Zilla::Plugin::ReportPhase`](https://metacpan.org/pod/Dist::Zilla::Plugin::ReportPhase) - Will report what phases are triggering as they happen.
+
 # DESCRIPTION
 
 Working out what Plugins will execute in which order during which phase can be a

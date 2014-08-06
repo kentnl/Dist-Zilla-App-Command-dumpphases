@@ -247,4 +247,14 @@ under the umbrella of a "phase".
 
 =cut
 
+=head1 SEE ALSO
+
+=over 4
+
+=item * L<< C<Dist::Zilla::Plugin::ReportPhase>|Dist::Zilla::Plugin::ReportPhase >> - Will report what phases are triggering as they happen.
+
+=back
+
+=cut
+
 1;
