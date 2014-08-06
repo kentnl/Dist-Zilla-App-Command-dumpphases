@@ -11,93 +11,6 @@ our $VERSION = '1.000003';
 
 # AUTHORITY
 
-=head1 SYNOPSIS
-
-  cd $PROJECT;
-  dzil dumpphases
-
-  dzil dumpphases --color-theme=basic::plain # plain text
-  dzil dumpphases --color-theme=basic::green # green text
-
-If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
-
-( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
-
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
-
-=cut
-
-=head1 DESCRIPTION
-
-Working out what Plugins will execute in which order during which phase can be a
-little confusing sometimes.
-
-This Command exists primarily to make developing Plugin Bundles and debugging
-dist.ini a bit easier, especially for newbies who may not fully understand
-Bundles yet.
-
-If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
-C<ANSI_COLORS_DISABLED>. E.g:
-
-  ANSI_COLORS_DISABLED=1 dzil dumpphases
-
-Alternatively, since 0.3.0 you can specify a color-free theme:
-
-    dzil dumpphases --color-theme=basic::plain
-
-=head1 TERMINOLOGY
-
-Technically speaking, this utility deals with more than just "phases", it will in fact dump all plugins used,
-and it will in the process of doing so, dump things that are part of the clearly defined "phases" that occur
-within C<Dist::Zilla>.
-
-However, if you want to be pedantic, and understand how L<< C<Dist::Zilla>|Dist::Zilla >> works, then you must understand,
-many of the things this module calls "phases" are not so much phases.
-
-At its core, C<Dist::Zilla> has an array, on which all L<< C<Plugin>s|Dist::Zilla::Role::Plugin >> are stored.
-
-A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >> )
-
-There are 3 Primary kinds of plugin
-
-=over 4
-
-=item * Auxiliary Plugins
-
-Plugins which exist to augment other plugins ( For instance, L<< C<-FileFinder>'s|Dist::Zilla::Role::FileFinder >> ).
-
-C<Dist::Zilla> itself essentially ignores these, and their consumption is entirely regulated by other C<plugin>s.
-
-=item * Phase Plugins
-
-Plugins which hook into a specific and determinate phase of the C<Dist::Zilla> build/test/release cycle.
-
-These all provide primary methods, which C<Dist::Zilla> directly calls somewhere in its core code base.
-
-Good examples of Phase plugins perform L<< C<-FileGatherer>|Dist::Zilla::Role::FileGatherer >>
-
-=item * A Third Kind
-
-There's a third kind of Plugin, which is somewhere between the other two, which I presently lack a name for.
-
-Like the Phases, they provide primary methods, which are called by C<Dist::Zilla> directly, and they provide
-information for infrastructural components of the C<Dist::Zilla> development process.
-
-However, they're not strictly "phases", because exactly when they will be called ( or if they will be called at all )
-is heavily dependent on usage.
-
-For instance, L<< C<-VersionProvider>|Dist::Zilla::Role::VersionProvider >>, which is dependent on a few variables,
-and is called only when its needed, the first time its needed.
-
-Which means it could occur as early as creating C<META.json> or it could occur as late as just before it writes the distribution out to disk.
-
-=back
-
-This C<App::Command> command will indeed list all of the above, but for the sake of ease of use, the "Third kind" is informally
-under the umbrella of a "phase".
-
-=cut
-
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -246,5 +159,92 @@ sub execute {
   }
   return 0;
 }
+
+=head1 SYNOPSIS
+
+  cd $PROJECT;
+  dzil dumpphases
+
+  dzil dumpphases --color-theme=basic::plain # plain text
+  dzil dumpphases --color-theme=basic::green # green text
+
+If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
+
+( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
+
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+
+=cut
+
+=head1 DESCRIPTION
+
+Working out what Plugins will execute in which order during which phase can be a
+little confusing sometimes.
+
+This Command exists primarily to make developing Plugin Bundles and debugging
+dist.ini a bit easier, especially for newbies who may not fully understand
+Bundles yet.
+
+If you want to turn colors off, use L<< C<Term::ANSIcolor>'s environment variable|Term::ANSIColor >>
+C<ANSI_COLORS_DISABLED>. E.g:
+
+  ANSI_COLORS_DISABLED=1 dzil dumpphases
+
+Alternatively, since 0.3.0 you can specify a color-free theme:
+
+    dzil dumpphases --color-theme=basic::plain
+
+=head1 TERMINOLOGY
+
+Technically speaking, this utility deals with more than just "phases", it will in fact dump all plugins used,
+and it will in the process of doing so, dump things that are part of the clearly defined "phases" that occur
+within C<Dist::Zilla>.
+
+However, if you want to be pedantic, and understand how L<< C<Dist::Zilla>|Dist::Zilla >> works, then you must understand,
+many of the things this module calls "phases" are not so much phases.
+
+At its core, C<Dist::Zilla> has an array, on which all L<< C<Plugin>s|Dist::Zilla::Role::Plugin >> are stored.
+
+A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >> )
+
+There are 3 Primary kinds of plugin
+
+=over 4
+
+=item * Auxiliary Plugins
+
+Plugins which exist to augment other plugins ( For instance, L<< C<-FileFinder>'s|Dist::Zilla::Role::FileFinder >> ).
+
+C<Dist::Zilla> itself essentially ignores these, and their consumption is entirely regulated by other C<plugin>s.
+
+=item * Phase Plugins
+
+Plugins which hook into a specific and determinate phase of the C<Dist::Zilla> build/test/release cycle.
+
+These all provide primary methods, which C<Dist::Zilla> directly calls somewhere in its core code base.
+
+Good examples of Phase plugins perform L<< C<-FileGatherer>|Dist::Zilla::Role::FileGatherer >>
+
+=item * A Third Kind
+
+There's a third kind of Plugin, which is somewhere between the other two, which I presently lack a name for.
+
+Like the Phases, they provide primary methods, which are called by C<Dist::Zilla> directly, and they provide
+information for infrastructural components of the C<Dist::Zilla> development process.
+
+However, they're not strictly "phases", because exactly when they will be called ( or if they will be called at all )
+is heavily dependent on usage.
+
+For instance, L<< C<-VersionProvider>|Dist::Zilla::Role::VersionProvider >>, which is dependent on a few variables,
+and is called only when its needed, the first time its needed.
+
+Which means it could occur as early as creating C<META.json> or it could occur as late as just before it writes the distribution out to disk.
+
+=back
+
+This C<App::Command> command will indeed list all of the above, but for the sake of ease of use, the "Third kind" is informally
+under the umbrella of a "phase".
+
+=cut
 
 1;
