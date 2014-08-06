@@ -247,6 +247,16 @@ sub execute {
 
 
 
+
+
+
+
+
+
+
+
+
+
 1;
 
 __END__
@@ -287,6 +297,14 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 =end MetaPOD::JSON
 
 =for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+
+=head1 SEE ALSO
+
+=over 4
+
+=item * L<< C<Dist::Zilla::Plugin::ReportPhase>|Dist::Zilla::Plugin::ReportPhase >> - Will report what phases are triggering as they happen.
+
+=back
 
 =head1 DESCRIPTION
 

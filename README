@@ -19,6 +19,10 @@ SYNOPSIS
     <http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example
     _01.png> )
 
+SEE ALSO
+    *   "Dist::Zilla::Plugin::ReportPhase" - Will report what phases are
+        triggering as they happen.
+
 DESCRIPTION
     Working out what Plugins will execute in which order during which phase
     can be a little confusing sometimes.
