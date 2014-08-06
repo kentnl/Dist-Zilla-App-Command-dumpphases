@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Role::Theme;
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 # ABSTRACT: Output formatting themes for dzil dumpphases
 
@@ -88,7 +88,7 @@ Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for dzil dumppha
 
 =head1 VERSION
 
-version 1.000002
+version 1.000003
 
 =begin MetaPOD::JSON v1.1.0
 

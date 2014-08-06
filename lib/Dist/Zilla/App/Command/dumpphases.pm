@@ -5,98 +5,11 @@ use utf8;
 
 package Dist::Zilla::App::Command::dumpphases;
 
-our $VERSION = '1.000002';
+our $VERSION = '1.000003';
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -247,6 +160,103 @@ sub execute {
   return 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1;
 
 __END__
@@ -261,7 +271,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 1.000002
+version 1.000003
 
 =head1 SYNOPSIS
 
@@ -275,8 +285,6 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 ( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
-
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -287,6 +295,16 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 
 =end MetaPOD::JSON
+
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+
+=head1 SEE ALSO
+
+=over 4
+
+=item * L<< C<Dist::Zilla::Plugin::ReportPhase>|Dist::Zilla::Plugin::ReportPhase >> - Will report what phases are triggering as they happen.
+
+=back
 
 =head1 DESCRIPTION
 

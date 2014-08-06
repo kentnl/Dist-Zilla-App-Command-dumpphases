@@ -3,7 +3,7 @@ NAME
     each phase's parts.
 
 VERSION
-    version 1.000002
+    version 1.000003
 
 SYNOPSIS
       cd $PROJECT;
@@ -18,6 +18,10 @@ SYNOPSIS
     ( Everyone else can visit
     <http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example
     _01.png> )
+
+SEE ALSO
+    *   "Dist::Zilla::Plugin::ReportPhase" - Will report what phases are
+        triggering as they happen.
 
 DESCRIPTION
     Working out what Plugins will execute in which order during which phase

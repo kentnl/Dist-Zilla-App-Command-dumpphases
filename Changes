@@ -1,5 +1,10 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+1.000003 2014-08-06T19:37:32Z
+ [Documentation]
+ - Add SEE ALSO for ReportPhase.
+ - Closes #4
+
 1.000002 2014-08-03T09:31:26Z
  [Bugfix]
  - Fix documentaiton links to point to kentnl org
