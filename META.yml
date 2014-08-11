@@ -101,7 +101,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled: '0.002000'
     Dist::Zilla::Plugin::ReadmeAnyFromPod: '0.142180'
     Dist::Zilla::Plugin::ReadmeFromPod: '0.21'
-    Dist::Zilla::Plugin::RewriteVersion::Sanitized: '0.001001'
+    Dist::Zilla::Plugin::RewriteVersion::Sanitized: '0.001002'
     Dist::Zilla::Plugin::RunExtraTests: '0.022'
     Dist::Zilla::Plugin::Test::CPAN::Changes: '0.008'
     Dist::Zilla::Plugin::Test::Compile::PerFile: '0.002001'
@@ -112,14 +112,14 @@ x_BuiltWith:
     Dist::Zilla::Plugin::TestRelease: '5.020'
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.020'
-    Dist::Zilla::PluginBundle::Author::KENTNL: '2.016007'
+    Dist::Zilla::PluginBundle::Author::KENTNL: '2.016008'
     Dist::Zilla::Util::RoleDB: '0.002000'
     ExtUtils::MakeMaker: '6.98'
     File::Spec: '3.48'
     Module::Runtime: '0.014'
     Moo: '1.005000'
     Path::ScanINC: '1.000001'
-    Path::Tiny: '0.055'
+    Path::Tiny: '0.056'
     Pod::Coverage::TrustPod: '0.100003'
     Role::Tiny: '1.003003'
     Scalar::Util: '1.39'
@@ -286,7 +286,7 @@ x_Dist_Zilla:
           mantissa: '6'
           normal_form: numify
       name: '@Author::KENTNL/RewriteVersion::Sanitized'
-      version: '0.001001'
+      version: '0.001002'
     -
       class: Dist::Zilla::Plugin::PodWeaver
       config:
