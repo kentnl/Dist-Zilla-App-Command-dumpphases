@@ -24,14 +24,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-
-
-
-
-
-
-
-
 use Moo qw( with );
 
 with 'Dist::Zilla::dumpphases::Role::Theme';
@@ -81,6 +73,14 @@ sub print_star_assoc {
   my ( undef, $name, $value ) = @_;
   return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
+
+
+
+
+
+
+
+
 
 1;
 

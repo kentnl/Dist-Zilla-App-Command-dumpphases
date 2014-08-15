@@ -24,12 +24,6 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 
-
-
-
-
-
-
 use Moo qw( with );
 
 with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
@@ -43,6 +37,14 @@ with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
 
 
 sub color { return 'green' }
+
+
+
+
+
+
+
+
 
 1;
 

@@ -25,19 +25,7 @@ use Role::Tiny qw( requires );
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+with 'Dist::Zilla::dumpphases::Role::Theme';
 
 
 
@@ -130,6 +118,20 @@ sub print_star_assoc {
     $self->_color_plugin_package( ' => ' . $value );
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 1;
 
 __END__
@@ -168,8 +170,6 @@ version 1.000004
 
 
 =end MetaPOD::JSON
-
-with 'Dist::Zilla::dumpphases::Role::Theme';
 
 =head1 REQUIRED METHODS
 
