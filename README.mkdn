@@ -110,11 +110,9 @@ This command takes one optional parameter
     - `basic::red`
     - `basic::plain`
 
-# AUTHORS
+# AUTHOR
 
-- Kent Fredric <kentnl@cpan.org>
-- Alan Young <harleypig@gmail.com>
-- Oliver Mengué <dolmen@cpan.org>
+Kent Fredric <kentnl@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
