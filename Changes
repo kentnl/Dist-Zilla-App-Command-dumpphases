@@ -11,6 +11,9 @@ Release history for Dist-Zilla-App-Command-dumpphases
  [Metadata]
  - 2 contributors now listed as such using x_contributors instead of authors
 
+ [Misc]
+ - Moved POD around in source so there's less whitespace prior to relevant code in built source
+
 1.000003 2014-08-06T19:37:32Z
  [Documentation]
  - Add SEE ALSO for ReportPhase.

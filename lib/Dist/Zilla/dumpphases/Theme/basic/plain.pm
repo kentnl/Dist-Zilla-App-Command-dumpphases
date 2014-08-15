@@ -24,14 +24,6 @@ our $VERSION = '1.000004';
 
 =cut
 
-=head1 SYNOPSIS
-
-    dzil dumpphases --color-theme=basic::plain
-
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_plain.png" alt="Screenshot" width="677" height="412"/></center>
-
-=cut
-
 use Moo qw( with );
 
 with 'Dist::Zilla::dumpphases::Role::Theme';
@@ -81,5 +73,13 @@ sub print_star_assoc {
   my ( undef, $name, $value ) = @_;
   return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
+
+=head1 SYNOPSIS
+
+    dzil dumpphases --color-theme=basic::plain
+
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_plain.png" alt="Screenshot" width="677" height="412"/></center>
+
+=cut
 
 1;

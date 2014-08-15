@@ -13,20 +13,6 @@ our $VERSION = '1.000004';
 
 use Role::Tiny qw( requires );
 
-=head1 SYNOPSIS
-
-    package Dist::Zilla::dumpphases::Theme::foo;
-
-    use Moo;
-    with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
-    sub color { 'magenta' };
-
-    ...
-
-    dzil dumpphases --color-theme=foo
-
-=cut
-
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -36,6 +22,8 @@ use Role::Tiny qw( requires );
 }
 
 =end MetaPOD::JSON
+
+=cut
 
 with 'Dist::Zilla::dumpphases::Role::Theme';
 
@@ -129,5 +117,19 @@ sub print_star_assoc {
     $self->_color_plugin_name($name),
     $self->_color_plugin_package( ' => ' . $value );
 }
+
+=head1 SYNOPSIS
+
+    package Dist::Zilla::dumpphases::Theme::foo;
+
+    use Moo;
+    with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
+    sub color { 'magenta' };
+
+    ...
+
+    dzil dumpphases --color-theme=foo
+
+=cut
 
 1;

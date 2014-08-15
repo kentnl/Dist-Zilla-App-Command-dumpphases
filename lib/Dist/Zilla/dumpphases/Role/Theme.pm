@@ -22,6 +22,12 @@ use Role::Tiny qw( requires );
 
 =end MetaPOD::JSON
 
+=cut
+
+requires 'print_star_assoc';
+requires 'print_section_prelude';
+requires 'print_section_header';
+
 =requires C<print_star_assoc>
 
 Print some kind of associated data.
@@ -39,8 +45,6 @@ recommended formatting is:
 
 Most of the time, C<$label> will be an alias of some kind (e.g: an instance name), and $value will be the thing that alias
 refers to (e.g.: an instances class).
-
-=cut
 
 =requires C<print_section_prelude>
 
@@ -69,9 +73,5 @@ Recommended format is simply
     \n$label$value\n
 
 =cut
-
-requires 'print_star_assoc';
-requires 'print_section_prelude';
-requires 'print_section_header';
 
 1;

@@ -22,12 +22,6 @@ our $VERSION = '1.000004';
 
 =end MetaPOD::JSON
 
-=head1 SYNOPSIS
-
-    dzil dumpphases --color-theme=basic::red
-
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_red.png" alt="Screenshot" width="702" height="417"/></center>
-
 =cut
 
 use Moo qw( with );
@@ -43,5 +37,13 @@ This simply returns C<'red'>
 =cut
 
 sub color { return 'red' }
+
+=head1 SYNOPSIS
+
+    dzil dumpphases --color-theme=basic::red
+
+=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_red.png" alt="Screenshot" width="702" height="417"/></center>
+
+=cut
 
 1;
