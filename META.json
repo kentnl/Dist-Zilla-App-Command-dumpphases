@@ -1,9 +1,7 @@
 {
    "abstract" : "Dump a textual representation of each phase's parts.",
    "author" : [
-      "Kent Fredric <kentnl@cpan.org>",
-      "Alan Young <harleypig@gmail.com>",
-      "Oliver Mengué <dolmen@cpan.org>"
+      "Kent Fredric <kentnl@cpan.org>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Dist::Zilla version 5.020, CPAN::Meta::Converter version 2.142060",

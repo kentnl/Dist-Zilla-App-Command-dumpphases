@@ -197,23 +197,9 @@ See L<Dist::Zilla::dumpphases::Role::Theme/print_star_assoc>.
 
 This satisfies that, printing label uncolored, and the value simply colored.
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
-
-=item *
-
-Alan Young <harleypig@gmail.com>
-
-=item *
-
-Oliver Mengué <dolmen@cpan.org>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 

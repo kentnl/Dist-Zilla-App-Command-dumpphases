@@ -143,23 +143,9 @@ Recommended format is simply
 
     \n$label$value\n
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
-
-=item *
-
-Alan Young <harleypig@gmail.com>
-
-=item *
-
-Oliver Mengué <dolmen@cpan.org>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 

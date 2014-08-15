@@ -11,7 +11,7 @@ use ExtUtils::MakeMaker ;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Dump a textual representation of each phase's parts.",
-  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>, Alan Young <harleypig\@gmail.com>, Oliver Mengu\x{e9} <dolmen\@cpan.org>",
+  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },

@@ -2,8 +2,6 @@
 abstract: "Dump a textual representation of each phase's parts."
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
-  - 'Alan Young <harleypig@gmail.com>'
-  - 'Oliver Mengué <dolmen@cpan.org>'
 build_requires:
   Cwd: '0'
   Dist::Zilla::App::Tester: '0'
