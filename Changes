@@ -1,7 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
-1.000004 2014-08-15T02:57:05Z
+1.000004 2014-08-15T19:36:42Z
  [00 Trivial]
+ - CPANDAY!
  - Metadata changes re: contributors
 
  [Dependencies::Stats]
