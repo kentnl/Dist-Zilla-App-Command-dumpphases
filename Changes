@@ -2,6 +2,7 @@ Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
  [00 Trivial]
+ - CPANDAY!
  - Metadata changes re: contributors
 
  [Dependencies::Stats]
