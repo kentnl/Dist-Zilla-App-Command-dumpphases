@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Theme::basic::plain;
 
-our $VERSION = '1.000004';
+our $VERSION = '1.000005';
 
 # ABSTRACT: A plain-text theme for dzil dumpphases
 
@@ -96,7 +96,7 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for dzil dumpp
 
 =head1 VERSION
 
-version 1.000004
+version 1.000005
 
 =head1 SYNOPSIS
 
