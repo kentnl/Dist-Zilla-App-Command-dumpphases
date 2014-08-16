@@ -5,17 +5,11 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Theme::basic::red;
 
-our $VERSION = '1.000003';
+our $VERSION = '1.000004';
 
 # ABSTRACT: A red color theme for dzil dumpphases
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
-
-
-
-
-
-
 
 
 
@@ -44,6 +38,14 @@ with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
 
 sub color { return 'red' }
 
+
+
+
+
+
+
+
+
 1;
 
 __END__
@@ -58,7 +60,7 @@ Dist::Zilla::dumpphases::Theme::basic::red - A red color theme for dzil dumpphas
 
 =head1 VERSION
 
-version 1.000003
+version 1.000004
 
 =head1 SYNOPSIS
 
@@ -86,23 +88,9 @@ See L<Dist::Zilla::dumpphases::Role::Theme::SimpleColor/color> for details.
 
 This simply returns C<'red'>
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
-
-=item *
-
-Alan Young <harleypig@gmail.com>
-
-=item *
-
-Oliver Mengué <dolmen@cpan.org>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 

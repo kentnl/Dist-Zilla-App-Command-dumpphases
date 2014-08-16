@@ -3,7 +3,7 @@ NAME
     each phase's parts.
 
 VERSION
-    version 1.000003
+    version 1.000004
 
 SYNOPSIS
       cd $PROJECT;
@@ -121,12 +121,8 @@ METHODS
 
         *   "basic::plain"
 
-AUTHORS
-    *   Kent Fredric <kentnl@cpan.org>
-
-    *   Alan Young <harleypig@gmail.com>
-
-    *   Oliver Mengué <dolmen@cpan.org>
+AUTHOR
+    Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.

@@ -1,5 +1,20 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+1.000004 2014-08-16T00:00:52Z
+ [00 Trivial]
+ - CPANDAY!
+ - Metadata changes re: contributors
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.000003, see misc/*.deps* for details
+ - develop: +1 (suggests: ↑1)
+
+ [Metadata]
+ - 2 contributors now listed as such using x_contributors instead of authors
+
+ [Misc]
+ - Moved POD around in source so there's less whitespace prior to relevant code in built source
+
 1.000003 2014-08-06T19:37:32Z
  [Documentation]
  - Add SEE ALSO for ReportPhase.

@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Role::Theme;
 
-our $VERSION = '1.000003';
+our $VERSION = '1.000004';
 
 # ABSTRACT: Output formatting themes for dzil dumpphases
 
@@ -24,55 +24,55 @@ use Role::Tiny qw( requires );
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 requires 'print_star_assoc';
 requires 'print_section_prelude';
 requires 'print_section_header';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 1;
 
@@ -88,7 +88,7 @@ Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for dzil dumppha
 
 =head1 VERSION
 
-version 1.000003
+version 1.000004
 
 =begin MetaPOD::JSON v1.1.0
 
@@ -143,23 +143,9 @@ Recommended format is simply
 
     \n$label$value\n
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
-
-=item *
-
-Alan Young <harleypig@gmail.com>
-
-=item *
-
-Oliver Mengué <dolmen@cpan.org>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 

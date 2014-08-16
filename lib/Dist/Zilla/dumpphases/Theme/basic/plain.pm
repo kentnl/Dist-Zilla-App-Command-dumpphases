@@ -5,19 +5,11 @@ use utf8;
 
 package Dist::Zilla::dumpphases::Theme::basic::plain;
 
-our $VERSION = '1.000003';
+our $VERSION = '1.000004';
 
 # ABSTRACT: A plain-text theme for dzil dumpphases
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
-
-
-
-
-
-
-
-
 
 
 
@@ -82,6 +74,14 @@ sub print_star_assoc {
   return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
 
+
+
+
+
+
+
+
+
 1;
 
 __END__
@@ -96,7 +96,7 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for dzil dumpp
 
 =head1 VERSION
 
-version 1.000003
+version 1.000004
 
 =head1 SYNOPSIS
 
@@ -143,23 +143,9 @@ This satisfies that, printing C<$label> and C<$value> uncolored, as:
 
      * $label => $value
 
-=head1 AUTHORS
-
-=over 4
-
-=item *
+=head1 AUTHOR
 
 Kent Fredric <kentnl@cpan.org>
-
-=item *
-
-Alan Young <harleypig@gmail.com>
-
-=item *
-
-Oliver Mengué <dolmen@cpan.org>
-
-=back
 
 =head1 COPYRIGHT AND LICENSE
 
