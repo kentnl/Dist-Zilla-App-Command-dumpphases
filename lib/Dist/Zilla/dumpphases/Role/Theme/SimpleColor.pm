@@ -11,7 +11,7 @@ our $VERSION = '1.000004';
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
-use Role::Tiny qw( requires );
+use Role::Tiny qw( requires with );
 
 
 
