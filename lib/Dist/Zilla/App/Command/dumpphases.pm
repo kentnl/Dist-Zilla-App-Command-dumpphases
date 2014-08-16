@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::App::Command::dumpphases;
 
-our $VERSION = '1.000004';
+our $VERSION = '1.000005';
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
