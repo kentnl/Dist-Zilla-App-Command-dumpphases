@@ -11,7 +11,7 @@ our $VERSION = '1.000004';
 
 # AUTHORITY
 
-use Role::Tiny qw( requires );
+use Role::Tiny qw( requires with );
 
 =begin MetaPOD::JSON v1.1.0
 
