@@ -64,11 +64,11 @@ x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
     Carp: '1.34'
-    Cwd: '3.48'
+    Cwd: '3.49'
     Dist::Zilla::App: '5.020'
     Dist::Zilla::App::Command::bakeini: '0.001002'
     Dist::Zilla::App::Tester: '5.020'
-    Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.002002'
+    Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes: '0.003001'
     Dist::Zilla::Plugin::Authority: '1.006'
     Dist::Zilla::Plugin::AutoPrereqs: '5.020'
     Dist::Zilla::Plugin::BumpVersionAfterRelease: '0.002'
@@ -90,7 +90,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::MetaConfig: '5.020'
     Dist::Zilla::Plugin::MetaData::BuiltWith: '1.002000'
     Dist::Zilla::Plugin::MetaJSON: '5.020'
-    Dist::Zilla::Plugin::MetaProvides::Package: '2.000004'
+    Dist::Zilla::Plugin::MetaProvides::Package: '2.001001'
     Dist::Zilla::Plugin::MetaTests: '5.020'
     Dist::Zilla::Plugin::MetaYAML: '5.020'
     Dist::Zilla::Plugin::MinimumPerl: '1.003'
@@ -105,24 +105,24 @@ x_BuiltWith:
     Dist::Zilla::Plugin::RunExtraTests: '0.022'
     Dist::Zilla::Plugin::Test::CPAN::Changes: '0.008'
     Dist::Zilla::Plugin::Test::Compile::PerFile: '0.002002'
-    Dist::Zilla::Plugin::Test::Kwalitee: '2.08'
+    Dist::Zilla::Plugin::Test::Kwalitee: '2.11'
     Dist::Zilla::Plugin::Test::MinimumVersion: '2.000005'
     Dist::Zilla::Plugin::Test::Perl::Critic: '2.112410'
     Dist::Zilla::Plugin::Test::ReportPrereqs: '0.019'
     Dist::Zilla::Plugin::TestRelease: '5.020'
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.020'
-    Dist::Zilla::PluginBundle::Author::KENTNL: '2.019000'
+    Dist::Zilla::PluginBundle::Author::KENTNL: '2.020000'
     Dist::Zilla::Util::RoleDB: '0.002001'
     ExtUtils::MakeMaker: '6.98'
-    File::Spec: '3.48'
+    File::Spec: '3.49'
     Module::Runtime: '0.014'
     Moo: '1.006000'
     Path::ScanINC: '1.000002'
     Path::Tiny: '0.056'
     Pod::Coverage::TrustPod: '0.100003'
     Role::Tiny: '1.003003'
-    Scalar::Util: '1.39'
+    Scalar::Util: '1.40'
     Term::ANSIColor: '4.03'
     Test::CPAN::Changes: '0.30'
     Test::CPAN::Meta: '0.23'
@@ -133,23 +133,25 @@ x_BuiltWith:
     Try::Tiny: '0.22'
     strict: '1.08'
     utf8: '1.14'
-    warnings: '1.24'
+    warnings: '1.26'
   perl:
-    original: v5.21.1
+    original: v5.21.3
     qv: 1
     version:
       - 5
       - 21
-      - 1
+      - 3
   perl-config:
     gccversion: 4.8.3
+    git_commit_id: 640eedb9ffcac7a9c2793689044e84bfd9af3045
+    git_describe: v5.21.2-215-g640eedb
     myarchname: x86_64-linux
     osname: linux
   platform: linux
-  uname: 'Linux 3.15.5-aufs x86_64 GenuineIntel GNU/Linux'
+  uname: 'Linux 3.16.1-aufs x86_64 GenuineIntel GNU/Linux'
 x_Dist_Zilla:
   perl:
-    version: '5.021001'
+    version: '5.021003'
   plugins:
     -
       class: Dist::Zilla::Plugin::MetaConfig
@@ -173,7 +175,7 @@ x_Dist_Zilla:
           inherit_version: '1'
           meta_noindex: '1'
       name: '@Author::KENTNL/MetaProvides::Package'
-      version: '2.000004'
+      version: '2.001001'
     -
       class: Dist::Zilla::Plugin::MetaData::BuiltWith
       config:
@@ -250,9 +252,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Test::Kwalitee
       config:
         Dist::Zilla::Plugin::Test::Kwalitee:
+          filename: xt/release/kwalitee.t
           skiptest: []
       name: '@Author::KENTNL/Test::Kwalitee'
-      version: '2.08'
+      version: '2.11'
     -
       class: Dist::Zilla::Plugin::EOLTests
       name: '@Author::KENTNL/EOLTests'
@@ -416,7 +419,7 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes
       name: '@Author::KENTNL/Author::KENTNL::RecommendFixes'
-      version: '0.002002'
+      version: '0.003001'
     -
       class: Dist::Zilla::Plugin::ReadmeFromPod
       name: '@Author::KENTNL/ReadmeFromPod'
