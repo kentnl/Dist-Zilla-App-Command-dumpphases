@@ -177,7 +177,7 @@
          "Dist::Zilla::Plugin::Git::CommitBuild" : "2.023",
          "Dist::Zilla::Plugin::Git::Contributors" : "0.007",
          "Dist::Zilla::Plugin::Git::GatherDir" : "2.023",
-         "Dist::Zilla::Plugin::Git::NextRelease" : "0.002012",
+         "Dist::Zilla::Plugin::Git::NextRelease" : "0.003000",
          "Dist::Zilla::Plugin::Git::Tag" : "2.023",
          "Dist::Zilla::Plugin::GithubMeta" : "0.46",
          "Dist::Zilla::Plugin::License" : "5.020",
@@ -700,8 +700,11 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextRelease",
+            "config" : {
+               "Dist::Zilla::Plugin::Git::NextRelease" : {}
+            },
             "name" : "@Author::KENTNL/Git::NextRelease",
-            "version" : "0.002012"
+            "version" : "0.003000"
          },
          {
             "class" : "Dist::Zilla::Plugin::BumpVersionAfterRelease",
