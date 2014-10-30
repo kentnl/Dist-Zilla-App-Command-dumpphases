@@ -17,6 +17,7 @@ toolkit_hardness  = soft
 bumpversions      = 1
 copyfiles         = LICENSE
 srcreadme         = mkdn
+twitter_extra_hash_tags = #distzilla
 
 ; version_major     = 0
 ; version_minor     = 1
@@ -26,7 +27,6 @@ srcreadme         = mkdn
 ; version_rel_day   = 14
 ; version_rel_hour  = 16
 ; version_rel_time_zone = Pacific/Auckland
-twitter_hash_tags = #perl #cpan
 
 [Prereqs]
 Path::ScanINC = 0.011 ; Win32 fixes
