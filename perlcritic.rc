@@ -42,6 +42,8 @@ allow_includes = 1
 
 [BuiltinFunctions::ProhibitUniversalIsa]
 
+[BuiltinFunctions::ProhibitUselessTopic]
+
 [BuiltinFunctions::ProhibitVoidGrep]
 
 [BuiltinFunctions::ProhibitVoidMap]
@@ -86,7 +88,7 @@ allow_includes = 1
 
 [CodeLayout::RequireTrailingCommas]
 
-[CodeLayout::RequireUseUTF8]
+[-CodeLayout::RequireUseUTF8]
 
 [Compatibility::ConstantLeadingUnderscore]
 
@@ -145,6 +147,8 @@ stop_words = screenshot Plugin Plugins ini Mengué instantiation dzil dumpphases
 [Documentation::ProhibitVerbatimMarkup]
 
 [Documentation::RequireEndBeforeLastPod]
+
+[Documentation::RequireFilenameMarkup]
 
 [Documentation::RequireFinalCut]
 
@@ -292,6 +296,8 @@ allowed_pragmata = diagnostics feature perlversion strict warnings utf8
 [RegularExpressions::ProhibitUnusedCapture]
 
 [RegularExpressions::ProhibitUnusualDelimiters]
+
+[RegularExpressions::ProhibitUselessTopic]
 
 [RegularExpressions::RequireBracesForMultiline]
 

@@ -1,26 +1,31 @@
 do { my $x = {
        'configure' => {
                         'recommends' => {
-                                          'ExtUtils::MakeMaker' => '6.98'
+                                          'ExtUtils::MakeMaker' => '7.00'
                                         },
                         'requires' => {
-                                        'ExtUtils::MakeMaker' => '0'
+                                        'ExtUtils::MakeMaker' => '0',
+                                        'perl' => '5.006'
                                       }
                       },
        'develop' => {
+                      'recommends' => {
+                                        'Test::More' => '1.001008'
+                                      },
                       'requires' => {
+                                      'Dist::Zilla' => '5',
+                                      'Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes' => '0.001001',
                                       'Dist::Zilla::Plugin::Authority' => '1.006',
                                       'Dist::Zilla::Plugin::AutoPrereqs' => '0',
                                       'Dist::Zilla::Plugin::BumpVersionAfterRelease' => '0',
                                       'Dist::Zilla::Plugin::ConfirmRelease' => '0',
                                       'Dist::Zilla::Plugin::CopyFilesFromBuild' => '0',
-                                      'Dist::Zilla::Plugin::EOLTests' => '0',
                                       'Dist::Zilla::Plugin::Git::Check' => '0',
                                       'Dist::Zilla::Plugin::Git::Commit' => '0',
                                       'Dist::Zilla::Plugin::Git::CommitBuild' => '0',
                                       'Dist::Zilla::Plugin::Git::Contributors' => '0.006',
                                       'Dist::Zilla::Plugin::Git::GatherDir' => '0',
-                                      'Dist::Zilla::Plugin::Git::NextRelease' => '0',
+                                      'Dist::Zilla::Plugin::Git::NextRelease' => '0.004000',
                                       'Dist::Zilla::Plugin::Git::Tag' => '0',
                                       'Dist::Zilla::Plugin::GithubMeta' => '0',
                                       'Dist::Zilla::Plugin::License' => '0',
@@ -38,6 +43,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::PodSyntaxTests' => '0',
                                       'Dist::Zilla::Plugin::PodWeaver' => '0',
                                       'Dist::Zilla::Plugin::Prereqs' => '0',
+                                      'Dist::Zilla::Plugin::Prereqs::AuthorDeps' => '0',
                                       'Dist::Zilla::Plugin::Prereqs::Recommend::MatchInstalled' => '0',
                                       'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0',
                                       'Dist::Zilla::Plugin::ReadmeFromPod' => '0',
@@ -45,6 +51,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::RunExtraTests' => '0',
                                       'Dist::Zilla::Plugin::Test::CPAN::Changes' => '0',
                                       'Dist::Zilla::Plugin::Test::Compile::PerFile' => '0',
+                                      'Dist::Zilla::Plugin::Test::EOL' => '0',
                                       'Dist::Zilla::Plugin::Test::Kwalitee' => '0',
                                       'Dist::Zilla::Plugin::Test::MinimumVersion' => '0',
                                       'Dist::Zilla::Plugin::Test::Perl::Critic' => '0',
@@ -55,13 +62,15 @@ do { my $x = {
                                       'Pod::Coverage::TrustPod' => '0',
                                       'Test::CPAN::Changes' => '0.19',
                                       'Test::CPAN::Meta' => '0',
-                                      'Test::Kwalitee' => '1.12',
+                                      'Test::EOL' => '0',
+                                      'Test::Kwalitee' => '1.21',
+                                      'Test::More' => '0',
                                       'Test::Pod' => '1.41',
                                       'Test::Pod::Coverage' => '1.08'
                                     },
                       'suggests' => {
-                                      'Dist::Zilla::App::Command::bakeini' => '0.001001',
-                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.017002'
+                                      'Dist::Zilla::App::Command::bakeini' => '0.001003',
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.022000'
                                     }
                     },
        'runtime' => {
@@ -77,24 +86,24 @@ do { my $x = {
                                       'Scalar::Util' => '0',
                                       'Term::ANSIColor' => '0',
                                       'Try::Tiny' => '0',
-                                      'perl' => '5.008',
+                                      'perl' => '5.006',
                                       'strict' => '0',
-                                      'utf8' => '0',
                                       'warnings' => '0'
                                     }
                     },
        'test' => {
                    'recommends' => {
                                      'CPAN::Meta' => '2.120900',
-                                     'ExtUtils::MakeMaker' => '6.98',
-                                     'Test::More' => '1.001003'
+                                     'ExtUtils::MakeMaker' => '7.00',
+                                     'Test::More' => '1.001008'
                                    },
                    'requires' => {
                                    'Cwd' => '0',
                                    'Dist::Zilla::App::Tester' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
-                                   'Test::More' => '0.89'
+                                   'Test::More' => '0.89',
+                                   'perl' => '5.006'
                                  }
                  }
      };

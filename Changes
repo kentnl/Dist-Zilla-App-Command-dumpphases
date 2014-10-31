@@ -1,5 +1,17 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+1.000005 2014-10-31T00:00:38Z 45e3144
+ [Dependencies::Stats]
+ - Dependencies changed since 1.000004, see misc/*.deps* for details
+ - configure: +1 (recommends: ↑1)
+ - develop: +6 ↑2 -1 (recommends: +1, suggests: ↑2)
+ - runtime: ↓1 -1
+ - test: +1 (recommends: ↑2)
+
+ [Internals]
+ - stop requiring utf8
+ - now supports 5.006
+
 1.000004 2014-08-16T00:00:52Z
  [00 Trivial]
  - CPANDAY!
