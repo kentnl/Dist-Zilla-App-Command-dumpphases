@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Theme::basic::plain;
 
-our $VERSION = '1.000005';
+our $VERSION = '1.000006';
 
 # ABSTRACT: A plain-text theme for dzil dumpphases
 
@@ -95,7 +95,7 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for dzil dumpp
 
 =head1 VERSION
 
-version 1.000005
+version 1.000006
 
 =head1 SYNOPSIS
 
