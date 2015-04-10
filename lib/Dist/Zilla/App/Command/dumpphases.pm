@@ -67,11 +67,10 @@ sub opt_spec {
 sub validate_args {
   my ( $self, $opt, undef ) = @_;
   my $color_theme = $opt->color_theme || 'basic::blue';
-  my $themes = $self->_available_themes;
-  if ( not exists $themes->{$color_theme} ) {
+  my @themes = $self->_available_themes;
+  if ( not grep { $_ eq $color_theme } @themes ) {
     require Carp;
-    Carp::croak(
-      'Invalid theme specification <' . $color_theme . '>, available themes are: ' . ( join q{, }, sort keys %{$themes} ) );
+    Carp::croak( 'Invalid theme specification <' . $color_theme . '>, available themes are: ' . ( join q{, }, @themes ) );
   }
 }
 
@@ -97,7 +96,8 @@ sub _available_themes {
       $themes{$theme_name} = 1;
     }
   }
-  return \%themes;
+  ## no critic (Variables::ProhibitUnusedVarsStricter)
+  return ( my (@list) = sort keys %themes );
 }
 
 sub _load_color_theme {
