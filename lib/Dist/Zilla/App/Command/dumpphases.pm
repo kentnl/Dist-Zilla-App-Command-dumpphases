@@ -100,19 +100,20 @@ sub _available_themes {
   return \%themes;
 }
 
-sub _get_theme_instance {
-  my ( undef, $theme ) = @_;
+sub _load_color_theme {
+  my ( undef, $color_theme ) = @_;
   require Module::Runtime;
-  my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $theme );
+  my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $color_theme );
   Module::Runtime::require_module($theme_module);
-  return $theme_module->new();
+  return $theme_module;
 }
 
 sub execute {
   my ( $self, $opt, undef ) = @_;
   my $zilla = $self->zilla;
 
-  my $theme = $self->_get_theme_instance( $opt->color_theme || 'basic::blue' );
+  my $theme_module = $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
+  my $theme = $theme_module->new();
 
   my $seen_plugins = {};
 
