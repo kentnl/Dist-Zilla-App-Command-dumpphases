@@ -4,7 +4,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 # VERSION
 
-version 1.000006
+version 1.000007
 
 # SYNOPSIS
 
