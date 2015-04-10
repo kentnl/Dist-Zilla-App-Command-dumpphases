@@ -1,6 +1,32 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 1.000006
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::TravisCI 0.001002
+ - Dist::Zilla::Plugin::Prereqs::Upgrade
+ - Dist::Zilla::Plugin::Readme::Brief
+
+ [Added / runtime recommends]
+ - Moo 1.000008
+ - Path::Tiny 0.058
+
+ [Changed / develop recommends]
+ - Test::More 1.001008 → 0.99
+
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001 → 0.004002
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 0 → 1.004000
+ - Test::More 0 → 0.88
+
+ [Changed / develop suggests]
+ - Dist::Zilla::App::Command::bakeini 0.001003 → 0.002000
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.022000 → 2.024001
+
+ [Changed / test recommends]
+ - Test::More 1.001008 → 0.99
+
+ [Removed / develop requires]
+ - Dist::Zilla::Plugin::ReadmeFromPod
 
 1.000005 2014-10-31T00:00:38Z
  [Added / configure requires]
