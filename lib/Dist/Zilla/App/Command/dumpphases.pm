@@ -205,7 +205,7 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 =end MetaPOD::JSON
 
 =for html <center>
-  <img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" 
+  <img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png"
        alt="Screenshot"
        width="721"
        height="1007" />
@@ -252,7 +252,7 @@ many of the things this module calls "phases" are not so much phases.
 
 At its core, C<Dist::Zilla> has an array, on which all L<< C<Plugin>s|Dist::Zilla::Role::Plugin >> are stored.
 
-A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like 
+A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like
 L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >> )
 
 There are 3 Primary kinds of plugin
