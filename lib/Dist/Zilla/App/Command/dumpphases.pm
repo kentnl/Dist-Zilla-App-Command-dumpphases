@@ -165,6 +165,8 @@ sub execute {
   return 0;
 }
 
+1;
+
 =head1 SYNOPSIS
 
   cd $PROJECT;
@@ -261,5 +263,3 @@ under the umbrella of a "phase".
 =back
 
 =cut
-
-1;
