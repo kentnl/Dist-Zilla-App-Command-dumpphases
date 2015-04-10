@@ -74,7 +74,7 @@ sub validate_args {
     require Carp;
     my $message = $error . qq[\n\n];
     $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $opt->color_theme;
-    $message .= sprintf "available themes are: %s", ( join q{, }, $self->_available_themes );
+    $message .= sprintf 'available themes are: %s', ( join q{, }, $self->_available_themes );
     Carp::croak($message);
   };
   return;
@@ -86,7 +86,7 @@ sub _available_themes {
   my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
   if ( not @theme_dirs ) {
     require Carp;
-    Carp::cluck("Found no theme dirs in \@INC matching Dist/Zilla/dumpphases/Theme/");
+    Carp::cluck('Found no theme dirs in @INC matching Dist/Zilla/dumpphases/Theme/');
   }
   my (%themes);
   require Path::Tiny;
@@ -106,7 +106,7 @@ sub _available_themes {
       $themes{$theme_name} = 1;
     }
   }
-  return sort keys %themes;
+  return (my (@list)= sort keys %themes);
 }
 
 sub _load_color_theme {
