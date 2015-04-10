@@ -179,7 +179,16 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 ( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+=begin html
+
+<center>
+  <img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png"
+       alt="Screenshot"
+       width="721"
+       height="1007" />
+</center>
+
+=end html
 
 =cut
 
@@ -212,7 +221,8 @@ many of the things this module calls "phases" are not so much phases.
 
 At its core, C<Dist::Zilla> has an array, on which all L<< C<Plugin>s|Dist::Zilla::Role::Plugin >> are stored.
 
-A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >> )
+A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like
+L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >> )
 
 There are 3 Primary kinds of plugin
 
@@ -245,7 +255,8 @@ is heavily dependent on usage.
 For instance, L<< C<-VersionProvider>|Dist::Zilla::Role::VersionProvider >>, which is dependent on a few variables,
 and is called only when its needed, the first time its needed.
 
-Which means it could occur as early as creating C<META.json> or it could occur as late as just before it writes the distribution out to disk.
+Which means it could occur as early as creating C<META.json> or it could occur as late as just before it writes the distribution
+out to disk.
 
 =back
 
@@ -258,7 +269,11 @@ under the umbrella of a "phase".
 
 =over 4
 
-=item * L<< C<Dist::Zilla::Plugin::ReportPhase>|Dist::Zilla::Plugin::ReportPhase >> - Will report what phases are triggering as they happen.
+=item * L<<
+C<Dist::Zilla::Plugin::ReportPhase>|Dist::Zilla::Plugin::ReportPhase
+>>
+
+Will report what phases are triggering as they happen.
 
 =back
 
