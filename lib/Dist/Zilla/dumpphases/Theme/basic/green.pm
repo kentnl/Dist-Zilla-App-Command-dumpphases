@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Theme::basic::green;
 
-our $VERSION = '1.000006';
+our $VERSION = '1.000007';
 
 # ABSTRACT: A green color theme for dzil dumpphases
 
@@ -59,7 +59,7 @@ Dist::Zilla::dumpphases::Theme::basic::green - A green color theme for dzil dump
 
 =head1 VERSION
 
-version 1.000006
+version 1.000007
 
 =head1 SYNOPSIS
 
