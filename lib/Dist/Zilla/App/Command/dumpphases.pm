@@ -66,12 +66,12 @@ sub opt_spec {
 
 sub validate_args {
   my ( $self, $opt, undef ) = @_;
-  return unless defined $opt->color_theme;
+  my $color_theme = $opt->color_theme || 'basic::blue';
   my $themes = $self->_available_themes;
-  if ( not exists $themes->{ $opt->color_theme } ) {
+  if ( not exists $themes->{$color_theme} ) {
     require Carp;
     Carp::croak(
-      'Invalid theme specification <' . $opt->color_theme . '>, available themes are: ' . ( join q{, }, sort keys %{$themes} ) );
+      'Invalid theme specification <' . $color_theme . '>, available themes are: ' . ( join q{, }, sort keys %{$themes} ) );
   }
 }
 
@@ -100,12 +100,6 @@ sub _available_themes {
   return \%themes;
 }
 
-sub _get_color_theme {
-  my ( undef, $opt, $default ) = @_;
-  return $default unless $opt->color_theme;
-  return $opt->color_theme;
-}
-
 sub _get_theme_instance {
   my ( undef, $theme ) = @_;
   require Module::Runtime;
@@ -118,7 +112,7 @@ sub execute {
   my ( $self, $opt, undef ) = @_;
   my $zilla = $self->zilla;
 
-  my $theme = $self->_get_theme_instance( $self->_get_color_theme( $opt, 'basic::blue' ) );
+  my $theme = $self->_get_theme_instance( $opt->color_theme || 'basic::blue' );
 
   my $seen_plugins = {};
 
@@ -410,7 +404,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2015 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
