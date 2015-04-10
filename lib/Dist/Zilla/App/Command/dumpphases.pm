@@ -23,7 +23,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 use Dist::Zilla::App '-command';
-use Try::Tiny;
+use Try::Tiny qw( try catch );
 use Scalar::Util qw( blessed );
 
 ## no critic ( ProhibitAmbiguousNames)
@@ -66,19 +66,28 @@ sub opt_spec {
 
 sub validate_args {
   my ( $self, $opt, undef ) = @_;
-  my $color_theme = $opt->color_theme || 'basic::blue';
-  my $themes = $self->_available_themes;
-  if ( not exists $themes->{$color_theme} ) {
-    require Carp;
-    Carp::croak(
-      'Invalid theme specification <' . $color_theme . '>, available themes are: ' . ( join q{, }, sort keys %{$themes} ) );
+  try {
+    $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
   }
+  catch {
+    my $error = shift;
+    require Carp;
+    my $message = $error . qq[\n\n];
+    $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $opt->color_theme;
+    $message .= sprintf "available themes are: %s", ( join q{, }, $self->_available_themes );
+    Carp::croak($message);
+  };
+  return;
 }
 
 sub _available_themes {
   my (undef) = @_;
   require Path::ScanINC;
   my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
+  if ( not @theme_dirs ) {
+    require Carp;
+    Carp::cluck("Found no theme dirs in \@INC matching Dist/Zilla/dumpphases/Theme/");
+  }
   my (%themes);
   require Path::Tiny;
   for my $dir (@theme_dirs) {
@@ -97,27 +106,27 @@ sub _available_themes {
       $themes{$theme_name} = 1;
     }
   }
-  return \%themes;
+  return sort keys %themes;
 }
 
-sub _get_theme_instance {
-  my ( undef, $theme ) = @_;
+sub _load_color_theme {
+  my ( $self, $color_theme ) = @_;
   require Module::Runtime;
-  my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $theme );
+  my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $color_theme );
   Module::Runtime::require_module($theme_module);
-  return $theme_module->new();
+  return $theme_module;
 }
 
 sub execute {
   my ( $self, $opt, undef ) = @_;
-  my $zilla = $self->zilla;
 
-  my $theme = $self->_get_theme_instance( $opt->color_theme || 'basic::blue' );
+  my $theme_module = $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
+  my $theme = $theme_module->new();
 
   my $seen_plugins = {};
 
   require Dist::Zilla::Util::RoleDB;
-
+  my $zilla;
   for my $phase ( Dist::Zilla::Util::RoleDB->new()->phases ) {
     my ($label);
     $label = $phase->name;
@@ -125,6 +134,7 @@ sub execute {
     $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
+    $zilla ||= $self->zilla;
     push @plugins, @{ $zilla->plugins_with( $phase->name ) };
     next unless @plugins;
 
@@ -152,103 +162,6 @@ sub execute {
   }
   return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 1;
 
