@@ -78,6 +78,11 @@ sub _available_themes {
   my (undef) = @_;
   require Path::ScanINC;
   my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
+  if ( not @theme_dirs ) {
+    require Carp;
+    ## no critic (ValuesAndExpressions::RequireInterpolationOfMetachars)
+    Carp::cluck('Found no theme dirs in @INC matching Dist/Zilla/dumpphases/Theme/');
+  }
   my (%themes);
   require Path::Tiny;
   for my $dir (@theme_dirs) {
