@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::App::Command::dumpphases;
 
-our $VERSION = '1.000005';
+our $VERSION = '1.000006';
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
@@ -23,7 +23,7 @@ our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 
 use Dist::Zilla::App '-command';
-use Try::Tiny;
+use Try::Tiny qw( try catch );
 use Scalar::Util qw( blessed );
 
 ## no critic ( ProhibitAmbiguousNames)
@@ -66,19 +66,29 @@ sub opt_spec {
 
 sub validate_args {
   my ( $self, $opt, undef ) = @_;
-  return unless defined $opt->color_theme;
-  my $themes = $self->_available_themes;
-  if ( not exists $themes->{ $opt->color_theme } ) {
-    require Carp;
-    Carp::croak(
-      'Invalid theme specification <' . $opt->color_theme . '>, available themes are: ' . ( join q{, }, sort keys %{$themes} ) );
+  try {
+    $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
   }
+  catch {
+    my $error = shift;
+    require Carp;
+    my $message = $error . qq[\n\n];
+    $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $opt->color_theme;
+    $message .= sprintf 'available themes are: %s', ( join q{, }, $self->_available_themes );
+    Carp::croak($message);
+  };
+  return;
 }
 
 sub _available_themes {
   my (undef) = @_;
   require Path::ScanINC;
   my (@theme_dirs) = Path::ScanINC->new()->all_dirs( 'Dist', 'Zilla', 'dumpphases', 'Theme' );
+  if ( not @theme_dirs ) {
+    require Carp;
+    ## no critic (ValuesAndExpressions::RequireInterpolationOfMetachars)
+    Carp::cluck('Found no theme dirs in @INC matching Dist/Zilla/dumpphases/Theme/');
+  }
   my (%themes);
   require Path::Tiny;
   for my $dir (@theme_dirs) {
@@ -97,33 +107,28 @@ sub _available_themes {
       $themes{$theme_name} = 1;
     }
   }
-  return \%themes;
+  ## no critic (Variables::ProhibitUnusedVarsStricter)
+  return ( my (@list) = sort keys %themes );
 }
 
-sub _get_color_theme {
-  my ( undef, $opt, $default ) = @_;
-  return $default unless $opt->color_theme;
-  return $opt->color_theme;
-}
-
-sub _get_theme_instance {
-  my ( undef, $theme ) = @_;
+sub _load_color_theme {
+  my ( undef, $color_theme ) = @_;
   require Module::Runtime;
-  my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $theme );
+  my $theme_module = Module::Runtime::compose_module_name( 'Dist::Zilla::dumpphases::Theme', $color_theme );
   Module::Runtime::require_module($theme_module);
-  return $theme_module->new();
+  return $theme_module;
 }
 
 sub execute {
   my ( $self, $opt, undef ) = @_;
-  my $zilla = $self->zilla;
 
-  my $theme = $self->_get_theme_instance( $self->_get_color_theme( $opt, 'basic::blue' ) );
+  my $theme_module = $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
+  my $theme = $theme_module->new();
 
   my $seen_plugins = {};
 
   require Dist::Zilla::Util::RoleDB;
-
+  my $zilla;
   for my $phase ( Dist::Zilla::Util::RoleDB->new()->phases ) {
     my ($label);
     $label = $phase->name;
@@ -131,6 +136,7 @@ sub execute {
     $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
+    $zilla ||= $self->zilla;
     push @plugins, @{ $zilla->plugins_with( $phase->name ) };
     next unless @plugins;
 
@@ -159,103 +165,6 @@ sub execute {
   return 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 1;
 
 __END__
@@ -270,7 +179,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 1.000005
+version 1.000006
 
 =head1 SYNOPSIS
 
@@ -295,13 +204,22 @@ If you are using an HTML-enabled POD viewer, you should see a screenshot of this
 
 =end MetaPOD::JSON
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png" alt="Screenshot" width="721" height="1007"/></center>
+=for html <center>
+  <img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png"
+       alt="Screenshot"
+       width="721"
+       height="1007" />
+</center>
 
 =head1 SEE ALSO
 
 =over 4
 
-=item * L<< C<Dist::Zilla::Plugin::ReportPhase>|Dist::Zilla::Plugin::ReportPhase >> - Will report what phases are triggering as they happen.
+=item * L<<
+C<Dist::Zilla::Plugin::ReportPhase>|Dist::Zilla::Plugin::ReportPhase
+>>
+
+Will report what phases are triggering as they happen.
 
 =back
 
@@ -334,7 +252,8 @@ many of the things this module calls "phases" are not so much phases.
 
 At its core, C<Dist::Zilla> has an array, on which all L<< C<Plugin>s|Dist::Zilla::Role::Plugin >> are stored.
 
-A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >> )
+A C<Plugin>, in itself, will not do very much ( at least, not unless they do instantiation-time changes like
+L<< C<[Bootstrap::lib]>|Dist::Zilla::Plugin::Bootstrap::lib >> )
 
 There are 3 Primary kinds of plugin
 
@@ -367,7 +286,8 @@ is heavily dependent on usage.
 For instance, L<< C<-VersionProvider>|Dist::Zilla::Role::VersionProvider >>, which is dependent on a few variables,
 and is called only when its needed, the first time its needed.
 
-Which means it could occur as early as creating C<META.json> or it could occur as late as just before it writes the distribution out to disk.
+Which means it could occur as early as creating C<META.json> or it could occur as late as just before it writes the distribution
+out to disk.
 
 =back
 
@@ -410,7 +330,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2015 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
