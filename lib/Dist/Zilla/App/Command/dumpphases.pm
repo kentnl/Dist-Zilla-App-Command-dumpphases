@@ -110,7 +110,6 @@ sub _load_color_theme {
 
 sub execute {
   my ( $self, $opt, undef ) = @_;
-  my $zilla = $self->zilla;
 
   my $theme_module = $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
   my $theme = $theme_module->new();
@@ -118,7 +117,7 @@ sub execute {
   my $seen_plugins = {};
 
   require Dist::Zilla::Util::RoleDB;
-
+  my $zilla;
   for my $phase ( Dist::Zilla::Util::RoleDB->new()->phases ) {
     my ($label);
     $label = $phase->name;
@@ -126,6 +125,7 @@ sub execute {
     $label =~ s/([[:lower:]])([[:upper:]])/$1 $2/gmsx;
 
     my @plugins;
+    $zilla ||= $self->zilla;
     push @plugins, @{ $zilla->plugins_with( $phase->name ) };
     next unless @plugins;
 
