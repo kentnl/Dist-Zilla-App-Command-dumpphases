@@ -23,7 +23,7 @@ our $VERSION = '1.000006';
 =cut
 
 use Dist::Zilla::App '-command';
-use Try::Tiny;
+use Try::Tiny qw( try catch );
 use Scalar::Util qw( blessed );
 
 ## no critic ( ProhibitAmbiguousNames)
@@ -66,12 +66,18 @@ sub opt_spec {
 
 sub validate_args {
   my ( $self, $opt, undef ) = @_;
-  my $color_theme = $opt->color_theme || 'basic::blue';
-  my @themes = $self->_available_themes;
-  if ( not grep { $_ eq $color_theme } @themes ) {
-    require Carp;
-    Carp::croak( 'Invalid theme specification <' . $color_theme . '>, available themes are: ' . ( join q{, }, @themes ) );
+  try {
+    $self->_load_color_theme( $opt->color_theme || 'basic::blue' );
   }
+  catch {
+    my $error = shift;
+    require Carp;
+    my $message = $error . qq[\n\n];
+    $message .= sprintf "^ Was seen attempting to load theme <%s>\n", $opt->color_theme;
+    $message .= sprintf 'available themes are: %s', ( join q{, }, $self->_available_themes );
+    Carp::croak($message);
+  };
+  return;
 }
 
 sub _available_themes {
