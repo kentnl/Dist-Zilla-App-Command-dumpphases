@@ -37,14 +37,6 @@ with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
 
 sub color { return 'green' }
 
-
-
-
-
-
-
-
-
 1;
 
 __END__
@@ -77,7 +69,11 @@ version 1.000007
 
 =end MetaPOD::JSON
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_green.png" alt="Screenshot" width="715" height="372"/></center>
+=for html <center>
+  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpphases/theme_basic_green.png"
+       alt="Screenshot"
+       width="715" height="372"/>
+</center>
 
 =head1 METHODS
 

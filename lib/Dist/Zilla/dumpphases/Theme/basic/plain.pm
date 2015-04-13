@@ -73,14 +73,6 @@ sub print_star_assoc {
   return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
 
-
-
-
-
-
-
-
-
 1;
 
 __END__
@@ -113,7 +105,12 @@ version 1.000007
 
 =end MetaPOD::JSON
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_plain.png" alt="Screenshot" width="677" height="412"/></center>
+=for html <center>
+  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpphases/theme_basic_plain.png"
+       alt="Screenshot"
+       width="677"
+       height="412"/>
+</center>
 
 =head1 METHODS
 

@@ -23,11 +23,6 @@ lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
 maint/perlcritic.rc.gen.pl
-media/example_01.png
-media/theme_basic_blue.png
-media/theme_basic_green.png
-media/theme_basic_plain.png
-media/theme_basic_red.png
 misc/Changes.deps
 misc/Changes.deps.all
 misc/Changes.deps.dev
