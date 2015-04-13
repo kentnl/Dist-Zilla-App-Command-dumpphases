@@ -1,8 +1,11 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
-1.000007 2015-04-13T01:47:59Z 4494399
+1.000007 2015-04-13T01:55:42Z 805606d
+ [Documentation]
+ - Redirect media URIs to different repo.
+
  [Packaging]
- - Nuke embedded media
+ - Nuke embedded media to slim installation/download.
 
 1.000006 2015-04-10T07:17:31Z d9fc4b6
  [Dependencies::Stats]
