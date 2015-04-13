@@ -13,8 +13,6 @@ README
 corpus/basic_01/dist.ini
 dist.ini
 dist.ini.meta
-layout/self_structure.dot
-layout/self_structure.png
 lib/Dist/Zilla/App/Command/dumpphases.pm
 lib/Dist/Zilla/dumpphases/Role/Theme.pm
 lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
