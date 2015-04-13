@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Theme::basic::red;
 
-our $VERSION = '1.000006';
+our $VERSION = '1.000007';
 
 # ABSTRACT: A red color theme for dzil dumpphases
 
@@ -37,14 +37,6 @@ with 'Dist::Zilla::dumpphases::Role::Theme::SimpleColor';
 
 sub color { return 'red' }
 
-
-
-
-
-
-
-
-
 1;
 
 __END__
@@ -59,7 +51,7 @@ Dist::Zilla::dumpphases::Theme::basic::red - A red color theme for dzil dumpphas
 
 =head1 VERSION
 
-version 1.000006
+version 1.000007
 
 =head1 SYNOPSIS
 
@@ -77,7 +69,12 @@ version 1.000006
 
 =end MetaPOD::JSON
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_red.png" alt="Screenshot" width="702" height="417"/></center>
+=for html <center>
+  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpphases/theme_basic_red.png"
+       alt="Screenshot"
+       width="702"
+       height="417"/>
+</center>
 
 =head1 METHODS
 

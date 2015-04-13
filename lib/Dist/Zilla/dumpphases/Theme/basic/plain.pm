@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Theme::basic::plain;
 
-our $VERSION = '1.000006';
+our $VERSION = '1.000007';
 
 # ABSTRACT: A plain-text theme for dzil dumpphases
 
@@ -73,14 +73,6 @@ sub print_star_assoc {
   return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
 
-
-
-
-
-
-
-
-
 1;
 
 __END__
@@ -95,7 +87,7 @@ Dist::Zilla::dumpphases::Theme::basic::plain - A plain-text theme for dzil dumpp
 
 =head1 VERSION
 
-version 1.000006
+version 1.000007
 
 =head1 SYNOPSIS
 
@@ -113,7 +105,12 @@ version 1.000006
 
 =end MetaPOD::JSON
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_plain.png" alt="Screenshot" width="677" height="412"/></center>
+=for html <center>
+  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpphases/theme_basic_plain.png"
+       alt="Screenshot"
+       width="677"
+       height="412"/>
+</center>
 
 =head1 METHODS
 

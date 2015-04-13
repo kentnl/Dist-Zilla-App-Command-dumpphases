@@ -13,8 +13,6 @@ README
 corpus/basic_01/dist.ini
 dist.ini
 dist.ini.meta
-layout/self_structure.dot
-layout/self_structure.png
 lib/Dist/Zilla/App/Command/dumpphases.pm
 lib/Dist/Zilla/dumpphases/Role/Theme.pm
 lib/Dist/Zilla/dumpphases/Role/Theme/SimpleColor.pm
@@ -23,11 +21,6 @@ lib/Dist/Zilla/dumpphases/Theme/basic/green.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/plain.pm
 lib/Dist/Zilla/dumpphases/Theme/basic/red.pm
 maint/perlcritic.rc.gen.pl
-media/example_01.png
-media/theme_basic_blue.png
-media/theme_basic_green.png
-media/theme_basic_plain.png
-media/theme_basic_red.png
 misc/Changes.deps
 misc/Changes.deps.all
 misc/Changes.deps.dev

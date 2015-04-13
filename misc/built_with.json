@@ -55,7 +55,7 @@
       "Dist::Zilla::Plugin::Twitter" : "0.026",
       "Dist::Zilla::Plugin::UploadToCPAN" : "5.034",
       "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.024001",
-      "Dist::Zilla::Util::RoleDB" : "0.003001",
+      "Dist::Zilla::Util::RoleDB" : "0.004000",
       "ExtUtils::MakeMaker" : "7.04",
       "File::Spec" : "3.53",
       "Module::Runtime" : "0.014",
