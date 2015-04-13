@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Role::Theme::SimpleColor;
 
-our $VERSION = '1.000007';
+our $VERSION = '1.000008';
 
 # ABSTRACT: A role for themes that are simple single-color themes with variations of bold/uncolored.
 

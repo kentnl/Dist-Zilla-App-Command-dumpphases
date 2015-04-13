@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::App::Command::dumpphases;
 
-our $VERSION = '1.000007';
+our $VERSION = '1.000008';
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
