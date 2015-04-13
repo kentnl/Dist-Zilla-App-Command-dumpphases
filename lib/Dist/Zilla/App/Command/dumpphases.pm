@@ -177,12 +177,12 @@ sub execute {
 
 If you are using an HTML-enabled POD viewer, you should see a screenshot of this in action:
 
-( Everyone else can visit L<http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png> )
+( Everyone else can visit L<http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpphases/example_01.png> )
 
 =begin html
 
 <center>
-  <img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/example_01.png"
+  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpphases/example_01.png"
        alt="Screenshot"
        width="721"
        height="1007" />

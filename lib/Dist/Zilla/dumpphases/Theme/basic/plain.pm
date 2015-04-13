@@ -73,12 +73,21 @@ sub print_star_assoc {
   return printf "%s%s%s\n", ' * ', $name, ' => ' . $value;
 }
 
+1;
+
 =head1 SYNOPSIS
 
     dzil dumpphases --color-theme=basic::plain
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_plain.png" alt="Screenshot" width="677" height="412"/></center>
+=begin html
+
+<center>
+  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpphases/theme_basic_plain.png"
+       alt="Screenshot"
+       width="677"
+       height="412"/>
+</center>
+
+=end html
 
 =cut
-
-1;

@@ -37,12 +37,21 @@ This simply returns C<'blue'>
 
 sub color { return 'blue' }
 
+1;
+
 =head1 SYNOPSIS
 
     dzil dumpphases --color-theme=basic::blue
 
-=for html <center><img src="http://kentnl.github.io/Dist-Zilla-App-Command-dumpphases/media/theme_basic_blue.png" alt="Screenshot" width="708" height="372"/></center>
+=begin html
+
+<center>
+  <img src="http://kentnl.github.io/screenshots/Dist-Zilla-App-Command-dumpphases/theme_basic_blue.png"
+       alt="Screenshot"
+       width="708"
+       height="372"/>
+</center>
+
+=end html
 
 =cut
-
-1;
