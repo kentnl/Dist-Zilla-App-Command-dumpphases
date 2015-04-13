@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
+1.000008 2015-04-13T02:01:23Z 0bcf944
+
 1.000007 2015-04-13T01:57:06Z e09e102
  [Documentation]
  - Redirect media URIs to different repo.
