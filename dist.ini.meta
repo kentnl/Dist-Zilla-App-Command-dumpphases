@@ -18,6 +18,7 @@ bumpversions      = 1
 copyfiles         = LICENSE
 srcreadme         = mkdn
 twitter_extra_hash_tags = #distzilla
+auto_prereqs_skip = ^Win32::Console::ANSI$
 
 ; version_major     = 0
 ; version_minor     = 1
