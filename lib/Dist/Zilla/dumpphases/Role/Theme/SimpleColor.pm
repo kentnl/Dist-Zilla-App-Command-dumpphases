@@ -36,7 +36,7 @@ requires 'color';
 
 ## no critic ( RequireArgUnpacking )
 sub _colored {
-  require Term::ANSIColor;
+  require Term::ANSIColor; () = eval { require Win32::Console::ANSI } if 'MSWin32' eq $^O;
   goto \&Term::ANSIColor::colored;
 }
 
