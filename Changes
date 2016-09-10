@@ -1,10 +1,14 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
-1.000008 2016-09-10T07:02:38Z ddafced
+1.000008 2016-09-10T07:27:49Z 950daa4
  [Dependencies::Stats]
  - Dependencies changed since 1.000007, see misc/*.deps* for details
  - configure: (suggests: +1)
  - develop: +2 ↑1 (suggests: ↑2)
+
+ [Features / Win32 ANSI Colors]
+ - ANSI Escape code colours should render correctly on Win32 if users have Win32::Console::ANSI installed.
+ - Patched (with thanks) by Roy Ivy III ( #5 )
 
 1.000007 2015-04-13T01:57:06Z e09e102
  [Documentation]
