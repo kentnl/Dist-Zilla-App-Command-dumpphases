@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Role::Theme::SimpleColor;
 
-our $VERSION = '1.000007';
+our $VERSION = '1.000008';
 
 # ABSTRACT: A role for themes that are simple single-color themes with variations of bold/uncolored.
 
@@ -36,7 +36,7 @@ requires 'color';
 
 ## no critic ( RequireArgUnpacking )
 sub _colored {
-  require Term::ANSIColor;
+  require Term::ANSIColor; () = eval { require Win32::Console::ANSI } if 'MSWin32' eq $^O;
   goto \&Term::ANSIColor::colored;
 }
 
@@ -145,7 +145,7 @@ Dist::Zilla::dumpphases::Role::Theme::SimpleColor - A role for themes that are s
 
 =head1 VERSION
 
-version 1.000007
+version 1.000008
 
 =head1 SYNOPSIS
 
@@ -202,7 +202,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2016 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
