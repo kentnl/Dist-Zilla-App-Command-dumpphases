@@ -271,6 +271,7 @@
                   "exclude_filename" : [
                      "CONTRIBUTING.pod",
                      "LICENSE",
+                     "Makefile.PL",
                      "README",
                      "README.mkdn",
                      "README.pod"
