@@ -1,6 +1,8 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-1.000008
+1.000009
+
+1.000008 2016-09-10T07:27:49Z
  [Added / configure suggests]
  - JSON::PP 2.27300
 
