@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+1.000008 2016-09-10T07:27:49Z d11870f
  [Dependencies::Stats]
  - Dependencies changed since 1.000007, see misc/*.deps* for details
  - configure: (suggests: +1)
