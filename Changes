@@ -1,6 +1,10 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 1.000007, see misc/*.deps* for details
+ - configure: (suggests: +1)
+ - develop: +2 ↑1 (suggests: ↑2)
 
 1.000007 2015-04-13T01:57:06Z e09e102
  [Documentation]
@@ -271,4 +275,3 @@ Release history for Dist-Zilla-App-Command-dumpphases
 
 0.1.0 2011-07-14T06:13:32Z
  - First version.
-
