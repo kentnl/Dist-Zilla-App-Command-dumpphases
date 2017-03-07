@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Role::Theme;
 
-our $VERSION = '1.000009';
+our $VERSION = '1.000010';
 
 # ABSTRACT: Output formatting themes for dzil dumpphases
 

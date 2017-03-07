@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-App-Command-dumpphases
 
 {{$NEXT}}
+
+1.000009 2017-03-07T07:38:33Z 1b7e8bb
  [Bugfix]
  - Fix tests with -Ddefault_inc_excludes_dot
 
