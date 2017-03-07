@@ -160,7 +160,7 @@ stop_words = screenshot Plugin Plugins ini Mengué instantiation dzil dumpphases
 
 [Documentation::RequirePodAtEnd]
 
-[Documentation::RequirePodLinksIncludeText]
+[-Documentation::RequirePodLinksIncludeText]
 
 [-Documentation::RequirePodSections]
 
@@ -305,7 +305,7 @@ allowed_pragmata = diagnostics feature perlversion strict warnings utf8
 
 [RegularExpressions::RequireExtendedFormatting]
 
-[RegularExpressions::RequireLineBoundaryMatching]
+[-RegularExpressions::RequireLineBoundaryMatching]
 
 [Subroutines::ProhibitAmpersandSigils]
 
@@ -317,7 +317,7 @@ allowed_pragmata = diagnostics feature perlversion strict warnings utf8
 
 [Subroutines::ProhibitExcessComplexity]
 
-[Subroutines::ProhibitExplicitReturnUndef]
+[-Subroutines::ProhibitExplicitReturnUndef]
 
 [Subroutines::ProhibitExportingUndeclaredSubs]
 
@@ -336,9 +336,9 @@ private_name_regex = _(?!build_)\w
 
 [Subroutines::ProtectPrivateSubs]
 
-[Subroutines::RequireArgUnpacking]
+[-Subroutines::RequireArgUnpacking]
 
-[Subroutines::RequireFinalReturn]
+[-Subroutines::RequireFinalReturn]
 
 [TestingAndDebugging::ProhibitNoStrict]
 
@@ -373,7 +373,7 @@ base_max = 130
 
 [ValuesAndExpressions::ProhibitComplexVersion]
 
-[ValuesAndExpressions::ProhibitConstantPragma]
+[-ValuesAndExpressions::ProhibitConstantPragma]
 
 [ValuesAndExpressions::ProhibitDuplicateHashKeys]
 

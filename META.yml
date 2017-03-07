@@ -7,13 +7,13 @@ build_requires:
   Dist::Zilla::App::Tester: '0'
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
-  Test::More: '0.89'
+  Test::More: '0'
   perl: '5.006'
 configure_requires:
   ExtUtils::MakeMaker: '0'
   perl: '5.006'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 6.007, CPAN::Meta::Converter version 2.150010'
+generated_by: 'Dist::Zilla version 6.009, CPAN::Meta::Converter version 2.150010'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
