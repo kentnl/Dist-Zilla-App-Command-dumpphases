@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::dumpphases::Role::Theme;
 
-our $VERSION = '1.000009';
+our $VERSION = '1.000010';
 
 # ABSTRACT: Output formatting themes for dzil dumpphases
 
@@ -87,7 +87,7 @@ Dist::Zilla::dumpphases::Role::Theme - Output formatting themes for dzil dumppha
 
 =head1 VERSION
 
-version 1.000009
+version 1.000010
 
 =begin MetaPOD::JSON v1.1.0
 
