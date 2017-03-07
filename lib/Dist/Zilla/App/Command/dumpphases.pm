@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::App::Command::dumpphases;
 
-our $VERSION = '1.000008';
+our $VERSION = '1.000009';
 
 # ABSTRACT: Dump a textual representation of each phase's parts.
 
@@ -179,7 +179,7 @@ Dist::Zilla::App::Command::dumpphases - Dump a textual representation of each ph
 
 =head1 VERSION
 
-version 1.000008
+version 1.000009
 
 =head1 SYNOPSIS
 
@@ -330,7 +330,7 @@ Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016 by Kent Fredric <kentnl@cpan.org>.
+This software is copyright (c) 2017 by Kent Fredric <kentnl@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
